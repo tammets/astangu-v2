@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edgrarist</title>
+  <title>Edgarist</title>
   <script src="https://unpkg.com/@tailwindcss/browser@4.0.0"></script>
   <script src="js/main.js"></script>
 </head>
 <body class="bg-gray-50 min-h-screen">
   <!-- Header -->
-  <header class="absolute inset-x-0 top-0 z-50">
+  <header class="relative inset-x-0 top-0 z-50 py-6">
     <div class="mx-auto max-w-7xl">
-      <div class="px-6 pt-6 max-w-7xl mx-auto">
+      <div class="px-6 max-w-7xl mx-auto">
         <nav class="flex items-center justify-between lg:justify-start" aria-label="Global">
           <a href="index.html" class="-m-1.5 p-1.5 flex items-center gap-2">
             <img alt="Astangu logo" class="h-8 w-auto" src="assets/astangu-logo.svg" />
@@ -29,7 +29,7 @@
             <a href="oppetoo-kavandamine.html" class="text-sm font-semibold text-gray-900">Õppetöö kavandamine</a>
             <a href="lisamaterjalid.html" class="text-sm font-semibold text-gray-900">Lisamaterjalid</a>
             <a href="tooriistakast.html" class="text-sm font-semibold text-gray-900">Tööriistakast</a>
-            <a href="edgrarist.html" class="text-sm font-semibold text-gray-900">Edgrarist</a>
+            <a href="edgarist.html" class="text-sm font-semibold text-gray-900">Edgarist</a>
             <a href="kontakt.html" class="text-sm font-semibold text-gray-900">Kontakt</a>
           </div>
         </nav>
@@ -41,7 +41,7 @@
       <div class="flex items-center justify-between">
         <a href="index.html" class="-m-1.5 p-1.5">
           <span class="sr-only">Astangu</span>
-          <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+          <img class="h-8 w-auto" src="assets/astangu-logo.svg" alt="" />
         </a>
         <button type="button" data-menu-close class="-m-2.5 rounded-md p-2.5 text-gray-700">
           <span class="sr-only">Close menu</span>
@@ -58,20 +58,56 @@
             <a href="oppetoo-kavandamine.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Õppetöö kavandamine</a>
             <a href="lisamaterjalid.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Lisamaterjalid</a>
             <a href="tooriistakast.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Tööriistakast</a>
-            <a href="edgrarist.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Edgrarist</a>
+            <a href="edgarist.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Edgarist</a>
             <a href="kontakt.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Kontakt</a>
           </div>
         </div>
       </div>
     </div>
   </header>
-  <main class="container mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold text-blue-700 mb-6">Edgrarist</h1>
-    <p class="text-lg text-gray-700 mb-4">Selle lehe sisu tuleb siia.</p>
+  <main class="bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
+      <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">"Edgari" eesti keele õppe mured ja rõõmud</h2>
+      <p class="mt-6 text-lg/8 text-gray-600">Vastavalt eelpool kirjeldatule olid "Edgari" õppijatel teatud raskused eesti keele õppimisel ja eestikeelses aineõppes. Allpool on need raskused toodud koos praktiliste lahendustega, mille õpetajate meeskond arendas ja kasutusele võttis.</p>
+      <dl class="mt-20 divide-y divide-gray-900/10">
+        <div class="py-8 first:pt-0 last:pb-0 lg:grid lg:grid-cols-12 lg:gap-8">
+          <dt class="text-base/7 font-semibold text-gray-900 lg:col-span-5">Väljakutse</dt>
+          <dd class="mt-4 lg:col-span-7 lg:mt-0">
+            <p class="text-base/7 text-gray-600">Lahendused</p>
+          </dd>
+        </div>
+        <div class="py-8 first:pt-0 last:pb-0 lg:grid lg:grid-cols-12 lg:gap-8">
+          <dt class="text-base/7 font-semibold text-gray-900 lg:col-span-5">Õppijad ei mõistnud eestikeelseid instruktsioone, sh 1a. klassiruumis tegutsemise juhiseid (nt, Loe! Kuula!) ja 1b.
+            ülesannete kirjeldusi (nt, Sobita pilt ja sõna).</dt>
+          <dd class="mt-4 lg:col-span-7 lg:mt-0">
+            <p class="text-base/7 text-gray-600">1a. Õpetajad tegid pildid, mis selgelt illustreerisid tegevusi, nt kõrvaga pilt sõna "Loe" jaoks, ja kasutasid neid pilte iga kord, kui andsid õpilastele juhiseid.</p>
+            <p class="text-base/7 text-gray-600 mt-6">1b. Õpetajad jagasid pikemaid instruktsioone konkreetsemateks tegevusteks, millest õppijatel oli kergem aru saada.</p>
+            <p class="text-base/7 text-gray-600 mt-6">1c. Õpetajad valmistasid ette kakskeelse tabeli, kus õpilastele pakuti ülesannete kirjeldused (nt sobita pildid, tõmba joonega jne) nii eesti kui ka vene keeles. Tabelid olid pakutud õpilastele individuaalseks kasutamiseks nii klassis kui ka soovi korral kodus.</p>
+          </dd>
+        </div>
+        <div class="py-8 first:pt-0 last:pb-0 lg:grid lg:grid-cols-12 lg:gap-8">
+          <dt class="text-base/7 font-semibold text-gray-900 lg:col-span-5">Öpilastel olid raskused teemadega seotud sõnavara meeldejätmisega.</dt>
+          <dd class="mt-4 lg:col-span-7 lg:mt-0">
+            <p class="text-base/7 text-gray-600">2a. Opetajad tagasid, et teemadega seotud sõnad oleksid füüsilises õppekeskkonnas tunnimaterjalides (esitluses, öpilaste nähtavad: mappide materjalides), klassiruumi seintel, õppevideotes ja töölehtedel.</p>
+            <p class="text-base/7 text-gray-600 mt-6">2b. Õpetajad kasutasid teemanädala planeerimist, et tuua välja eestikeelset sõnavara, mida käsitleti enamikes ainetundides samal nädalal. See andis õpilastele võimalused kasutada neid sõnu erinevates ülesannetes ja olukordades, korrata ja kinnistada neid.</p>
+          </dd>
+        </div>
+        <div class="py-8 first:pt-0 last:pb-0 lg:grid lg:grid-cols-12 lg:gap-8">
+          <dt class="text-base/7 font-semibold text-gray-900 lg:col-span-5">Õpilastel olid raskused tekstide mõistmisel</dt>
+          <dd class="mt-4 lg:col-span-7 lg:mt-0">
+            <p class="text-base/7 text-gray-600">За. Õpetajad kontrollisid olemasolevate õppematerjalide, sh õpikute tekstide, taset ja selle jõukohasust õppijatele, kasutades Sõnaveebi õppeteksti hindamise tööriista.</p>
+            <p class="text-base/7 text-gray-600 mt-6">3b. Õpetajad lihtsustasid teksti, jagades seda väiksematesse löikudesse, lühendades lauseid ja
+              asendades võimalikke raskeid sõnu nende rahvusvaheliste sünonüümidega, mille kõla on õppijatele harjumuspärasem, nt pädevus vs kompetents.</p>
+          </dd>
+        </div>
+      </dl>
+    </div>
   </main>
+  <!-- Footer -->
   <footer class="bg-white shadow mt-12">
     <div class="container mx-auto px-4 py-6 text-center text-gray-500 text-sm">
-      &copy; 2024 Astangu. Kõik õigused kaitstud.
+      <div class="mb-2">Loome koos paremat elu!
+      </div>
     </div>
   </footer>
 </body>
