@@ -6,6 +6,17 @@
   <title>Tööriistakast</title>
   <script src="https://unpkg.com/@tailwindcss/browser@4.0.0"></script>
   <script src="js/main.js"></script>
+  <style>
+    /* Custom scrollbar for filter panel */
+    .scrollbar-thin::-webkit-scrollbar {
+      width: 6px;
+      background: #f3f4f6;
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background: #d1d5db;
+      border-radius: 3px;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
   <!-- Header -->
@@ -65,9 +76,95 @@
       </div>
     </div>
   </header>
-  <main class="container mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold text-blue-700 mb-6">Tööriistakast</h1>
-    <p class="text-lg text-gray-700 mb-4">Selle lehe sisu tuleb siia.</p>
+  <main class="bg-white min-h-screen">
+    <section class="py-12 sm:py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+          <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Tööriistakast</h1>
+          <p class="mt-2 text-lg text-gray-600 max-w-2xl">Siit leiad tunnikavad ja õppematerjalid, mida saad sortida, filtreerida ja otsida vastavalt oma vajadustele.</p>
+        </div>
+        <!-- Search and Sort -->
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-6">
+          <div class="flex-1 flex items-center gap-2">
+            <input id="searchInput" type="text" placeholder="Otsi märksõna, autorit, teemat..." class="w-full sm:w-80 rounded-lg border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none" />
+          </div>
+          <div class="flex items-center gap-2">
+            <label for="sortSelect" class="text-sm text-gray-700">Sorteeri:</label>
+            <select id="sortSelect" class="rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none">
+              <option value="date-desc">Uuemad enne</option>
+              <option value="date-asc">Vanimad enne</option>
+              <option value="title-asc">Pealkiri A-Z</option>
+              <option value="title-desc">Pealkiri Z-A</option>
+              <option value="author-asc">Autor A-Z</option>
+              <option value="author-desc">Autor Z-A</option>
+            </select>
+          </div>
+        </div>
+        <!-- Filters and Resource List -->
+        <div class="flex flex-col lg:flex-row gap-8">
+          <!-- Filter Panel -->
+          <aside class="w-full lg:w-72 bg-gray-50 rounded-2xl p-4 shadow-sm scrollbar-thin max-h-[700px] overflow-y-auto">
+            <form id="filterForm" class="space-y-6">
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Teema</label>
+                <select name="teema" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900">
+                  <option value="">Kõik</option>
+                  <option value="Riik ja sümboolika">Riik ja sümboolika</option>
+                  <option value="Pere ja suhted">Pere ja suhted</option>
+                  <option value="Töö ja ametid">Töö ja ametid</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Keeleaste</label>
+                <div class="flex flex-wrap gap-2">
+                  <label><input type="checkbox" name="keeleaste" value="Eel-A1" class="mr-1">Eel-A1</label>
+                  <label><input type="checkbox" name="keeleaste" value="A1" class="mr-1">A1</label>
+                  <label><input type="checkbox" name="keeleaste" value="A2" class="mr-1">A2</label>
+                  <label><input type="checkbox" name="keeleaste" value="B1" class="mr-1">B1</label>
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Keeleline osaoskus</label>
+                <div class="flex flex-wrap gap-2">
+                  <label><input type="checkbox" name="osaoskus" value="Kuulamine" class="mr-1">Kuulamine</label>
+                  <label><input type="checkbox" name="osaoskus" value="Rääkimine" class="mr-1">Rääkimine</label>
+                  <label><input type="checkbox" name="osaoskus" value="Kirjutamine" class="mr-1">Kirjutamine</label>
+                  <label><input type="checkbox" name="osaoskus" value="Lugemine" class="mr-1">Lugemine</label>
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Õppetegevuse tüüp</label>
+                <div class="flex flex-wrap gap-2">
+                  <label><input type="checkbox" name="tegevus" value="Rühmatöö" class="mr-1">Rühmatöö</label>
+                  <label><input type="checkbox" name="tegevus" value="Individuaaltöö" class="mr-1">Individuaaltöö</label>
+                  <label><input type="checkbox" name="tegevus" value="Paaristöö" class="mr-1">Paaristöö</label>
+                  <label><input type="checkbox" name="tegevus" value="Mäng" class="mr-1">Mäng</label>
+                  <label><input type="checkbox" name="tegevus" value="Liikumistegevus" class="mr-1">Liikumistegevus</label>
+                  <label><input type="checkbox" name="tegevus" value="Praktiline tegevus" class="mr-1">Praktiline tegevus</label>
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Tunni osa</label>
+                <div class="flex flex-wrap gap-2">
+                  <label><input type="checkbox" name="tunniosa" value="Häälestamine" class="mr-1">Häälestamine</label>
+                  <label><input type="checkbox" name="tunniosa" value="Eesmärgistamine" class="mr-1">Eesmärgistamine</label>
+                  <label><input type="checkbox" name="tunniosa" value="Uue materjali tutvustamine" class="mr-1">Uue materjali tutvustamine</label>
+                  <label><input type="checkbox" name="tunniosa" value="Harjutamine" class="mr-1">Harjutamine</label>
+                  <label><input type="checkbox" name="tunniosa" value="Kinnistamine" class="mr-1">Kinnistamine</label>
+                  <label><input type="checkbox" name="tunniosa" value="Kokkuvõte" class="mr-1">Kokkuvõte</label>
+                </div>
+              </div>
+              <button type="button" id="resetFilters" class="mt-4 w-full rounded-lg bg-gray-200 px-4 py-2 text-base font-semibold text-gray-700 hover:bg-gray-300 transition">Lähtesta filtrid</button>
+            </form>
+          </aside>
+          <!-- Resource List -->
+          <section class="flex-1">
+            <div id="resourceList" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6"></div>
+            <div id="noResults" class="hidden text-center text-gray-500 mt-12">Ühtegi materjali ei leitud.</div>
+          </section>
+        </div>
+      </div>
+    </section>
   </main>
   <!-- Footer -->
   <footer class="bg-white shadow mt-12">
@@ -76,5 +173,6 @@
       </div>
     </div>
   </footer>
+  <script src="js/tooriistakast.js"></script>
 </body>
 </html> 
