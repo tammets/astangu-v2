@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lisa uus materjal</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div class="max-w-2xl mx-auto py-8 px-4">
+    <h1 class="text-2xl font-bold mb-6">Lisa uus materjal</h1>
+    <form id="addResourceForm" class="space-y-6 bg-white p-6 rounded-xl shadow">
+      <div>
+        <label class="block font-semibold mb-1">Pealkiri</label>
+        <input type="text" name="title" required class="w-full border rounded px-3 py-2">
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Kirjeldus</label>
+        <textarea name="description" required class="w-full border rounded px-3 py-2"></textarea>
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Teema</label>
+        <input type="text" name="teema" required class="w-full border rounded px-3 py-2">
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Keeleaste</label>
+        <select name="keeleaste" multiple class="w-full border rounded px-3 py-2">
+          <option value="Eel-A1">Eel-A1</option>
+          <option value="A1">A1</option>
+          <option value="A2">A2</option>
+          <option value="B1">B1</option>
+        </select>
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Osaoskus</label>
+        <select name="osaoskus" multiple class="w-full border rounded px-3 py-2">
+          <option value="Kuulamine">Kuulamine</option>
+          <option value="Rääkimine">Rääkimine</option>
+          <option value="Kirjutamine">Kirjutamine</option>
+          <option value="Lugemine">Lugemine</option>
+        </select>
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Õppetegevuse tüüp</label>
+        <select name="tegevus" multiple class="w-full border rounded px-3 py-2">
+          <option value="Rühmatöö">Rühmatöö</option>
+          <option value="Individuaaltöö">Individuaaltöö</option>
+          <option value="Mäng">Mäng</option>
+        </select>
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Tunni osa</label>
+        <select name="tunniosa" multiple class="w-full border rounded px-3 py-2">
+          <option value="Uue materjali tutvustamine">Uue materjali tutvustamine</option>
+          <option value="Harjutamine">Harjutamine</option>
+          <option value="Kinnistamine">Kinnistamine</option>
+          <option value="Häälestamine">Häälestamine</option>
+        </select>
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Autor</label>
+        <input type="text" name="autor" required class="w-full border rounded px-3 py-2">
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Kuupäev</label>
+        <input type="date" name="date" required class="w-full border rounded px-3 py-2">
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Sildid (komaga eraldatud)</label>
+        <input type="text" name="tags" class="w-full border rounded px-3 py-2">
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Õppematerjali tüüp</label>
+        <div class="flex flex-col gap-2">
+          <label><input type="checkbox" name="resourceType" value="h5p"> H5P</label>
+          <label><input type="checkbox" name="resourceType" value="url"> URL</label>
+          <label><input type="checkbox" name="resourceType" value="text"> Tekst (WYSIWYG)</label>
+          <label><input type="checkbox" name="resourceType" value="file"> Fail</label>
+        </div>
+      </div>
+      <div id="resourceInputs" class="space-y-4">
+        <!-- Dynamic resource input fields will appear here -->
+      </div>
+      <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded">Salvesta materjal</button>
+    </form>
+    <div id="successMsg" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded">Materjal lisatud!</div>
+    <div class="mt-6">
+      <a href="tooriistakast.html" class="text-indigo-600 hover:underline">← Tagasi tööriistakasti</a>
+    </div>
+  </div>
+  <script>
+    // Dynamically show resource input fields based on selected types
+    const resourceInputs = document.getElementById('resourceInputs');
+    const form = document.getElementById('addResourceForm');
+    form.addEventListener('change', (e) => {
+      if (e.target.name === 'resourceType') {
+        updateResourceInputs();
+      }
+    });
+    function updateResourceInputs() {
+      const types = Array.from(form.querySelectorAll('input[name="resourceType"]:checked')).map(i => i.value);
+      let html = '';
+      if (types.includes('h5p')) {
+        html += `<div><label class="block font-semibold mb-1">H5P embed kood või link</label><input type="text" name="h5p" class="w-full border rounded px-3 py-2"></div>`;
+      }
+      if (types.includes('url')) {
+        html += `<div><label class="block font-semibold mb-1">URL</label><input type="url" name="url" class="w-full border rounded px-3 py-2"></div>`;
+      }
+      if (types.includes('text')) {
+        html += `<div><label class="block font-semibold mb-1">Tekst (WYSIWYG)</label><textarea id="wysiwyg" name="text" class="w-full border rounded px-3 py-2"></textarea></div>`;
+      }
+      if (types.includes('file')) {
+        html += `<div><label class="block font-semibold mb-1">Fail</label><input type="file" name="file" class="w-full"></div>`;
+      }
+      resourceInputs.innerHTML = html;
+      if (types.includes('text')) {
+        setTimeout(() => {
+          if (window.ClassicEditor && document.getElementById('wysiwyg')) {
+            ClassicEditor.create(document.getElementById('wysiwyg')).catch(() => {});
+          }
+        }, 100);
+      }
+    }
+    // Handle form submit (for now, just show success message)
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('successMsg').classList.remove('hidden');
+      form.reset();
+      resourceInputs.innerHTML = '';
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+  </script>
+</body>
+</html> 
