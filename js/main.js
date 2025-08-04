@@ -26,4 +26,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Ensure menu is closed by default
   closeMenu();
+
+  // Mobile dropdown toggle for navigation
+  document.querySelectorAll('[data-collapse-toggle]').forEach(function (toggle) {
+    toggle.addEventListener('click', function () {
+      const targetId = this.getAttribute('data-collapse-toggle');
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        targetEl.classList.toggle('hidden');
+        const svg = this.querySelector('svg');
+        if (svg) {
+          svg.classList.toggle('rotate-180');
+        }
+      }
+    });
+  });
 }); 
