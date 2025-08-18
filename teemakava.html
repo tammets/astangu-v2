@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teemakavade Haldus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.462.0/lucide.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --primary: 222.2 47.4% 11.2%;
+            --primary-foreground: 210 40% 98%;
+            --secondary: 210 40% 96.1%;
+            --secondary-foreground: 222.2 47.4% 11.2%;
+            --muted: 210 40% 96.1%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --accent: 210 40% 96.1%;
+            --accent-foreground: 222.2 47.4% 11.2%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 222.2 84% 4.9%;
+            --radius: 0.5rem;
+        }
+
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            min-width: 300px;
+            padding: 16px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .toast.success {
+            background-color: #10b981;
+        }
+
+        .toast.error {
+            background-color: #ef4444;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .btn-primary {
+            background-color: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+        }
+
+        .btn-primary:hover {
+            background-color: hsl(var(--primary) / 0.9);
+        }
+
+        .btn-secondary {
+            background-color: hsl(var(--secondary));
+            color: hsl(var(--secondary-foreground));
+        }
+
+        .btn-destructive {
+            background-color: hsl(var(--destructive));
+            color: hsl(var(--destructive-foreground));
+        }
+
+        .btn-outline {
+            border: 1px solid hsl(var(--border));
+            background-color: transparent;
+            color: hsl(var(--foreground));
+        }
+
+        .btn-outline:hover {
+            background-color: hsl(var(--accent));
+        }
+
+        .card {
+            background-color: hsl(var(--card));
+            color: hsl(var(--card-foreground));
+            border: 1px solid hsl(var(--border));
+        }
+
+        .input, .textarea, .select {
+            border: 1px solid hsl(var(--border));
+            background-color: hsl(var(--background));
+        }
+
+        .input:focus, .textarea:focus, .select:focus {
+            border-color: hsl(var(--ring));
+            outline: none;
+            box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <div id="toast-container"></div>
+    
+    <div class="container mx-auto py-8">
+        <!-- Navigation -->
+        <div id="navigation" class="card p-4 mb-6 rounded-lg">
+            <div class="flex gap-4">
+                <button id="nav-create" class="btn-primary px-4 py-2 rounded-md">
+                    Uue teemakava loomine
+                </button>
+                <button id="nav-list" class="btn-outline px-4 py-2 rounded-md">
+                    Teemakavade nimekiri
+                </button>
+            </div>
+        </div>
+
+        <!-- Create/Edit Form View -->
+        <div id="create-view" class="max-w-4xl mx-auto p-6 space-y-8">
+            <div class="card rounded-lg">
+                <div class="p-6 border-b">
+                    <h1 id="form-title" class="text-2xl font-bold">Uue teemakava loomine</h1>
+                </div>
+                <div class="p-6">
+                    <form id="curriculum-form" class="space-y-6">
+                        <!-- Basic Information -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label for="title" class="block text-sm font-medium">Pealkiri *</label>
+                                <input type="text" id="title" class="input w-full px-3 py-2 rounded-md" 
+                                       placeholder="Näiteks: Emotsioonid" required>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="subject" class="block text-sm font-medium">Õppeaine *</label>
+                                <select id="subject" class="select w-full px-3 py-2 rounded-md" required>
+                                    <option value="">Vali õppeaine</option>
+                                    <option value="Eesti keel">Eesti keel</option>
+                                    <option value="Matemaatika">Matemaatika</option>
+                                    <option value="Loodusõpetus">Loodusõpetus</option>
+                                    <option value="Ajalugu">Ajalugu</option>
+                                    <option value="Geograafia">Geograafia</option>
+                                    <option value="Füüsika">Füüsika</option>
+                                    <option value="Keemia">Keemia</option>
+                                    <option value="Bioloogia">Bioloogia</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="field" class="block text-sm font-medium">Valdkond *</label>
+                                <select id="field" class="select w-full px-3 py-2 rounded-md" required>
+                                    <option value="">Vali valdkond</option>
+                                    <option value="Sotsiaalsed oskused">Sotsiaalsed oskused</option>
+                                    <option value="Kognitiivsed oskused">Kognitiivsed oskused</option>
+                                    <option value="Emotsionaalsed oskused">Emotsionaalsed oskused</option>
+                                    <option value="Kommunikatiivsed oskused">Kommunikatiivsed oskused</option>
+                                    <option value="Praktiline tegevus">Praktiline tegevus</option>
+                                    <option value="Loovus ja kunstiline väljendus">Loovus ja kunstiline väljendus</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="plannedHours" class="block text-sm font-medium">Kavandatud tundide arv</label>
+                                <select id="plannedHours" class="select w-full px-3 py-2 rounded-md">
+                                    <option value="">Vali tundide arv</option>
+                                    <option value="1 x 45 minutit">1 x 45 minutit</option>
+                                    <option value="2 x 45 minutit">2 x 45 minutit</option>
+                                    <option value="3 x 45 minutit">3 x 45 minutit</option>
+                                    <option value="4 x 45 minutit">4 x 45 minutit</option>
+                                    <option value="5 x 45 minutit">5 x 45 minutit</option>
+                                    <option value="6 x 45 minutit">6 x 45 minutit</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="description" class="block text-sm font-medium">Kirjeldus</label>
+                            <textarea id="description" class="textarea w-full px-3 py-2 rounded-md" rows="4"
+                                      placeholder="Teemakava kirjeldus..."></textarea>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="subjectOutcomes" class="block text-sm font-medium">Ainealased õpitulemused</label>
+                            <textarea id="subjectOutcomes" class="textarea w-full px-3 py-2 rounded-md" rows="3"
+                                      placeholder="Näiteks: õpilane tunneb ära põhiemotsioonid; õpilane seletab, missugustes olukordades tekivad teatud emotsioonid..."></textarea>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="languageOutcomes" class="block text-sm font-medium">Keelelised õpitulemused</label>
+                            <textarea id="languageOutcomes" class="textarea w-full px-3 py-2 rounded-md" rows="3"
+                                      placeholder="Näiteks: õpilane nimetab põhiemotsioone; õpilane tunneb konteksti põhjal ära põhiemotsioonid..."></textarea>
+                        </div>
+
+                        <!-- Lessons Section -->
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-xl font-semibold">Tunnid</h3>
+                                <button type="button" id="add-lesson" class="btn-primary px-4 py-2 rounded-md flex items-center gap-2">
+                                    <i data-lucide="plus" class="w-4 h-4"></i>
+                                    Lisa tund
+                                </button>
+                            </div>
+                            <div id="lessons-container" class="space-y-4"></div>
+                        </div>
+
+                        <div class="flex justify-end pt-6">
+                            <button type="submit" class="btn-primary px-8 py-3 rounded-md text-lg">
+                                Salvesta teemakava
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- List View -->
+        <div id="list-view" class="hidden max-w-6xl mx-auto p-6 space-y-6">
+            <div class="card rounded-lg">
+                <div class="p-6 border-b">
+                    <div class="flex justify-between items-center">
+                        <h1 class="text-2xl font-bold">Teemakavade nimekiri</h1>
+                        <div class="flex items-center gap-4">
+                            <label class="text-sm font-medium">Sorteeri valdkonna järgi:</label>
+                            <select id="sort-field" class="select px-3 py-2 rounded-md w-64">
+                                <option value="all">Kõik valdkonnad</option>
+                                <option value="Sotsiaalsed oskused">Sotsiaalsed oskused</option>
+                                <option value="Kognitiivsed oskused">Kognitiivsed oskused</option>
+                                <option value="Emotsionaalsed oskused">Emotsionaalsed oskused</option>
+                                <option value="Kommunikatiivsed oskused">Kommunikatiivsed oskused</option>
+                                <option value="Praktiline tegevus">Praktiline tegevus</option>
+                                <option value="Loovus ja kunstiline väljendus">Loovus ja kunstiline väljendus</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div id="curricula-table" class="overflow-x-auto">
+                        <div id="empty-state" class="text-center py-8 text-gray-600">
+                            Ühtegi teemakava pole veel loodud.
+                        </div>
+                        <table id="curricula-list" class="hidden w-full border-collapse">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="border border-gray-200 p-3 text-left font-semibold">Pealkiri</th>
+                                    <th class="border border-gray-200 p-3 text-left font-semibold">Õppeaine</th>
+                                    <th class="border border-gray-200 p-3 text-left font-semibold">Valdkond</th>
+                                    <th class="border border-gray-200 p-3 text-left font-semibold">Tundide arv</th>
+                                    <th class="border border-gray-200 p-3 text-left font-semibold">Tunnid kokku</th>
+                                    <th class="border border-gray-200 p-3 text-left font-semibold">Loodud</th>
+                                    <th class="border border-gray-200 p-3 text-right font-semibold">Tegevused</th>
+                                </tr>
+                            </thead>
+                            <tbody id="curricula-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Curriculum -->
+        <div id="view-curriculum" class="hidden max-w-4xl mx-auto p-6 space-y-6">
+            <div class="flex items-center justify-between mb-6">
+                <button id="back-to-list" class="btn-outline px-4 py-2 rounded-md flex items-center gap-2">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    Tagasi nimekirja
+                </button>
+                <button id="teacher-view-btn" class="btn-primary px-4 py-2 rounded-md flex items-center gap-2">
+                    <i data-lucide="eye" class="w-4 h-4"></i>
+                    Õpetaja vaade
+                </button>
+            </div>
+            <div id="curriculum-details"></div>
+        </div>
+
+        <!-- Teacher View -->
+        <div id="teacher-view" class="hidden max-w-4xl mx-auto p-6 space-y-6">
+            <div class="flex items-center justify-between mb-6">
+                <button id="back-to-view" class="btn-outline px-4 py-2 rounded-md flex items-center gap-2">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    Tagasi vaatesse
+                </button>
+                <div class="text-sm text-gray-600" id="curriculum-title-header"></div>
+            </div>
+
+            <div class="flex items-center justify-between mb-4">
+                <button id="prev-lesson" class="btn-outline px-4 py-2 rounded-md flex items-center gap-2">
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                    Eelmine tund
+                </button>
+                
+                <div class="text-center">
+                    <span id="lesson-counter" class="text-lg font-semibold"></span>
+                </div>
+                
+                <button id="next-lesson" class="btn-outline px-4 py-2 rounded-md flex items-center gap-2">
+                    Järgmine tund
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <div id="current-lesson-display"></div>
+        </div>
+    </div>
+
+    <script>
+        // Application State
+        let state = {
+            currentView: 'create',
+            curricula: [],
+            editingCurriculum: null,
+            viewingCurriculum: null,
+            currentLessonIndex: 0,
+            sortField: 'all'
+        };
+
+        // Load data from localStorage
+        function loadData() {
+            const saved = localStorage.getItem('curricula');
+            if (saved) {
+                state.curricula = JSON.parse(saved);
+            }
+        }
+
+        // Save data to localStorage
+        function saveData() {
+            localStorage.setItem('curricula', JSON.stringify(state.curricula));
+        }
+
+        // Show toast notification
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.textContent = message;
+            document.getElementById('toast-container').appendChild(toast);
+            
+            setTimeout(() => toast.classList.add('show'), 100);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Generate unique ID
+        function generateId() {
+            return Date.now().toString();
+        }
+
+        // Switch views
+        function switchView(view) {
+            document.querySelectorAll('#create-view, #list-view, #view-curriculum, #teacher-view').forEach(el => {
+                el.classList.add('hidden');
+            });
+            
+            if (view === 'create' || view === 'list') {
+                document.getElementById('navigation').classList.remove('hidden');
+                document.getElementById('nav-create').className = view === 'create' ? 'btn-primary px-4 py-2 rounded-md' : 'btn-outline px-4 py-2 rounded-md';
+                document.getElementById('nav-list').className = view === 'list' ? 'btn-primary px-4 py-2 rounded-md' : 'btn-outline px-4 py-2 rounded-md';
+            } else {
+                document.getElementById('navigation').classList.add('hidden');
+            }
+            
+            document.getElementById(`${view === 'view' ? 'view-curriculum' : view === 'teacher' ? 'teacher-view' : view + '-view'}`).classList.remove('hidden');
+            state.currentView = view;
+        }
+
+        // Create lesson form HTML
+        function createLessonForm(lesson, index) {
+            const subtopicOptions = ['põhiemotsioonid', 'olukorrad ja emotsioonid', 'emotsioonide väljendamine', 'toimetulekuviisid', 'empaafia', 'suhtlemine'];
+            const durations = ['1 x 45 minutit', '2 x 45 minutit', '3 x 45 minutit', '4 x 45 minutit'];
+            
+            return `
+                <div class="card border-l-4 border-l-blue-500 rounded-lg" data-lesson-id="${lesson.id}">
+                    <div class="p-4 border-b flex justify-between items-center">
+                        <h3 class="text-lg font-semibold">Tund ${index + 1}</h3>
+                        <button type="button" class="btn-destructive px-3 py-1 rounded text-sm remove-lesson" data-lesson-id="${lesson.id}">
+                            <i data-lucide="trash-2" class="w-4 h-4 inline mr-1"></i>
+                            Eemalda
+                        </button>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-medium">Tunni pealkiri</label>
+                                <input type="text" class="input w-full px-3 py-2 rounded-md lesson-title" 
+                                       placeholder="Näiteks: Olukorrad ja emotsioonid" value="${lesson.title}">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-medium">Tunni kestvus</label>
+                                <select class="select w-full px-3 py-2 rounded-md lesson-duration">
+                                    <option value="">Vali kestvus</option>
+                                    ${durations.map(d => `<option value="${d}" ${lesson.duration === d ? 'selected' : ''}>${d}</option>`).join('')}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium">Alamteema (mitmikvalik)</label>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                ${subtopicOptions.map(subtopic => `
+                                    <label class="flex items-center space-x-2 cursor-pointer">
+                                        <input type="checkbox" class="lesson-subtopic" value="${subtopic}" 
+                                               ${lesson.subtopics.includes(subtopic) ? 'checked' : ''}>
+                                        <span class="text-sm">${subtopic}</span>
+                                    </label>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium">Tunni keeleline eesmärk</label>
+                            <input type="text" class="input w-full px-3 py-2 rounded-md lesson-language-goal" 
+                                   placeholder="Näiteks: Uue sõnavara tutvustamine ja harjutamine" value="${lesson.languageGoal}">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium">Tunni õpiväljundid</label>
+                            <textarea class="textarea w-full px-3 py-2 rounded-md lesson-outcomes" rows="3"
+                                      placeholder="Näiteks: õpilane tunneb ära põhiemotsioonid; õpilane seletab...">${lesson.outcomes}</textarea>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium">Tunnis käsitletavad mõisted</label>
+                            <textarea class="textarea w-full px-3 py-2 rounded-md lesson-concepts" rows="4"
+                                      placeholder="Näiteks: Põhiemotsioonid: rõõm, viha, üllatus, kurbus...">${lesson.concepts}</textarea>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <label class="text-base font-medium">Tunni käik</label>
+                                <button type="button" class="btn-primary px-3 py-1 rounded text-sm add-activity" data-lesson-id="${lesson.id}">
+                                    <i data-lucide="plus" class="w-4 h-4 inline mr-1"></i>
+                                    Lisa tegevus
+                                </button>
+                            </div>
+                            
+                            <div class="activities-container" data-lesson-id="${lesson.id}">
+                                ${lesson.activities.length > 0 ? `
+                                    <div class="grid grid-cols-4 gap-2 p-3 bg-gray-50 rounded-lg text-sm font-medium mb-3">
+                                        <div>Tunni osad</div>
+                                        <div>Arendatavad osaoskused</div>
+                                        <div>Plaanitud tegevused</div>
+                                        <div>Materjalid ja vahendid</div>
+                                    </div>
+                                    ${lesson.activities.map(activity => createActivityRow(activity)).join('')}
+                                ` : ''}
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium">Lõimingu võimalused teiste ainetega</label>
+                            <textarea class="textarea w-full px-3 py-2 rounded-md lesson-integration" rows="3"
+                                      placeholder="Näiteks: Lõiming ainega 'Arvutiõpetus'...">${lesson.integration}</textarea>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium">Tegevuste diferentseerimise ja lisaarendamise võimalused</label>
+                            <textarea class="textarea w-full px-3 py-2 rounded-md lesson-differentiation" rows="3"
+                                      placeholder="Näiteks: 4. ülesannet õpilased saavad teha edasi paaristööna...">${lesson.differentiation}</textarea>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium">Enese- ja tunnianalüüs õpetajale</label>
+                            <textarea class="textarea w-full px-3 py-2 rounded-md lesson-self-analysis" rows="3"
+                                      placeholder="Näiteks: Mis tänases tunnis õnnestus? Mis ei õnnestunud? Miks?">${lesson.selfAnalysis}</textarea>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Create activity row HTML
+        function createActivityRow(activity) {
+            return `
+                <div class="grid grid-cols-4 gap-2 p-3 border rounded-lg bg-white relative activity-row" data-activity-id="${activity.id}">
+                    <button type="button" class="absolute -right-2 -top-2 w-6 h-6 p-0 btn-destructive rounded text-xs remove-activity" data-activity-id="${activity.id}">
+                        <i data-lucide="trash-2" class="w-3 h-3"></i>
+                    </button>
+                    <textarea class="textarea text-sm activity-part" rows="2" placeholder="1. Emotsioonide laul">${activity.part}</textarea>
+                    <textarea class="textarea text-sm activity-skills" rows="2" placeholder="kuulamine, rääkimine">${activity.skills}</textarea>
+                    <textarea class="textarea text-sm activity-activities" rows="2" placeholder="Õppijad kuulavad emotsioonide laulu...">${activity.activities}</textarea>
+                    <textarea class="textarea text-sm activity-materials" rows="2" placeholder="https://www.youtube.com/...">${activity.materials}</textarea>
+                </div>
+            `;
+        }
+
+        // Add lesson
+        function addLesson() {
+            const newLesson = {
+                id: generateId(),
+                title: '',
+                subtopics: [],
+                languageGoal: '',
+                duration: '',
+                outcomes: '',
+                concepts: '',
+                activities: [],
+                integration: '',
+                differentiation: '',
+                selfAnalysis: ''
+            };
+            
+            const lessonsContainer = document.getElementById('lessons-container');
+            const lessonCount = lessonsContainer.children.length;
+            lessonsContainer.insertAdjacentHTML('beforeend', createLessonForm(newLesson, lessonCount));
+            lucide.createIcons();
+        }
+
+        // Remove lesson
+        function removeLesson(lessonId) {
+            document.querySelector(`[data-lesson-id="${lessonId}"]`).remove();
+        }
+
+        // Add activity to lesson
+        function addActivity(lessonId) {
+            const newActivity = {
+                id: generateId(),
+                part: '',
+                skills: '',
+                activities: '',
+                materials: ''
+            };
+            
+            const container = document.querySelector(`.activities-container[data-lesson-id="${lessonId}"]`);
+            if (container.children.length === 0) {
+                container.innerHTML = `
+                    <div class="grid grid-cols-4 gap-2 p-3 bg-gray-50 rounded-lg text-sm font-medium mb-3">
+                        <div>Tunni osad</div>
+                        <div>Arendatavad osaoskused</div>
+                        <div>Plaanitud tegevused</div>
+                        <div>Materjalid ja vahendid</div>
+                    </div>
+                `;
+            }
+            container.insertAdjacentHTML('beforeend', createActivityRow(newActivity));
+            lucide.createIcons();
+        }
+
+        // Remove activity
+        function removeActivity(activityId) {
+            document.querySelector(`[data-activity-id="${activityId}"]`).remove();
+        }
+
+        // Get form data
+        function getFormData() {
+            const form = document.getElementById('curriculum-form');
+            const formData = new FormData(form);
+            
+            const data = {
+                title: document.getElementById('title').value,
+                description: document.getElementById('description').value,
+                subject: document.getElementById('subject').value,
+                field: document.getElementById('field').value,
+                plannedHours: document.getElementById('plannedHours').value,
+                subjectOutcomes: document.getElementById('subjectOutcomes').value,
+                languageOutcomes: document.getElementById('languageOutcomes').value,
+                lessons: []
+            };
+
+            // Get lessons data
+            document.querySelectorAll('[data-lesson-id]').forEach(lessonEl => {
+                const lessonId = lessonEl.dataset.lessonId;
+                const subtopics = Array.from(lessonEl.querySelectorAll('.lesson-subtopic:checked')).map(cb => cb.value);
+                const activities = [];
+                
+                lessonEl.querySelectorAll('.activity-row').forEach(activityEl => {
+                    activities.push({
+                        id: activityEl.dataset.activityId,
+                        part: activityEl.querySelector('.activity-part').value,
+                        skills: activityEl.querySelector('.activity-skills').value,
+                        activities: activityEl.querySelector('.activity-activities').value,
+                        materials: activityEl.querySelector('.activity-materials').value
+                    });
+                });
+
+                data.lessons.push({
+                    id: lessonId,
+                    title: lessonEl.querySelector('.lesson-title').value,
+                    subtopics: subtopics,
+                    languageGoal: lessonEl.querySelector('.lesson-language-goal').value,
+                    duration: lessonEl.querySelector('.lesson-duration').value,
+                    outcomes: lessonEl.querySelector('.lesson-outcomes').value,
+                    concepts: lessonEl.querySelector('.lesson-concepts').value,
+                    activities: activities,
+                    integration: lessonEl.querySelector('.lesson-integration').value,
+                    differentiation: lessonEl.querySelector('.lesson-differentiation').value,
+                    selfAnalysis: lessonEl.querySelector('.lesson-self-analysis').value
+                });
+            });
+
+            return data;
+        }
+
+        // Load form data for editing
+        function loadFormData(curriculum) {
+            document.getElementById('form-title').textContent = 'Teemakava muutmine';
+            document.getElementById('title').value = curriculum.title || '';
+            document.getElementById('description').value = curriculum.description || '';
+            document.getElementById('subject').value = curriculum.subject || '';
+            document.getElementById('field').value = curriculum.field || '';
+            document.getElementById('plannedHours').value = curriculum.plannedHours || '';
+            document.getElementById('subjectOutcomes').value = curriculum.subjectOutcomes || '';
+            document.getElementById('languageOutcomes').value = curriculum.languageOutcomes || '';
+
+            // Clear existing lessons
+            document.getElementById('lessons-container').innerHTML = '';
+
+            // Load lessons
+            curriculum.lessons?.forEach((lesson, index) => {
+                document.getElementById('lessons-container').insertAdjacentHTML('beforeend', createLessonForm(lesson, index));
+            });
+
+            lucide.createIcons();
+        }
+
+        // Clear form
+        function clearForm() {
+            document.getElementById('form-title').textContent = 'Uue teemakava loomine';
+            document.getElementById('curriculum-form').reset();
+            document.getElementById('lessons-container').innerHTML = '';
+            state.editingCurriculum = null;
+        }
+
+        // Render curricula list
+        function renderCurriculaList() {
+            const tbody = document.getElementById('curricula-tbody');
+            const table = document.getElementById('curricula-list');
+            const emptyState = document.getElementById('empty-state');
+            
+            let filteredCurricula = state.curricula;
+            if (state.sortField !== 'all') {
+                filteredCurricula = state.curricula.filter(c => c.field === state.sortField);
+            }
+
+            if (filteredCurricula.length === 0) {
+                table.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                emptyState.textContent = state.sortField === 'all' 
+                    ? 'Ühtegi teemakava pole veel loodud.'
+                    : `Valdkonnas "${state.sortField}" pole ühtegi teemakava.`;
+                return;
+            }
+
+            table.classList.remove('hidden');
+            emptyState.classList.add('hidden');
+
+            tbody.innerHTML = filteredCurricula.map(curriculum => `
+                <tr>
+                    <td class="border border-gray-200 p-3 font-medium cursor-pointer hover:text-blue-600 view-curriculum" data-id="${curriculum.id}">
+                        ${curriculum.title}
+                    </td>
+                    <td class="border border-gray-200 p-3">${curriculum.subject}</td>
+                    <td class="border border-gray-200 p-3">${curriculum.field}</td>
+                    <td class="border border-gray-200 p-3">${curriculum.plannedHours}</td>
+                    <td class="border border-gray-200 p-3">${curriculum.lessons?.length || 0}</td>
+                    <td class="border border-gray-200 p-3">${new Date(curriculum.createdAt).toLocaleDateString('et-EE')}</td>
+                    <td class="border border-gray-200 p-3 text-right">
+                        <div class="flex justify-end gap-2">
+                            <button class="btn-outline px-3 py-1 rounded text-sm view-curriculum" data-id="${curriculum.id}">
+                                <i data-lucide="eye" class="w-4 h-4 inline mr-1"></i>
+                                Vaata
+                            </button>
+                            <button class="btn-outline px-3 py-1 rounded text-sm edit-curriculum" data-id="${curriculum.id}">
+                                <i data-lucide="edit" class="w-4 h-4 inline mr-1"></i>
+                                Muuda
+                            </button>
+                            <button class="btn-destructive px-3 py-1 rounded text-sm delete-curriculum" data-id="${curriculum.id}">
+                                <i data-lucide="trash-2" class="w-4 h-4 inline mr-1"></i>
+                                Kustuta
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+
+            lucide.createIcons();
+        }
+
+        // Render curriculum details
+        function renderCurriculumDetails(curriculum) {
+            const container = document.getElementById('curriculum-details');
+            container.innerHTML = `
+                <div class="card rounded-lg">
+                    <div class="p-6 border-b">
+                        <h1 class="text-2xl font-bold">${curriculum.title}</h1>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        ${curriculum.description ? `
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">Kirjeldus</h3>
+                                <p class="text-gray-700">${curriculum.description}</p>
+                            </div>
+                        ` : ''}
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <h3 class="font-semibold mb-1">Õppeaine</h3>
+                                <p class="text-gray-700">${curriculum.subject}</p>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Valdkond</h3>
+                                <p class="text-gray-700">${curriculum.field}</p>
+                            </div>
+                            ${curriculum.plannedHours ? `
+                                <div>
+                                    <h3 class="font-semibold mb-1">Kavandatud tundide arv</h3>
+                                    <p class="text-gray-700">${curriculum.plannedHours}</p>
+                                </div>
+                            ` : ''}
+                            <div>
+                                <h3 class="font-semibold mb-1">Loodud</h3>
+                                <p class="text-gray-700">${new Date(curriculum.createdAt).toLocaleDateString('et-EE')}</p>
+                            </div>
+                        </div>
+
+                        ${curriculum.subjectOutcomes ? `
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">Ainealased õpitulemused</h3>
+                                <p class="text-gray-700 whitespace-pre-wrap">${curriculum.subjectOutcomes}</p>
+                            </div>
+                        ` : ''}
+
+                        ${curriculum.languageOutcomes ? `
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">Keelelised õpitulemused</h3>
+                                <p class="text-gray-700 whitespace-pre-wrap">${curriculum.languageOutcomes}</p>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+
+                ${curriculum.lessons.length > 0 ? `
+                    <div class="space-y-4">
+                        <h2 class="text-2xl font-semibold">Tunnid (${curriculum.lessons.length})</h2>
+                        ${curriculum.lessons.map((lesson, index) => `
+                            <div class="card border-l-4 border-l-blue-500 rounded-lg">
+                                <div class="p-4 border-b">
+                                    <h3 class="text-xl font-semibold">Tund ${index + 1}: ${lesson.title}</h3>
+                                </div>
+                                <div class="p-6 space-y-4">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        ${lesson.duration ? `
+                                            <div>
+                                                <h4 class="font-semibold mb-1">Kestvus</h4>
+                                                <p class="text-gray-700">${lesson.duration}</p>
+                                            </div>
+                                        ` : ''}
+                                        ${lesson.subtopics.length > 0 ? `
+                                            <div>
+                                                <h4 class="font-semibold mb-1">Alamteemad</h4>
+                                                <p class="text-gray-700">${lesson.subtopics.join(', ')}</p>
+                                            </div>
+                                        ` : ''}
+                                    </div>
+
+                                    ${lesson.languageGoal ? `
+                                        <div>
+                                            <h4 class="font-semibold mb-1">Keeleline eesmärk</h4>
+                                            <p class="text-gray-700">${lesson.languageGoal}</p>
+                                        </div>
+                                    ` : ''}
+
+                                    ${lesson.outcomes ? `
+                                        <div>
+                                            <h4 class="font-semibold mb-1">Õpiväljundid</h4>
+                                            <p class="text-gray-700 whitespace-pre-wrap">${lesson.outcomes}</p>
+                                        </div>
+                                    ` : ''}
+
+                                    ${lesson.concepts ? `
+                                        <div>
+                                            <h4 class="font-semibold mb-1">Käsitletavad mõisted</h4>
+                                            <p class="text-gray-700 whitespace-pre-wrap">${lesson.concepts}</p>
+                                        </div>
+                                    ` : ''}
+
+                                    ${lesson.activities.length > 0 ? `
+                                        <div>
+                                            <h4 class="font-semibold mb-2">Tunni käik</h4>
+                                            <div class="overflow-x-auto">
+                                                <table class="w-full border border-gray-200 rounded-lg">
+                                                    <thead class="bg-gray-50">
+                                                        <tr>
+                                                            <th class="border border-gray-200 p-3 text-left text-sm font-semibold">Tunni osad</th>
+                                                            <th class="border border-gray-200 p-3 text-left text-sm font-semibold">Osaoskused</th>
+                                                            <th class="border border-gray-200 p-3 text-left text-sm font-semibold">Tegevused</th>
+                                                            <th class="border border-gray-200 p-3 text-left text-sm font-semibold">Materjalid</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        ${lesson.activities.map(activity => `
+                                                            <tr class="hover:bg-gray-50">
+                                                                <td class="border border-gray-200 p-3 text-sm">${activity.part}</td>
+                                                                <td class="border border-gray-200 p-3 text-sm">${activity.skills}</td>
+                                                                <td class="border border-gray-200 p-3 text-sm whitespace-pre-wrap">${activity.activities}</td>
+                                                                <td class="border border-gray-200 p-3 text-sm">${activity.materials}</td>
+                                                            </tr>
+                                                        `).join('')}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    ` : ''}
+
+                                    ${lesson.integration ? `
+                                        <div>
+                                            <h4 class="font-semibold mb-1">Lõimingu võimalused</h4>
+                                            <p class="text-gray-700 whitespace-pre-wrap">${lesson.integration}</p>
+                                        </div>
+                                    ` : ''}
+
+                                    ${lesson.differentiation ? `
+                                        <div>
+                                            <h4 class="font-semibold mb-1">Diferentseerimise võimalused</h4>
+                                            <p class="text-gray-700 whitespace-pre-wrap">${lesson.differentiation}</p>
+                                        </div>
+                                    ` : ''}
+
+                                    ${lesson.selfAnalysis ? `
+                                        <div>
+                                            <h4 class="font-semibold mb-1">Enese- ja tunnianalüüs</h4>
+                                            <p class="text-gray-700 whitespace-pre-wrap">${lesson.selfAnalysis}</p>
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : ''}
+            `;
+        }
+
+        // Render teacher view
+        function renderTeacherView() {
+            const curriculum = state.viewingCurriculum;
+            const lesson = curriculum.lessons[state.currentLessonIndex];
+            
+            document.getElementById('curriculum-title-header').textContent = curriculum.title;
+            document.getElementById('lesson-counter').textContent = `Tund ${state.currentLessonIndex + 1} / ${curriculum.lessons.length}`;
+            
+            document.getElementById('prev-lesson').disabled = state.currentLessonIndex === 0;
+            document.getElementById('next-lesson').disabled = state.currentLessonIndex === curriculum.lessons.length - 1;
+            
+            if (!lesson) {
+                document.getElementById('current-lesson-display').innerHTML = `
+                    <div class="text-center py-8 text-gray-600">
+                        Selles teemakavas pole veel tunde lisatud.
+                    </div>
+                `;
+                return;
+            }
+
+            document.getElementById('current-lesson-display').innerHTML = `
+                <div class="card border-l-4 border-l-green-500 rounded-lg">
+                    <div class="p-6 border-b">
+                        <h1 class="text-2xl font-bold">${lesson.title}</h1>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            ${lesson.duration ? `
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-1">Kestvus</h3>
+                                    <p class="text-gray-700">${lesson.duration}</p>
+                                </div>
+                            ` : ''}
+                            ${lesson.subtopics.length > 0 ? `
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-1">Alamteemad</h3>
+                                    <p class="text-gray-700">${lesson.subtopics.join(', ')}</p>
+                                </div>
+                            ` : ''}
+                        </div>
+
+                        ${lesson.languageGoal ? `
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">Keeleline eesmärk</h3>
+                                <p class="text-gray-700">${lesson.languageGoal}</p>
+                            </div>
+                        ` : ''}
+
+                        ${lesson.outcomes ? `
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">Õpiväljundid</h3>
+                                <p class="text-gray-700 whitespace-pre-wrap">${lesson.outcomes}</p>
+                            </div>
+                        ` : ''}
+
+                        ${lesson.concepts ? `
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">Käsitletavad mõisted</h3>
+                                <p class="text-gray-700 whitespace-pre-wrap">${lesson.concepts}</p>
+                            </div>
+                        ` : ''}
+
+                        ${lesson.activities.length > 0 ? `
+                            <div>
+                                <h3 class="font-semibold text-lg mb-3">Tunni käik</h3>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full border border-gray-200 rounded-lg">
+                                        <thead class="bg-gray-50">
+                                            <tr>
+                                                <th class="border border-gray-200 p-4 text-left font-semibold">Tunni osad</th>
+                                                <th class="border border-gray-200 p-4 text-left font-semibold">Osaoskused</th>
+                                                <th class="border border-gray-200 p-4 text-left font-semibold">Tegevused</th>
+                                                <th class="border border-gray-200 p-4 text-left font-semibold">Materjalid</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            ${lesson.activities.map(activity => `
+                                                <tr class="hover:bg-gray-50">
+                                                    <td class="border border-gray-200 p-4">${activity.part}</td>
+                                                    <td class="border border-gray-200 p-4">${activity.skills}</td>
+                                                    <td class="border border-gray-200 p-4 whitespace-pre-wrap">${activity.activities}</td>
+                                                    <td class="border border-gray-200 p-4">${activity.materials}</td>
+                                                </tr>
+                                            `).join('')}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        ` : ''}
+
+                        ${lesson.integration ? `
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">Lõimingu võimalused</h3>
+                                <p class="text-gray-700 whitespace-pre-wrap">${lesson.integration}</p>
+                            </div>
+                        ` : ''}
+
+                        ${lesson.differentiation ? `
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">Diferentseerimise võimalused</h3>
+                                <p class="text-gray-700 whitespace-pre-wrap">${lesson.differentiation}</p>
+                            </div>
+                        ` : ''}
+
+                        ${lesson.selfAnalysis ? `
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">Enese- ja tunnianalüüs</h3>
+                                <p class="text-gray-700 whitespace-pre-wrap">${lesson.selfAnalysis}</p>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            loadData();
+            renderCurriculaList();
+            lucide.createIcons();
+
+            // Navigation
+            document.getElementById('nav-create').addEventListener('click', () => {
+                clearForm();
+                switchView('create');
+            });
+
+            document.getElementById('nav-list').addEventListener('click', () => {
+                renderCurriculaList();
+                switchView('list');
+            });
+
+            // Form submission
+            document.getElementById('curriculum-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const data = getFormData();
+                
+                if (!data.title || !data.subject || !data.field) {
+                    showToast('Palun täitke kõik kohustuslikud väljad', 'error');
+                    return;
+                }
+
+                const curriculum = {
+                    ...data,
+                    id: state.editingCurriculum ? state.editingCurriculum.id : generateId(),
+                    createdAt: state.editingCurriculum ? state.editingCurriculum.createdAt : new Date().toISOString()
+                };
+
+                if (state.editingCurriculum) {
+                    // Update existing
+                    const index = state.curricula.findIndex(c => c.id === state.editingCurriculum.id);
+                    state.curricula[index] = curriculum;
+                    showToast('Teemakava on edukalt uuendatud');
+                } else {
+                    // Add new
+                    state.curricula.push(curriculum);
+                    showToast('Teemakava on edukalt salvestatud');
+                }
+
+                saveData();
+                switchView('list');
+                renderCurriculaList();
+            });
+
+            // Add lesson button
+            document.getElementById('add-lesson').addEventListener('click', addLesson);
+
+            // Dynamic event delegation
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.remove-lesson')) {
+                    const lessonId = e.target.closest('.remove-lesson').dataset.lessonId;
+                    removeLesson(lessonId);
+                }
+                
+                if (e.target.closest('.add-activity')) {
+                    const lessonId = e.target.closest('.add-activity').dataset.lessonId;
+                    addActivity(lessonId);
+                }
+                
+                if (e.target.closest('.remove-activity')) {
+                    const activityId = e.target.closest('.remove-activity').dataset.activityId;
+                    removeActivity(activityId);
+                }
+                
+                if (e.target.closest('.view-curriculum')) {
+                    const id = e.target.closest('.view-curriculum').dataset.id;
+                    const curriculum = state.curricula.find(c => c.id === id);
+                    state.viewingCurriculum = curriculum;
+                    renderCurriculumDetails(curriculum);
+                    switchView('view');
+                }
+                
+                if (e.target.closest('.edit-curriculum')) {
+                    const id = e.target.closest('.edit-curriculum').dataset.id;
+                    const curriculum = state.curricula.find(c => c.id === id);
+                    state.editingCurriculum = curriculum;
+                    loadFormData(curriculum);
+                    switchView('create');
+                }
+                
+                if (e.target.closest('.delete-curriculum')) {
+                    const id = e.target.closest('.delete-curriculum').dataset.id;
+                    const curriculum = state.curricula.find(c => c.id === id);
+                    if (confirm(`Kas olete kindel, et soovite kustutada teemakava "${curriculum.title}"?`)) {
+                        state.curricula = state.curricula.filter(c => c.id !== id);
+                        saveData();
+                        renderCurriculaList();
+                        showToast('Teemakava on edukalt kustutatud');
+                    }
+                }
+            });
+
+            // Sort field change
+            document.getElementById('sort-field').addEventListener('change', function(e) {
+                state.sortField = e.target.value;
+                renderCurriculaList();
+            });
+
+            // View navigation
+            document.getElementById('back-to-list').addEventListener('click', () => {
+                state.viewingCurriculum = null;
+                renderCurriculaList();
+                switchView('list');
+            });
+
+            document.getElementById('teacher-view-btn').addEventListener('click', () => {
+                state.currentLessonIndex = 0;
+                renderTeacherView();
+                switchView('teacher');
+            });
+
+            document.getElementById('back-to-view').addEventListener('click', () => {
+                switchView('view');
+            });
+
+            // Teacher view navigation
+            document.getElementById('prev-lesson').addEventListener('click', () => {
+                if (state.currentLessonIndex > 0) {
+                    state.currentLessonIndex--;
+                    renderTeacherView();
+                }
+            });
+
+            document.getElementById('next-lesson').addEventListener('click', () => {
+                if (state.currentLessonIndex < state.viewingCurriculum.lessons.length - 1) {
+                    state.currentLessonIndex++;
+                    renderTeacherView();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
