@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="et">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +13,14 @@
       width: 6px;
       background: #f3f4f6;
     }
+
     .scrollbar-thin::-webkit-scrollbar-thumb {
       background: #d1d5db;
       border-radius: 3px;
     }
   </style>
 </head>
+
 <body class="bg-gray-50 min-h-screen">
   <!-- Header -->
   <header class="relative inset-x-0 top-0 z-50 py-6">
@@ -30,7 +33,8 @@
           </a>
           <button type="button" data-menu-open class="-m-2.5 rounded-md p-2.5 text-gray-700 lg:hidden">
             <span class="sr-only">Open main menu</span>
-            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true" data-slot="icon">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
           </button>
@@ -40,16 +44,26 @@
             <div class="relative group pb-2">
               <button class="flex items-center gap-x-1 text-sm font-semibold text-900 focus:outline-none">
                 <span>Õppetöö kavandamine</span>
-                <svg class="h-5 w-5 flex-none text-gray-400 group-hover:text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                <svg class="h-5 w-5 flex-none text-gray-400 group-hover:text-gray-500" viewBox="0 0 20 20"
+                  fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd" />
                 </svg>
               </button>
-              <div class="absolute -left-8 top-full z-10 w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5 hidden group-hover:block">
-                <a href="oppetoo-kavandamine.html" class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Ülevaade</a>
-                <a href="oppekeskkond.html" class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Õppekeskkond</a>
-                <a href="keeleoppe-etapid.html" class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Keeleõppe etapid</a>
-                <a href="diferentseerimine.html" class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Diferentseerimine</a>
-                <a href="hindamine.html" class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Hindamine</a>
+              <div
+                class="absolute -left-8 top-full z-10 w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5 hidden group-hover:block">
+                <a href="oppetoo-kavandamine.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Ülevaade</a>
+                <a href="oppekeskkond.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Õppekeskkond</a>
+                <a href="keeleoppe-etapid.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Keeleõppe
+                  etapid</a>
+                <a href="diferentseerimine.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Diferentseerimine</a>
+                <a href="hindamine.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Hindamine</a>
               </div>
             </div>
             <a href="lisamaterjalid.html" class="text-sm font-semibold text-gray-900">Lisamaterjalid</a>
@@ -62,7 +76,8 @@
     </div>
     <!-- Mobile menu, show/hide based on menu open state. -->
     <div id="mobile-menu-backdrop" class="lg:hidden fixed inset-0 z-50 hidden bg-black/20"></div>
-    <div id="mobile-menu" class="lg:hidden fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 hidden">
+    <div id="mobile-menu"
+      class="lg:hidden fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 hidden">
       <div class="flex items-center justify-between">
         <a href="index.html" class="-m-1.5 p-1.5">
           <span class="sr-only">Astangu</span>
@@ -70,7 +85,8 @@
         </a>
         <button type="button" data-menu-close class="-m-2.5 rounded-md p-2.5 text-gray-700">
           <span class="sr-only">Close menu</span>
-          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            aria-hidden="true" data-slot="icon">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
           </svg>
         </button>
@@ -78,25 +94,42 @@
       <div class="mt-6 flow-root">
         <div class="-my-6 divide-y divide-gray-500/10">
           <div class="space-y-2 py-6">
-            <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Avaleht</a>
-            <a href="hev-oppija.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">HEV-õppija keeleõppes</a>
+            <a href="index.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Avaleht</a>
+            <a href="hev-oppija.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">HEV-õppija
+              keeleõppes</a>
             <div>
-              <button type="button" data-collapse-toggle="dropdown-oppetoo" class="flex items-center justify-between w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">
+              <button type="button" data-collapse-toggle="dropdown-oppetoo"
+                class="flex items-center justify-between w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">
                 <span>Õppetöö kavandamine</span>
-                <svg class="w-4 h-4 transition-transform" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <svg class="w-4 h-4 transition-transform" aria-hidden="true" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
               </button>
               <div id="dropdown-oppetoo" class="hidden py-2 space-y-2 pl-6">
-                <a href="oppetoo-kavandamine.html" class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Ülevaade</a>
-                <a href="oppekeskkond.html" class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Õppekeskkond</a>
-                <a href="keeleoppe-etapid.html" class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Keeleõppe etapid</a>
-                <a href="diferentseerimine.html" class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Diferentseerimine</a>
-                <a href="hindamine.html" class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Hindamine</a>
+                <a href="oppetoo-kavandamine.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Ülevaade</a>
+                <a href="oppekeskkond.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Õppekeskkond</a>
+                <a href="keeleoppe-etapid.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Keeleõppe
+                  etapid</a>
+                <a href="diferentseerimine.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Diferentseerimine</a>
+                <a href="hindamine.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Hindamine</a>
               </div>
             </div>
-            <a href="lisamaterjalid.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Lisamaterjalid</a>
-            <a href="tooriistakast.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Tööriistakast</a>
-            <a href="edgarist.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Edgarist</a>
-            <a href="kontakt.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Kontakt</a>
+            <a href="lisamaterjalid.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Lisamaterjalid</a>
+            <a href="tooriistakast.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Tööriistakast</a>
+            <a href="edgarist.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Edgarist</a>
+            <a href="kontakt.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Kontakt</a>
           </div>
         </div>
       </div>
@@ -107,16 +140,19 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mb-8">
           <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Tööriistakast</h1>
-          <p class="mt-2 text-lg text-gray-600 max-w-2xl">Siit leiad tunnikavad ja õppematerjalid, mida saad sortida, filtreerida ja otsida vastavalt oma vajadustele.</p>
+          <p class="mt-2 text-lg text-gray-600 max-w-2xl">Siit leiad tunnikavad ja õppematerjalid, mida saad sortida,
+            filtreerida ja otsida vastavalt oma vajadustele.</p>
         </div>
         <!-- Search and Sort -->
         <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-6">
           <div class="flex-1 flex items-center gap-2">
-            <input id="searchInput" type="text" placeholder="Otsi märksõna, autorit, teemat..." class="w-full sm:w-80 rounded-lg border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none" />
+            <input id="searchInput" type="text" placeholder="Otsi märksõna, autorit, teemat..."
+              class="w-full sm:w-80 rounded-lg border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none" />
           </div>
           <div class="flex items-center gap-2">
             <label for="sortSelect" class="text-sm text-gray-700">Sorteeri:</label>
-            <select id="sortSelect" class="rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none">
+            <select id="sortSelect"
+              class="rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none">
               <option value="date-desc">Uuemad enne</option>
               <option value="date-asc">Vanimad enne</option>
               <option value="title-asc">Pealkiri A-Z</option>
@@ -129,11 +165,13 @@
         <!-- Filters and Resource List -->
         <div class="flex flex-col lg:flex-row gap-8">
           <!-- Filter Panel -->
-          <aside class="w-full lg:w-72 bg-gray-50 rounded-2xl p-4 shadow-sm scrollbar-thin max-h-[700px] overflow-y-auto">
+          <aside
+            class="w-full lg:w-72 bg-gray-50 rounded-2xl p-4 shadow-sm scrollbar-thin max-h-[700px] overflow-y-auto">
             <form id="filterForm" class="space-y-6">
               <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Teema</label>
-                <select name="teema" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900">
+                <select name="teema"
+                  class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900">
                   <option value="">Kõik</option>
                   <option value="Riik ja sümboolika">Riik ja sümboolika</option>
                   <option value="Pere ja suhted">Pere ja suhted</option>
@@ -141,12 +179,11 @@
                 </select>
               </div>
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">Keeleaste</label>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Keeletase</label>
                 <div class="flex flex-wrap gap-2">
-                  <label><input type="checkbox" name="keeleaste" value="Eel-A1" class="mr-1">Eel-A1</label>
-                  <label><input type="checkbox" name="keeleaste" value="A1" class="mr-1">A1</label>
-                  <label><input type="checkbox" name="keeleaste" value="A2" class="mr-1">A2</label>
-                  <label><input type="checkbox" name="keeleaste" value="B1" class="mr-1">B1</label>
+                  <label><input type="checkbox" name="keeletase" value="A1" class="mr-1">A1</label>
+                  <label><input type="checkbox" name="keeletase" value="A2" class="mr-1">A2</label>
+                  <label><input type="checkbox" name="keeletase" value="B1" class="mr-1">B1</label>
                 </div>
               </div>
               <div>
@@ -158,35 +195,31 @@
                   <label><input type="checkbox" name="osaoskus" value="Lugemine" class="mr-1">Lugemine</label>
                 </div>
               </div>
-              <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">Õppetegevuse tüüp</label>
-                <div class="flex flex-wrap gap-2">
-                  <label><input type="checkbox" name="tegevus" value="Rühmatöö" class="mr-1">Rühmatöö</label>
-                  <label><input type="checkbox" name="tegevus" value="Individuaaltöö" class="mr-1">Individuaaltöö</label>
-                  <label><input type="checkbox" name="tegevus" value="Paaristöö" class="mr-1">Paaristöö</label>
-                  <label><input type="checkbox" name="tegevus" value="Mäng" class="mr-1">Mäng</label>
-                  <label><input type="checkbox" name="tegevus" value="Liikumistegevus" class="mr-1">Liikumistegevus</label>
-                  <label><input type="checkbox" name="tegevus" value="Praktiline tegevus" class="mr-1">Praktiline tegevus</label>
-                </div>
-              </div>
+
               <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Tunni osa</label>
                 <div class="flex flex-wrap gap-2">
                   <label><input type="checkbox" name="tunniosa" value="Häälestamine" class="mr-1">Häälestamine</label>
-                  <label><input type="checkbox" name="tunniosa" value="Eesmärgistamine" class="mr-1">Eesmärgistamine</label>
-                  <label><input type="checkbox" name="tunniosa" value="Uue materjali tutvustamine" class="mr-1">Uue materjali tutvustamine</label>
+                  <label><input type="checkbox" name="tunniosa" value="Eesmärgistamine"
+                      class="mr-1">Eesmärgistamine</label>
+                  <label><input type="checkbox" name="tunniosa" value="Uue materjali tutvustamine" class="mr-1">Uue
+                    materjali tutvustamine</label>
                   <label><input type="checkbox" name="tunniosa" value="Harjutamine" class="mr-1">Harjutamine</label>
                   <label><input type="checkbox" name="tunniosa" value="Kinnistamine" class="mr-1">Kinnistamine</label>
                   <label><input type="checkbox" name="tunniosa" value="Kokkuvõte" class="mr-1">Kokkuvõte</label>
                 </div>
               </div>
-              <button type="button" id="resetFilters" class="mt-4 w-full rounded-lg bg-gray-200 px-4 py-2 text-base font-semibold text-gray-700 hover:bg-gray-300 transition">Lähtesta filtrid</button>
+              <button type="button" id="resetFilters"
+                class="mt-4 w-full rounded-lg bg-gray-200 px-4 py-2 text-base font-semibold text-gray-700 hover:bg-gray-300 transition">Lähtesta
+                filtrid</button>
             </form>
           </aside>
           <!-- Resource List -->
           <section class="flex-1">
             <div class="flex justify-end mb-4">
-              <a href="lisauus.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded transition">Lisa uus materjal</a>
+              <a href="lisauus.html"
+                class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded transition">Lisa uus
+                materjal</a>
             </div>
             <div id="resourceList" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6"></div>
             <div id="noResults" class="hidden text-center text-gray-500 mt-12">Ühtegi materjali ei leitud.</div>
@@ -204,4 +237,5 @@
   </footer>
   <script src="js/tooriistakast.js"></script>
 </body>
+
 </html>

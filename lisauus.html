@@ -1,95 +1,480 @@
 <!DOCTYPE html>
 <html lang="et">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lisa uus materjal</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@tailwindcss/browser@4.0.0"></script>
+  <script src="js/main.js"></script>
   <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 </head>
+
 <body class="bg-gray-50 min-h-screen">
-  <div class="max-w-2xl mx-auto py-8 px-4">
-    <h1 class="text-2xl font-bold mb-6">Lisa uus materjal</h1>
-    <form id="addResourceForm" class="space-y-6 bg-white p-6 rounded-xl shadow">
-      <div>
-        <label class="block font-semibold mb-1">Pealkiri</label>
-        <input type="text" name="title" required class="w-full border rounded px-3 py-2">
+  <!-- Header -->
+  <header class="relative inset-x-0 top-0 z-50 py-6">
+    <div class="mx-auto max-w-7xl">
+      <div class="px-6 max-w-7xl mx-auto">
+        <nav class="flex items-center justify-between lg:justify-start" aria-label="Global">
+          <a href="index.html" class="-m-1.5 p-1.5 flex items-center gap-2">
+            <img alt="Astangu logo" class="h-8 w-auto" src="assets/astangu-logo.svg" />
+            <span class="sr-only">Astangu</span>
+          </a>
+          <button type="button" data-menu-open class="-m-2.5 rounded-md p-2.5 text-gray-700 lg:hidden">
+            <span class="sr-only">Open main menu</span>
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+          <div class="hidden lg:ml-12 lg:flex lg:gap-x-10">
+            <a href="index.html" class="text-sm font-semibold text-gray-900">Avaleht</a>
+            <a href="hev-oppija.html" class="text-sm font-semibold text-gray-900">HEV-õppija keeleõppes</a>
+            <div class="relative group pb-2">
+              <button class="flex items-center gap-x-1 text-sm font-semibold text-900 focus:outline-none">
+                <span>Õppetöö kavandamine</span>
+                <svg class="h-5 w-5 flex-none text-gray-400 group-hover:text-gray-500" viewBox="0 0 20 20"
+                  fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div
+                class="absolute -left-8 top-full z-10 w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5 hidden group-hover:block">
+                <a href="oppetoo-kavandamine.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Ülevaade</a>
+                <a href="oppekeskkond.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Õppekeskkond</a>
+                <a href="keeleoppe-etapid.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Keeleõppe
+                  etapid</a>
+                <a href="diferentseerimine.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Diferentseerimine</a>
+                <a href="hindamine.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Hindamine</a>
+              </div>
+            </div>
+            <a href="lisamaterjalid.html" class="text-sm font-semibold text-gray-900">Lisamaterjalid</a>
+            <a href="tooriistakast.html" class="text-sm font-semibold text-gray-900">Tööriistakast</a>
+            <a href="edgarist.html" class="text-sm font-semibold text-gray-900">Edgarist</a>
+            <a href="kontakt.html" class="text-sm font-semibold text-gray-900">Kontakt</a>
+          </div>
+        </nav>
       </div>
-      <div>
-        <label class="block font-semibold mb-1">Kirjeldus</label>
-        <textarea name="description" required class="w-full border rounded px-3 py-2"></textarea>
+    </div>
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div id="mobile-menu-backdrop" class="lg:hidden fixed inset-0 z-50 hidden bg-black/20"></div>
+    <div id="mobile-menu"
+      class="lg:hidden fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 hidden">
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="-m-1.5 p-1.5">
+          <span class="sr-only">Astangu</span>
+          <img class="h-8 w-auto" src="assets/astangu-logo.svg" alt="" />
+        </a>
+        <button type="button" data-menu-close class="-m-2.5 rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Close menu</span>
+          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            aria-hidden="true" data-slot="icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
       </div>
-      <div>
-        <label class="block font-semibold mb-1">Teema</label>
-        <input type="text" name="teema" required class="w-full border rounded px-3 py-2">
-      </div>
-      <div>
-        <label class="block font-semibold mb-1">Keeleaste</label>
-        <select name="keeleaste" multiple class="w-full border rounded px-3 py-2">
-          <option value="Eel-A1">Eel-A1</option>
-          <option value="A1">A1</option>
-          <option value="A2">A2</option>
-          <option value="B1">B1</option>
-        </select>
-      </div>
-      <div>
-        <label class="block font-semibold mb-1">Osaoskus</label>
-        <select name="osaoskus" multiple class="w-full border rounded px-3 py-2">
-          <option value="Kuulamine">Kuulamine</option>
-          <option value="Rääkimine">Rääkimine</option>
-          <option value="Kirjutamine">Kirjutamine</option>
-          <option value="Lugemine">Lugemine</option>
-        </select>
-      </div>
-      <div>
-        <label class="block font-semibold mb-1">Õppetegevuse tüüp</label>
-        <select name="tegevus" multiple class="w-full border rounded px-3 py-2">
-          <option value="Rühmatöö">Rühmatöö</option>
-          <option value="Individuaaltöö">Individuaaltöö</option>
-          <option value="Mäng">Mäng</option>
-        </select>
-      </div>
-      <div>
-        <label class="block font-semibold mb-1">Tunni osa</label>
-        <select name="tunniosa" multiple class="w-full border rounded px-3 py-2">
-          <option value="Uue materjali tutvustamine">Uue materjali tutvustamine</option>
-          <option value="Harjutamine">Harjutamine</option>
-          <option value="Kinnistamine">Kinnistamine</option>
-          <option value="Häälestamine">Häälestamine</option>
-        </select>
-      </div>
-      <div>
-        <label class="block font-semibold mb-1">Autor</label>
-        <input type="text" name="autor" required class="w-full border rounded px-3 py-2">
-      </div>
-      <div>
-        <label class="block font-semibold mb-1">Kuupäev</label>
-        <input type="date" name="date" required class="w-full border rounded px-3 py-2">
-      </div>
-      <div>
-        <label class="block font-semibold mb-1">Sildid (komaga eraldatud)</label>
-        <input type="text" name="tags" class="w-full border rounded px-3 py-2">
-      </div>
-      <div>
-        <label class="block font-semibold mb-1">Õppematerjali tüüp</label>
-        <div class="flex flex-col gap-2">
-          <label><input type="checkbox" name="resourceType" value="h5p"> H5P</label>
-          <label><input type="checkbox" name="resourceType" value="url"> URL</label>
-          <label><input type="checkbox" name="resourceType" value="text"> Tekst (WYSIWYG)</label>
-          <label><input type="checkbox" name="resourceType" value="file"> Fail</label>
+      <div class="mt-6 flow-root">
+        <div class="-my-6 divide-y divide-gray-500/10">
+          <div class="space-y-2 py-6">
+            <a href="index.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Avaleht</a>
+            <a href="hev-oppija.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">HEV-õppija
+              keeleõppes</a>
+            <div>
+              <button type="button" data-collapse-toggle="dropdown-oppetoo"
+                class="flex items-center justify-between w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">
+                <span>Õppetöö kavandamine</span>
+                <svg class="w-4 h-4 transition-transform" aria-hidden="true" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div id="dropdown-oppetoo" class="hidden py-2 space-y-2 pl-6">
+                <a href="oppetoo-kavandamine.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Ülevaade</a>
+                <a href="oppekeskkond.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Õppekeskkond</a>
+                <a href="keeleoppe-etapid.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Keeleõppe
+                  etapid</a>
+                <a href="diferentseerimine.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Diferentseerimine</a>
+                <a href="hindamine.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Hindamine</a>
+              </div>
+            </div>
+            <a href="lisamaterjalid.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Lisamaterjalid</a>
+            <a href="tooriistakast.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Tööriistakast</a>
+            <a href="edgarist.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Edgarist</a>
+            <a href="kontakt.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Kontakt</a>
+          </div>
         </div>
       </div>
-      <div id="resourceInputs" class="space-y-4">
-        <!-- Dynamic resource input fields will appear here -->
-      </div>
-      <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded">Salvesta materjal</button>
-    </form>
-    <div id="successMsg" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded">Materjal lisatud!</div>
-    <div class="mt-6">
-      <a href="tooriistakast.html" class="text-indigo-600 hover:underline">← Tagasi tööriistakasti</a>
     </div>
-  </div>
+  </header>
+
+  <main class="bg-white min-h-screen">
+    <section class="py-12 sm:py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+          <div class="flex items-center gap-4 mb-4">
+            <a href="tooriistakast.html"
+              class="text-indigo-600 hover:text-indigo-800 flex items-center gap-2 text-sm font-semibold">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+              Tagasi tööriistakasti
+            </a>
+          </div>
+          <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Lisa uus materjal</h1>
+          <p class="mt-2 text-lg text-gray-600 max-w-2xl">Loo uus õppematerjal koos metaandmetega, mida saab hiljem
+            tööriistakastis filtreerida ja otsida.</p>
+        </div>
+
+        <div class="max-w-2xl mx-auto"></div>
+        <form id="addResourceForm" class="space-y-8 bg-white p-8 rounded-xl shadow-lg ring-1 ring-gray-900/5">
+          <div>
+            <label for="title" class="block text-sm/6 font-medium text-gray-900">Pealkiri</label>
+            <div class="mt-2">
+              <input type="text" name="title" id="title" required
+                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+            </div>
+          </div>
+          <div>
+            <label for="description" class="block text-sm/6 font-medium text-gray-900">Kirjeldus</label>
+            <div class="mt-2">
+              <textarea name="description" id="description" rows="4" required
+                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
+            </div>
+          </div>
+          <div>
+            <label for="teema" class="block text-sm/6 font-medium text-gray-900">Teema</label>
+            <div class="mt-2">
+              <input type="text" name="teema" id="teema" required
+                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium leading-6 text-gray-900 mb-3">Keelelised osaoskused ja õpiväljundid
+              *</label>
+            <div id="skillSets" class="space-y-4">
+              <!-- Dynamic skill sets will be added here -->
+            </div>
+            <div class="flex justify-end mt-4">
+              <button type="button" id="addSkillSet"
+                class="inline-flex items-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">
+                <svg class="-ml-0.5 mr-1.5 h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                </svg>
+                Lisa osaoskus
+              </button>
+            </div>
+          </div>
+
+          <fieldset>
+            <legend class="text-sm/6 font-medium text-gray-900">Tunni osa</legend>
+            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="flex items-center">
+                <input id="tunniosa-uus" name="tunniosa" type="checkbox" value="Uue materjali tutvustamine"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="tunniosa-uus" class="ml-3 text-sm/6 font-medium text-gray-900">Uue materjali
+                  tutvustamine</label>
+              </div>
+              <div class="flex items-center">
+                <input id="tunniosa-harjutamine" name="tunniosa" type="checkbox" value="Harjutamine"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="tunniosa-harjutamine" class="ml-3 text-sm/6 font-medium text-gray-900">Harjutamine</label>
+              </div>
+              <div class="flex items-center">
+                <input id="tunniosa-kinnistamine" name="tunniosa" type="checkbox" value="Kinnistamine"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="tunniosa-kinnistamine" class="ml-3 text-sm/6 font-medium text-gray-900">Kinnistamine</label>
+              </div>
+              <div class="flex items-center">
+                <input id="tunniosa-haalestamine" name="tunniosa" type="checkbox" value="Häälestamine"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="tunniosa-haalestamine" class="ml-3 text-sm/6 font-medium text-gray-900">Häälestamine</label>
+              </div>
+            </div>
+          </fieldset>
+          <div>
+            <label for="tags" class="block text-sm/6 font-medium text-gray-900">Sildid (komaga
+              eraldatud)</label>
+            <div class="mt-2">
+              <input type="text" name="tags" id="tags"
+                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+            </div>
+          </div>
+          <div>
+            <label for="autor" class="block text-sm/6 font-medium text-gray-900">Autor</label>
+            <div class="mt-2">
+              <input type="text" name="autor" id="autor" required
+                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+            </div>
+          </div>
+          <fieldset>
+            <legend class="text-sm font-medium leading-6 text-gray-900">Õppematerjali tüüp</legend>
+            <div class="mt-4 space-y-3">
+              <div class="flex items-center">
+                <input id="h5p" name="resourceType" type="checkbox" value="h5p"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="h5p" class="ml-3 text-sm font-medium leading-6 text-gray-900">H5P</label>
+              </div>
+              <div class="flex items-center">
+                <input id="url" name="resourceType" type="checkbox" value="url"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="url" class="ml-3 text-sm font-medium leading-6 text-gray-900">URL</label>
+              </div>
+              <div class="flex items-center">
+                <input id="text" name="resourceType" type="checkbox" value="text"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="text" class="ml-3 text-sm font-medium leading-6 text-gray-900">Tekst (WYSIWYG)</label>
+              </div>
+              <div class="flex items-center">
+                <input id="file" name="resourceType" type="checkbox" value="file"
+                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="file" class="ml-3 text-sm font-medium leading-6 text-gray-900">Fail</label>
+              </div>
+            </div>
+          </fieldset>
+          <div id="resourceInputs" class="space-y-6">
+            <!-- Dynamic resource input fields will appear here -->
+          </div>
+          <div class="flex items-center justify-end gap-x-6 pt-6 border-t border-gray-900/10">
+            <button type="submit"
+              class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              Salvesta materjal
+            </button>
+          </div>
+        </form>
+        <div id="successMsg" class="hidden mt-6 rounded-md bg-green-50 p-4 ring-1 ring-green-600/20">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.236 4.53L7.53 10.53a.75.75 0 00-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm font-medium text-green-800">Materjal edukalt lisatud!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow mt-12">
+    <div class="container mx-auto px-4 py-6 text-center text-gray-500 text-sm">
+      <div class="mb-2">Loome koos paremat elu!</div>
+    </div>
+  </footer>
   <script>
+    // Learning outcomes data structure
+    const learningOutcomes = {
+      kuulamine: {
+        A1: [
+          "eristab ja leiab tuttavaid sõnu ja fraase aeglaselt ja selgelt edastatud kõnes",
+          "sobitab sõnad neid illustreeritavate piltidega"
+        ],
+        A2: [
+          "mõistab lühikesi, selgelt artikuleeritud sõnumeid ja teateid",
+          "tabab peamist infot lühikestest salvestistest tuttavatel teemadel"
+        ],
+        B1: [
+          "mõistab peamisi mõtteid selges standardkeeles esitatud kõnes tuttavatel teemadel",
+          "mõistab enamikku raadiouudiseid ja ajandulikest programmidest"
+        ]
+      },
+      raakimine: {
+        A1: [
+          "kasutab lihtsaid väljendeid ja lauseid enda ja tuttavate inimeste kirjeldamiseks",
+          "suudab lihtsalt suhelda, kui vestluspartner räägib aeglaselt"
+        ],
+        A2: [
+          "kirjeldab lihtsate vahenditega oma tausta, lähiümbrust ja vajadusi",
+          "suudab pidada lühikesi sotsiaalseid vestlusi"
+        ],
+        B1: [
+          "vestleb ette valmistuseta tuttaval, huvitaval või olulisel teemal",
+          "edastab infot infovahetuse eesmärgiga suhtlemises igapäevasel teemal",
+          "kirjeldab kogemusi, sündmusi, unistusi ja kavatsusi lihtsate seostatud lausetega",
+          "lühendab põhjendab ning selgitab oma seisukohti",
+          "annab edasi jutu, raamatu ja filmi sisu ning kirjeldab oma muljeid"
+        ]
+      },
+      lugemine: {
+        A1: [
+          "mõistab tuttavaid nimesid, sõnu ja väga lihtsaid lauseid",
+          "loeb väga lihtsaid tekste ja leiab konkreetset infot"
+        ],
+        A2: [
+          "loeb lühikesi lihtsaid tekste ja leiab konkreetset infot",
+          "mõistab lühikesi isiklikke kirju"
+        ],
+        B1: [
+          "mõistab tekste, mis koosnevad igapäevases suhtluses kasutatavatest sõnadest",
+          "mõistab isiklike kirjade sisu, kus kirjeldatakse sündmusi ja tundeid"
+        ]
+      },
+      kirjutamine: {
+        A1: [
+          "kirjutab lühikesi lihtsaid märkmeid ja sõnumeid",
+          "täidab ankeete isikuandmetega"
+        ],
+        A2: [
+          "kirjutab lühikesi lihtsaid märkmeid tuttavatel teemadel",
+          "kirjutab väga lihtsaid isiklikke kirju"
+        ],
+        B1: [
+          "kirjutab lihtsaid seostatud tekste tuttavatel teemadel",
+          "kirjutab isiklikke kirju, kirjeldades kogemusi ja muljeid"
+        ]
+      }
+    };
+
+    // Skill sets management
+    let skillSetCounter = 0;
+    const skillSetsContainer = document.getElementById('skillSets');
+    const addSkillSetBtn = document.getElementById('addSkillSet');
+
+    // Function to create a new skill set
+    function createSkillSet() {
+      const skillSetId = skillSetCounter++;
+      const skillSetDiv = document.createElement('div');
+      skillSetDiv.className = 'rounded-lg border border-gray-200 bg-gray-50 p-6';
+      skillSetDiv.innerHTML = `
+        <div class="flex justify-between items-center mb-4">
+          <h4 class="text-sm font-medium text-gray-900">Osaoskus ${skillSetId + 1}</h4>
+          <button type="button" class="remove-skill-set text-sm font-medium text-red-600 hover:text-red-500">
+            Eemalda
+          </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <label class="block text-sm font-medium leading-6 text-gray-900">Keeleline osaoskus</label>
+            <div class="mt-2">
+              <select name="keeleline_osaoskus_${skillSetId}" class="keeleline-osaoskus block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
+                <option value="">Vali osaoskus</option>
+                <option value="kuulamine">Kuulamine, kuurdust mõistmine</option>
+                <option value="raakimine">Rääkimine</option>
+                <option value="lugemine">Lugemine</option>
+                <option value="kirjutamine">Kirjutamine</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium leading-6 text-gray-900">Keeletase</label>
+            <div class="mt-2">
+              <select name="keeletase_${skillSetId}" class="keeletase block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200" disabled>
+                <option value="">Vali tase</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium leading-6 text-gray-900">Õpiväljund</label>
+            <div class="mt-2">
+              <select name="opivaljund_${skillSetId}" class="opivaljund block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200" disabled>
+                <option value="">Vali väljund</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Add event listeners for this skill set
+      const osaoskusSelect = skillSetDiv.querySelector('.keeleline-osaoskus');
+      const keeletaseSelect = skillSetDiv.querySelector('.keeletase');
+      const opivaljundSelect = skillSetDiv.querySelector('.opivaljund');
+      const removeBtn = skillSetDiv.querySelector('.remove-skill-set');
+
+      // Handle osaoskus change
+      osaoskusSelect.addEventListener('change', function () {
+        const selectedSkill = this.value;
+
+        keeletaseSelect.innerHTML = '<option value="">Vali tase</option>';
+        opivaljundSelect.innerHTML = '<option value="">Vali väljund</option>';
+        opivaljundSelect.disabled = true;
+
+        if (selectedSkill) {
+          keeletaseSelect.disabled = false;
+          const availableLevels = Object.keys(learningOutcomes[selectedSkill]);
+          availableLevels.forEach(level => {
+            const option = document.createElement('option');
+            option.value = level;
+            option.textContent = level;
+            keeletaseSelect.appendChild(option);
+          });
+        } else {
+          keeletaseSelect.disabled = true;
+        }
+      });
+
+      // Handle keeletase change
+      keeletaseSelect.addEventListener('change', function () {
+        const selectedSkill = osaoskusSelect.value;
+        const selectedLevel = this.value;
+
+        opivaljundSelect.innerHTML = '<option value="">Vali väljund</option>';
+
+        if (selectedSkill && selectedLevel) {
+          opivaljundSelect.disabled = false;
+          const outcomes = learningOutcomes[selectedSkill][selectedLevel];
+          outcomes.forEach((outcome, index) => {
+            const option = document.createElement('option');
+            option.value = `${selectedSkill}_${selectedLevel}_${index}`;
+            option.textContent = outcome;
+            opivaljundSelect.appendChild(option);
+          });
+        } else {
+          opivaljundSelect.disabled = true;
+        }
+      });
+
+      // Handle remove button
+      removeBtn.addEventListener('click', function () {
+        skillSetDiv.remove();
+        updateSkillSetNumbers();
+      });
+
+      return skillSetDiv;
+    }
+
+    // Function to update skill set numbers
+    function updateSkillSetNumbers() {
+      const skillSets = skillSetsContainer.querySelectorAll('.border');
+      skillSets.forEach((skillSet, index) => {
+        const header = skillSet.querySelector('h4');
+        header.textContent = `Osaoskus ${index + 1}`;
+      });
+    }
+
+    // Add skill set button handler
+    addSkillSetBtn.addEventListener('click', function () {
+      const newSkillSet = createSkillSet();
+      skillSetsContainer.appendChild(newSkillSet);
+    });
+
+    // Add initial skill set
+    const initialSkillSet = createSkillSet();
+    skillSetsContainer.appendChild(initialSkillSet);
+
     // Dynamically show resource input fields based on selected types
     const resourceInputs = document.getElementById('resourceInputs');
     const form = document.getElementById('addResourceForm');
@@ -102,34 +487,59 @@
       const types = Array.from(form.querySelectorAll('input[name="resourceType"]:checked')).map(i => i.value);
       let html = '';
       if (types.includes('h5p')) {
-        html += `<div><label class="block font-semibold mb-1">H5P embed kood või link</label><input type="text" name="h5p" class="w-full border rounded px-3 py-2"></div>`;
+        html += `
+          <div>
+            <label for="h5p-input" class="block text-sm/6 font-medium text-gray-900">H5P embed kood või link</label>
+            <div class="mt-2">
+              <input type="text" name="h5p" id="h5p-input" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+            </div>
+          </div>`;
       }
       if (types.includes('url')) {
-        html += `<div><label class="block font-semibold mb-1">URL</label><input type="url" name="url" class="w-full border rounded px-3 py-2"></div>`;
+        html += `
+          <div>
+            <label for="url-input" class="block text-sm/6 font-medium text-gray-900">URL</label>
+            <div class="mt-2">
+              <input type="url" name="url" id="url-input" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+            </div>
+          </div>`;
       }
       if (types.includes('text')) {
-        html += `<div><label class="block font-semibold mb-1">Tekst (WYSIWYG)</label><textarea id="wysiwyg" name="text" class="w-full border rounded px-3 py-2"></textarea></div>`;
+        html += `
+          <div>
+            <label for="wysiwyg" class="block text-sm/6 font-medium text-gray-900">Tekst (WYSIWYG)</label>
+            <div class="mt-2">
+              <textarea id="wysiwyg" name="text" rows="4" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
+            </div>
+          </div>`;
       }
       if (types.includes('file')) {
-        html += `<div><label class="block font-semibold mb-1">Fail</label><input type="file" name="file" class="w-full"></div>`;
+        html += `
+          <div>
+            <label for="file-input" class="block text-sm font-medium leading-6 text-gray-900">Fail</label>
+            <div class="mt-2">
+              <input type="file" name="file" id="file-input" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none">
+            </div>
+          </div>`;
       }
       resourceInputs.innerHTML = html;
       if (types.includes('text')) {
         setTimeout(() => {
           if (window.ClassicEditor && document.getElementById('wysiwyg')) {
-            ClassicEditor.create(document.getElementById('wysiwyg')).catch(() => {});
+            ClassicEditor.create(document.getElementById('wysiwyg')).catch(() => { });
           }
         }, 100);
       }
     }
     // Handle form submit (for now, just show success message)
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
       document.getElementById('successMsg').classList.remove('hidden');
       form.reset();
       resourceInputs.innerHTML = '';
-      window.scrollTo({top: 0, behavior: 'smooth'});
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
-</html> 
+
+</html>
