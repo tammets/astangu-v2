@@ -72,7 +72,7 @@ function renderResources(list) {
         ${res.tags.map(t => `<span class="bg-gray-200 text-gray-700 rounded px-2 py-0.5">#${t}</span>`).join(' ')}
       </div>
       <div class="text-xs text-gray-400">${res.date} &middot; ${res.autor}</div>
-      <button class="mt-2 w-fit rounded bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 hover:bg-indigo-100 transition">Vaata lähemalt</button>
+      <a href="file:///Users/priit/Projects/astangu-v2/materjal.html" class="mt-2 w-fit rounded bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 hover:bg-indigo-100 transition">Vaata lähemalt</a>
     `;
     container.appendChild(card);
   });
