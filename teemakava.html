@@ -136,46 +136,61 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="space-y-2">
                                 <label for="title" class="block text-sm font-medium">Pealkiri *</label>
-                                <input type="text" id="title" class="input w-full px-3 py-2 rounded-md" 
+                                <input type="text" id="title" class="input w-full px-3 py-1.5 rounded-md" 
                                        placeholder="Näiteks: Emotsioonid" required>
                             </div>
                             <div class="space-y-2">
-                                <label for="subject" class="block text-sm font-medium">Õppeaine *</label>
-                                <select id="subject" class="select w-full px-3 py-2 rounded-md" required>
-                                    <option value="">Vali õppeaine</option>
-                                    <option value="Eesti keel">Eesti keel</option>
-                                    <option value="Matemaatika">Matemaatika</option>
-                                    <option value="Loodusõpetus">Loodusõpetus</option>
-                                    <option value="Ajalugu">Ajalugu</option>
-                                    <option value="Geograafia">Geograafia</option>
-                                    <option value="Füüsika">Füüsika</option>
-                                    <option value="Keemia">Keemia</option>
-                                    <option value="Bioloogia">Bioloogia</option>
-                                </select>
+                                <label for="subject" class="block text-sm/6 font-medium text-gray-900">Õppeaine *</label>
+                                <div class="grid grid-cols-1">
+                                    <select id="subject" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 border border-gray-300 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6" required>
+                                        <option value="">Vali õppeaine</option>
+                                        <option value="Eesti keel">Eesti keel</option>
+                                        <option value="Matemaatika">Matemaatika</option>
+                                        <option value="Loodusõpetus">Loodusõpetus</option>
+                                        <option value="Ajalugu">Ajalugu</option>
+                                        <option value="Geograafia">Geograafia</option>
+                                        <option value="Füüsika">Füüsika</option>
+                                        <option value="Keemia">Keemia</option>
+                                        <option value="Bioloogia">Bioloogia</option>
+                                    </select>
+                                    <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4">
+                                        <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                    </svg>
+                                </div>
                             </div>
                             <div class="space-y-2">
-                                <label for="field" class="block text-sm font-medium">Valdkond *</label>
-                                <select id="field" class="select w-full px-3 py-2 rounded-md" required>
-                                    <option value="">Vali valdkond</option>
-                                    <option value="Sotsiaalsed oskused">Sotsiaalsed oskused</option>
-                                    <option value="Kognitiivsed oskused">Kognitiivsed oskused</option>
-                                    <option value="Emotsionaalsed oskused">Emotsionaalsed oskused</option>
-                                    <option value="Kommunikatiivsed oskused">Kommunikatiivsed oskused</option>
-                                    <option value="Praktiline tegevus">Praktiline tegevus</option>
-                                    <option value="Loovus ja kunstiline väljendus">Loovus ja kunstiline väljendus</option>
-                                </select>
+                                <label for="field" class="block text-sm/6 font-medium text-gray-900">Valdkond *</label>
+                                <div class="grid grid-cols-1">
+                                    <select id="field" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 border border-gray-300 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6" required>
+                                        <option value="">Vali valdkond</option>
+                                        <option value="Sotsiaalsed oskused">Sotsiaalsed oskused</option>
+                                        <option value="Kognitiivsed oskused">Kognitiivsed oskused</option>
+                                        <option value="Emotsionaalsed oskused">Emotsionaalsed oskused</option>
+                                        <option value="Kommunikatiivsed oskused">Kommunikatiivsed oskused</option>
+                                        <option value="Praktiline tegevus">Praktiline tegevus</option>
+                                        <option value="Loovus ja kunstiline väljendus">Loovus ja kunstiline väljendus</option>
+                                    </select>
+                                    <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4">
+                                        <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                    </svg>
+                                </div>
                             </div>
                             <div class="space-y-2">
-                                <label for="plannedHours" class="block text-sm font-medium">Kavandatud tundide arv</label>
-                                <select id="plannedHours" class="select w-full px-3 py-2 rounded-md">
-                                    <option value="">Vali tundide arv</option>
-                                    <option value="1 x 45 minutit">1 x 45 minutit</option>
-                                    <option value="2 x 45 minutit">2 x 45 minutit</option>
-                                    <option value="3 x 45 minutit">3 x 45 minutit</option>
-                                    <option value="4 x 45 minutit">4 x 45 minutit</option>
-                                    <option value="5 x 45 minutit">5 x 45 minutit</option>
-                                    <option value="6 x 45 minutit">6 x 45 minutit</option>
-                                </select>
+                                <label for="plannedHours" class="block text-sm/6 font-medium text-gray-900">Kavandatud tundide arv</label>
+                                <div class="grid grid-cols-1">
+                                    <select id="plannedHours" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 border border-gray-300 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6">
+                                        <option value="">Vali tundide arv</option>
+                                        <option value="1 x 45 minutit">1 x 45 minutit</option>
+                                        <option value="2 x 45 minutit">2 x 45 minutit</option>
+                                        <option value="3 x 45 minutit">3 x 45 minutit</option>
+                                        <option value="4 x 45 minutit">4 x 45 minutit</option>
+                                        <option value="5 x 45 minutit">5 x 45 minutit</option>
+                                        <option value="6 x 45 minutit">6 x 45 minutit</option>
+                                    </select>
+                                    <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4">
+                                        <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
 
@@ -226,16 +241,21 @@
                     <div class="flex justify-between items-center">
                         <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl" style="color: #5d0f57;">Teemakavade nimekiri</h1>
                         <div class="flex items-center gap-4">
-                            <label class="text-sm font-medium">Sorteeri valdkonna järgi:</label>
-                            <select id="sort-field" class="select px-3 py-2 rounded-md w-64">
-                                <option value="all">Kõik valdkonnad</option>
-                                <option value="Sotsiaalsed oskused">Sotsiaalsed oskused</option>
-                                <option value="Kognitiivsed oskused">Kognitiivsed oskused</option>
-                                <option value="Emotsionaalsed oskused">Emotsionaalsed oskused</option>
-                                <option value="Kommunikatiivsed oskused">Kommunikatiivsed oskused</option>
-                                <option value="Praktiline tegevus">Praktiline tegevus</option>
-                                <option value="Loovus ja kunstiline väljendus">Loovus ja kunstiline väljendus</option>
-                            </select>
+                            <label class="text-sm/6 font-medium text-gray-900">Sorteeri valdkonna järgi:</label>
+                            <div class="grid grid-cols-1 w-64">
+                                <select id="sort-field" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 border border-gray-300 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6">
+                                    <option value="all">Kõik valdkonnad</option>
+                                    <option value="Sotsiaalsed oskused">Sotsiaalsed oskused</option>
+                                    <option value="Kognitiivsed oskused">Kognitiivsed oskused</option>
+                                    <option value="Emotsionaalsed oskused">Emotsionaalsed oskused</option>
+                                    <option value="Kommunikatiivsed oskused">Kommunikatiivsed oskused</option>
+                                    <option value="Praktiline tegevus">Praktiline tegevus</option>
+                                    <option value="Loovus ja kunstiline väljendus">Loovus ja kunstiline väljendus</option>
+                                </select>
+                                <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4">
+                                    <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                </svg>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -387,15 +407,20 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="space-y-2">
                                 <label class="block text-sm font-medium">Tunni pealkiri</label>
-                                <input type="text" class="input w-full px-3 py-2 rounded-md lesson-title" 
+                                <input type="text" class="input w-full px-3 py-1.5 rounded-md lesson-title" 
                                        placeholder="Näiteks: Olukorrad ja emotsioonid" value="${lesson.title}">
                             </div>
                             <div class="space-y-2">
                                 <label class="block text-sm font-medium">Tunni kestvus</label>
-                                <select class="select w-full px-3 py-2 rounded-md lesson-duration">
-                                    <option value="">Vali kestvus</option>
-                                    ${durations.map(d => `<option value="${d}" ${lesson.duration === d ? 'selected' : ''}>${d}</option>`).join('')}
-                                </select>
+                                <div class="grid grid-cols-1">
+                                    <select class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 border border-gray-300 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6 lesson-duration">
+                                        <option value="">Vali kestvus</option>
+                                        ${durations.map(d => `<option value="${d}" ${lesson.duration === d ? 'selected' : ''}>${d}</option>`).join('')}
+                                    </select>
+                                    <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4">
+                                        <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
 
@@ -414,7 +439,7 @@
 
                         <div class="space-y-2">
                             <label class="block text-sm font-medium">Tunni keeleline eesmärk</label>
-                            <input type="text" class="input w-full px-3 py-2 rounded-md lesson-language-goal" 
+                            <input type="text" class="input w-full px-3 py-1.5 rounded-md lesson-language-goal" 
                                    placeholder="Näiteks: Uue sõnavara tutvustamine ja harjutamine" value="${lesson.languageGoal}">
                         </div>
 
