@@ -79,7 +79,7 @@ function renderResources(list) {
         </div>
       </div>
       <div class="text-xs text-gray-400">${res.date}</div>
-      <a href="file:///Users/priit/Projects/astangu-v2/materjal.html" class="mt-2 w-fit rounded bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 hover:bg-indigo-100 transition">Ava materjal</a>
+      <a href="materjal.html" class="mt-2 w-fit rounded bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 hover:bg-indigo-100 transition">Ava materjal</a>
     `;
     container.appendChild(card);
   });
