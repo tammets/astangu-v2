@@ -64,15 +64,22 @@ function renderResources(list) {
     card.innerHTML = `
       <h2 class="text-lg font-semibold text-gray-900">${res.title}</h2>
       <p class="text-gray-600 text-sm mb-2">${res.description}</p>
-      <div class="flex flex-wrap gap-2 text-xs text-gray-500 mb-2">
-        <span class="bg-gray-100 rounded px-2 py-0.5">${res.teema}</span>
-        ${res.keeleaste.map(k => `<span class="bg-indigo-50 text-indigo-700 rounded px-2 py-0.5">${k}</span>`).join(' ')}
-        ${res.osaoskus.map(o => `<span class="bg-green-50 text-green-700 rounded px-2 py-0.5">${o}</span>`).join(' ')}
-        ${res.tegevus.map(t => `<span class="bg-yellow-50 text-yellow-700 rounded px-2 py-0.5">${t}</span>`).join(' ')}
-        ${res.tags.map(t => `<span class="bg-gray-200 text-gray-700 rounded px-2 py-0.5">#${t}</span>`).join(' ')}
+      <div class="space-y-2 text-xs text-gray-500 mb-2">
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-100 rounded px-2 py-0.5">${res.teema}</span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          ${res.keeleaste.map(k => `<span class="bg-indigo-50 text-indigo-700 rounded px-2 py-0.5">${k}</span>`).join(' ')}
+        </div>
+        <div class="flex flex-wrap gap-2">
+          ${res.osaoskus.map(o => `<span class="bg-green-50 text-green-700 rounded px-2 py-0.5">${o}</span>`).join(' ')}
+        </div>
+        <div class="flex flex-wrap gap-2">
+          ${res.tags.map(t => `<span class="bg-gray-200 text-gray-700 rounded px-2 py-0.5">#${t}</span>`).join(' ')}
+        </div>
       </div>
-      <div class="text-xs text-gray-400">${res.date} &middot; ${res.autor}</div>
-      <a href="file:///Users/priit/Projects/astangu-v2/materjal.html" class="mt-2 w-fit rounded bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 hover:bg-indigo-100 transition">Vaata lähemalt</a>
+      <div class="text-xs text-gray-400">${res.date}</div>
+      <a href="file:///Users/priit/Projects/astangu-v2/materjal.html" class="mt-2 w-fit rounded bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 hover:bg-indigo-100 transition">Ava materjal</a>
     `;
     container.appendChild(card);
   });
@@ -139,12 +146,7 @@ function sortResources(list, sort) {
     case 'title-desc':
       sorted.sort((a, b) => b.title.localeCompare(a.title));
       break;
-    case 'author-asc':
-      sorted.sort((a, b) => a.autor.localeCompare(b.autor));
-      break;
-    case 'author-desc':
-      sorted.sort((a, b) => b.autor.localeCompare(a.autor));
-      break;
+
   }
   return sorted;
 }
@@ -163,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderResources(resources);
   document.getElementById('filterForm').addEventListener('change', updateResourceList);
   document.getElementById('searchInput').addEventListener('input', updateResourceList);
+  document.getElementById('searchButton').addEventListener('click', updateResourceList);
   document.getElementById('sortSelect').addEventListener('change', updateResourceList);
   document.getElementById('resetFilters').addEventListener('click', () => {
     document.getElementById('filterForm').reset();

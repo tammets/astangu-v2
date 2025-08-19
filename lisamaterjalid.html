@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="et">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <script src="https://unpkg.com/@tailwindcss/browser@4.0.0"></script>
   <script src="js/main.js"></script>
 </head>
+
 <body class="bg-gray-50 min-h-screen">
   <!-- Header -->
   <header class="relative inset-x-0 top-0 z-50 py-6">
@@ -19,7 +21,8 @@
           </a>
           <button type="button" data-menu-open class="-m-2.5 rounded-md p-2.5 text-gray-700 lg:hidden">
             <span class="sr-only">Open main menu</span>
-            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true" data-slot="icon">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
           </button>
@@ -29,16 +32,26 @@
             <div class="relative group pb-2">
               <button class="flex items-center gap-x-1 text-sm font-semibold text-gray-900 focus:outline-none">
                 <span>Õppetöö kavandamine</span>
-                <svg class="h-5 w-5 flex-none text-gray-400 group-hover:text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                <svg class="h-5 w-5 flex-none text-gray-400 group-hover:text-gray-500" viewBox="0 0 20 20"
+                  fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd" />
                 </svg>
               </button>
-              <div class="absolute -left-8 top-full z-10 w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5 hidden group-hover:block">
-                <a href="oppetoo-kavandamine.html" class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Ülevaade</a>
-                <a href="oppekeskkond.html" class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Õppekeskkond</a>
-                <a href="keeleoppe-etapid.html" class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Keeleõppe etapid</a>
-                <a href="diferentseerimine.html" class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Diferentseerimine</a>
-                <a href="hindamine.html" class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Hindamine</a>
+              <div
+                class="absolute -left-8 top-full z-10 w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5 hidden group-hover:block">
+                <a href="oppetoo-kavandamine.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Ülevaade</a>
+                <a href="oppekeskkond.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Õppekeskkond</a>
+                <a href="keeleoppe-etapid.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Keeleõppe
+                  etapid</a>
+                <a href="diferentseerimine.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Diferentseerimine</a>
+                <a href="hindamine.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Hindamine</a>
               </div>
             </div>
             <a href="lisamaterjalid.html" class="text-sm font-semibold text-gray-900">Lisamaterjalid</a>
@@ -51,7 +64,8 @@
     </div>
     <!-- Mobile menu, show/hide based on menu open state. -->
     <div id="mobile-menu-backdrop" class="lg:hidden fixed inset-0 z-50 hidden bg-black/20"></div>
-    <div id="mobile-menu" class="lg:hidden fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 hidden">
+    <div id="mobile-menu"
+      class="lg:hidden fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 hidden">
       <div class="flex items-center justify-between">
         <a href="index.html" class="-m-1.5 p-1.5">
           <span class="sr-only">Astangu</span>
@@ -59,7 +73,8 @@
         </a>
         <button type="button" data-menu-close class="-m-2.5 rounded-md p-2.5 text-gray-700">
           <span class="sr-only">Close menu</span>
-          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            aria-hidden="true" data-slot="icon">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
           </svg>
         </button>
@@ -67,34 +82,207 @@
       <div class="mt-6 flow-root">
         <div class="-my-6 divide-y divide-gray-500/10">
           <div class="space-y-2 py-6">
-            <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Avaleht</a>
-            <a href="hev-oppija.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">HEV-õppija keeleõppes</a>
+            <a href="index.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Avaleht</a>
+            <a href="hev-oppija.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">HEV-õppija
+              keeleõppes</a>
             <div>
-              <button type="button" data-collapse-toggle="dropdown-oppetoo" class="flex items-center justify-between w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">
+              <button type="button" data-collapse-toggle="dropdown-oppetoo"
+                class="flex items-center justify-between w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">
                 <span>Õppetöö kavandamine</span>
-                <svg class="w-4 h-4 transition-transform" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <svg class="w-4 h-4 transition-transform" aria-hidden="true" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
               </button>
               <div id="dropdown-oppetoo" class="hidden py-2 space-y-2 pl-6">
-                <a href="oppetoo-kavandamine.html" class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Ülevaade</a>
-                <a href="oppekeskkond.html" class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Õppekeskkond</a>
-                <a href="keeleoppe-etapid.html" class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Keeleõppe etapid</a>
-                <a href="diferentseerimine.html" class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Diferentseerimine</a>
-                <a href="hindamine.html" class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Hindamine</a>
+                <a href="oppetoo-kavandamine.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Ülevaade</a>
+                <a href="oppekeskkond.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Õppekeskkond</a>
+                <a href="keeleoppe-etapid.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Keeleõppe
+                  etapid</a>
+                <a href="diferentseerimine.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Diferentseerimine</a>
+                <a href="hindamine.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Hindamine</a>
               </div>
             </div>
-            <a href="lisamaterjalid.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Lisamaterjalid</a>
-            <a href="tooriistakast.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Tööriistakast</a>
-            <a href="edgarist.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Edgarist</a>
-            <a href="kontakt.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Kontakt</a>
+            <a href="lisamaterjalid.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Lisamaterjalid</a>
+            <a href="tooriistakast.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Tööriistakast</a>
+            <a href="edgarist.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Edgarist</a>
+            <a href="kontakt.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Kontakt</a>
           </div>
         </div>
       </div>
     </div>
   </header>
-  <main class="container mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold text-blue-700 mb-6">Lisamaterjalid</h1>
-    <p class="text-lg text-gray-700 mb-4">Selle lehe sisu tuleb siia.</p>
-  </main>
+  <div class="bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl" style="color: #5d0f57;">Lõimitud aine- ja keeleõppe lisamaterjalid</h1>
+        <p class="mt-6 text-base/7 text-gray-600">
+          Keelekümbluse kohanemiskursuse ülesehitamisel ning keeleõppe mudeli loomisel lähtusime nii õppeaasta jooksul avastatud taipamistest kui ka olemasolevatest teoreetilistest keeleõppe käsitlustest ning õppematerjalidest.
+        </p>
+      </div>
+
+      <div class="mt-20">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-8">LAK-õppe lähenemist selgitavad teoreetilisi ja praktilisi
+          materjale</h3>
+        <dl class="space-y-16 sm:grid sm:grid-cols-2 sm:space-y-0 sm:gap-x-6 sm:gap-y-16 lg:gap-x-10">
+          <div>
+            <dt class="text-base/7 font-semibold text-gray-900">
+              <a href="#" class="flex items-center gap-2 hover:opacity-80" style="color: #5d0f57;">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                  </path>
+                </svg>
+                LAK-õpet toetavad metoodilised võtted õpetajale
+              </a>
+            </dt>
+            <dd class="mt-2 text-base/7 text-gray-600">(E. Veide) - Praktilised soovitused ja meetodid LAK-õppe
+              rakendamiseks klassiruumis.</dd>
+          </div>
+          <div>
+            <dt class="text-base/7 font-semibold text-gray-900">
+              <a href="#" class="flex items-center gap-2 hover:opacity-80" style="color: #5d0f57;">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                  </path>
+                </svg>
+                LAK-põhised õpetajale
+              </a>
+            </dt>
+            <dd class="mt-2 text-base/7 text-gray-600">(L. Dale, W. van der Es, R. Tanner) - Teoreetilised alused ja
+              praktilised juhised keeleõpetajatele.</dd>
+          </div>
+          <div>
+            <dt class="text-base/7 font-semibold text-gray-900">
+              <a href="#" class="flex items-center gap-2 hover:opacity-80" style="color: #5d0f57;">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                  </path>
+                </svg>
+                Lõimitud aine- ja keeleõpe
+              </a>
+            </dt>
+            <dd class="mt-2 text-base/7 text-gray-600">(P. Mehisto, D. Marsh, M. J. Frigols, K. Võlli, H. Asser) -
+              Põhjalik käsitlus CLIL-meetodi rakendamisest.</dd>
+          </div>
+          <div>
+            <dt class="text-base/7 font-semibold text-gray-900">
+              <a href="#" class="flex items-center gap-2 hover:opacity-80" style="color: #5d0f57;">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                  </path>
+                </svg>
+                Keelekümbluse käsiraamat
+              </a>
+            </dt>
+            <dd class="mt-2 text-base/7 text-gray-600">(S. Aulik) - Keelekümblusprogrammide planeerimise ja elluviimise
+              juhend.</dd>
+          </div>
+          <div>
+            <dt class="text-base/7 font-semibold text-gray-900">
+              <a href="#" class="flex items-center gap-2 hover:opacity-80" style="color: #5d0f57;">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                  </path>
+                </svg>
+                Õppimine ja õpetamine mitmekultuurilises õpikeskkonnas: keelekümblusprogrammi näitel
+              </a>
+            </dt>
+            <dd class="mt-2 text-base/7 text-gray-600">(A. Kukk, M. Kebbinau, U. Aja) - Uurimus mitmekultuurilise
+              õpikeskkonna eripäradest.</dd>
+          </div>
+          <div>
+            <dt class="text-base/7 font-semibold text-gray-900">
+              <a href="#" class="flex items-center gap-2 hover:opacity-80" style="color: #5d0f57;">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                  </path>
+                </svg>
+                Õppimine ja õpetamine mitmekultuurilises õpikeskkonnas
+              </a>
+            </dt>
+            <dd class="mt-2 text-base/7 text-gray-600">(A. Kukk, M. Multima, J. Nõmm) - Täiendav uurimistöö
+              mitmekultuurilise hariduse valdkonnas.</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="mt-20">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-8">Toetavad lisamaterjalid</h3>
+        <dl class="space-y-16 sm:grid sm:grid-cols-2 sm:space-y-0 sm:gap-x-6 sm:gap-y-16 lg:gap-x-10">
+          <div>
+            <dt class="text-base/7 font-semibold text-gray-900">
+              <a href="#" class="flex items-center gap-2 hover:opacity-80" style="color: #5d0f57;">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+                Mitmekeelne erivajadusega õpilane koolis
+              </a>
+            </dt>
+            <dd class="mt-2 text-base/7 text-gray-600">(M. Padrik, M. Hallap) - Juhised erivajadusega õpilaste
+              toetamiseks mitmekeelses keskkonnas.</dd>
+          </div>
+          <div>
+            <dt class="text-base/7 font-semibold text-gray-900">
+              <a href="#" class="flex items-center gap-2 hover:opacity-80" style="color: #5d0f57;">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+                Eesti kui teise keele infokogу
+              </a>
+            </dt>
+            <dd class="mt-2 text-base/7 text-gray-600">(R. Pool) - Põhjalik ressurss eesti keele kui teise keele
+              õpetamiseks.</dd>
+          </div>
+          <div>
+            <dt class="text-base/7 font-semibold text-gray-900">
+              <a href="#" class="flex items-center gap-2 hover:opacity-80" style="color: #5d0f57;">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                  </path>
+                </svg>
+                Täiskasvanud uussisserändajate eesti keele õpitee mudel "REDEL"
+              </a>
+            </dt>
+            <dd class="mt-2 text-base/7 text-gray-600">(K. Praakli, B. Klaas-Lang) - Struktureeritud lähenemisviis
+              täiskasvanute keeleõppele.</dd>
+          </div>
+          <div>
+            <dt class="text-base/7 font-semibold text-gray-900">
+              <a href="#" class="flex items-center gap-2 hover:opacity-80" style="color: #5d0f57;"></a>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+              INNOVE materjalid lastegadele ja õpetajatele
+              </a>
+            </dt>
+            <dd class="mt-2 text-base/7 text-gray-600">Täiendavad ressursid ja materjalid keeleõppe toetamiseks
+              lasteaedades ja koolides.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
   <!-- Footer -->
   <footer class="bg-white shadow mt-12">
     <div class="container mx-auto px-4 py-6 text-center text-gray-500 text-sm">
@@ -103,4 +291,5 @@
     </div>
   </footer>
 </body>
+
 </html>

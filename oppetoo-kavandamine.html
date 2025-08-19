@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="et">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <script src="https://unpkg.com/@tailwindcss/browser@4.0.0"></script>
   <script src="js/main.js"></script>
 </head>
+
 <body class="bg-gray-50 min-h-screen flex flex-col">
   <!-- Header -->
   <header class="relative inset-x-0 top-0 z-50 py-6">
@@ -19,7 +21,8 @@
           </a>
           <button type="button" data-menu-open class="-m-2.5 rounded-md p-2.5 text-gray-700 lg:hidden">
             <span class="sr-only">Open main menu</span>
-            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true" data-slot="icon">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
           </button>
@@ -29,16 +32,26 @@
             <div class="relative group pb-2">
               <button class="flex items-center gap-x-1 text-sm font-semibold text-gray-900 focus:outline-none">
                 <span>Õppetöö kavandamine</span>
-                <svg class="h-5 w-5 flex-none text-gray-400 group-hover:text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                <svg class="h-5 w-5 flex-none text-gray-400 group-hover:text-gray-500" viewBox="0 0 20 20"
+                  fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd" />
                 </svg>
               </button>
-              <div class="absolute -left-8 top-full z-10 w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5 hidden group-hover:block">
-                <a href="oppetoo-kavandamine.html" class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Ülevaade</a>
-                <a href="oppekeskkond.html" class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Õppekeskkond</a>
-                <a href="keeleoppe-etapid.html" class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Keeleõppe etapid</a>
-                <a href="diferentseerimine.html" class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Diferentseerimine</a>
-                <a href="hindamine.html" class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Hindamine</a>
+              <div
+                class="absolute -left-8 top-full z-10 w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5 hidden group-hover:block">
+                <a href="oppetoo-kavandamine.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Ülevaade</a>
+                <a href="oppekeskkond.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Õppekeskkond</a>
+                <a href="keeleoppe-etapid.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Keeleõppe
+                  etapid</a>
+                <a href="diferentseerimine.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Diferentseerimine</a>
+                <a href="hindamine.html"
+                  class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Hindamine</a>
               </div>
             </div>
             <a href="lisamaterjalid.html" class="text-sm font-semibold text-gray-900">Lisamaterjalid</a>
@@ -51,7 +64,8 @@
     </div>
     <!-- Mobile menu, show/hide based on menu open state. -->
     <div id="mobile-menu-backdrop" class="lg:hidden fixed inset-0 z-50 hidden bg-black/20"></div>
-    <div id="mobile-menu" class="lg:hidden fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 hidden">
+    <div id="mobile-menu"
+      class="lg:hidden fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 hidden">
       <div class="flex items-center justify-between">
         <a href="index.html" class="-m-1.5 p-1.5">
           <span class="sr-only">Astangu</span>
@@ -59,7 +73,8 @@
         </a>
         <button type="button" data-menu-close class="-m-2.5 rounded-md p-2.5 text-gray-700">
           <span class="sr-only">Close menu</span>
-          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            aria-hidden="true" data-slot="icon">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
           </svg>
         </button>
@@ -67,33 +82,127 @@
       <div class="mt-6 flow-root">
         <div class="-my-6 divide-y divide-gray-500/10">
           <div class="space-y-2 py-6">
-            <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Avaleht</a>
-            <a href="hev-oppija.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">HEV-õppija keeleõppes</a>
+            <a href="index.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Avaleht</a>
+            <a href="hev-oppija.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">HEV-õppija
+              keeleõppes</a>
             <div>
-              <button type="button" data-collapse-toggle="dropdown-oppetoo" class="flex items-center justify-between w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">
+              <button type="button" data-collapse-toggle="dropdown-oppetoo"
+                class="flex items-center justify-between w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">
                 <span>Õppetöö kavandamine</span>
-                <svg class="w-4 h-4 transition-transform" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <svg class="w-4 h-4 transition-transform" aria-hidden="true" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
               </button>
               <div id="dropdown-oppetoo" class="hidden py-2 space-y-2 pl-6">
-                <a href="oppetoo-kavandamine.html" class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Ülevaade</a>
-                <a href="oppekeskkond.html" class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Õppekeskkond</a>
-                <a href="keeleoppe-etapid.html" class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Keeleõppe etapid</a>
-                <a href="diferentseerimine.html" class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Diferentseerimine</a>
-                <a href="hindamine.html" class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Hindamine</a>
+                <a href="oppetoo-kavandamine.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Ülevaade</a>
+                <a href="oppekeskkond.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Õppekeskkond</a>
+                <a href="keeleoppe-etapid.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Keeleõppe
+                  etapid</a>
+                <a href="diferentseerimine.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Diferentseerimine</a>
+                <a href="hindamine.html"
+                  class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Hindamine</a>
               </div>
             </div>
-            <a href="lisamaterjalid.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Lisamaterjalid</a>
-            <a href="tooriistakast.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Tööriistakast</a>
-            <a href="edgarist.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Edgarist</a>
-            <a href="kontakt.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Kontakt</a>
+            <a href="lisamaterjalid.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Lisamaterjalid</a>
+            <a href="tooriistakast.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Tööriistakast</a>
+            <a href="edgarist.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Edgarist</a>
+            <a href="kontakt.html"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Kontakt</a>
           </div>
         </div>
       </div>
     </div>
   </header>
-  <main class="flex-grow container mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold text-gray-800 mb-6">Õppetöö kavandamine</h1>
-    <p class="text-lg text-gray-700 mb-4">Selle lehe sisu on loomisel.</p>
+  <main class="flex-grow">
+    <div class="bg-white dark:bg-gray-900">
+      <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
+        <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+          style="color: #5d0f57;">Õppetöö läbiviimise põhimõtted</h1>
+        <div class="mt-12 flex justify-center">
+          <img src="assets/p6him6tted.png" alt="Õppetöö kavandamine" class="max-w-full h-auto rounded-lg ">
+        </div>
+        <dl class="mt-20 divide-y divide-gray-900/10 dark:divide-white/10">
+          <div class="py-8 first:pt-0 last:pb-0 lg:grid lg:grid-cols-12 lg:gap-8">
+            <dt class="text-base/7 font-semibold text-gray-900 lg:col-span-5 dark:text-white">„Üks raskus korraga"
+              reegli järgimine õppetöö kavandamisel</dt>
+            <dd class="mt-4 lg:col-span-7 lg:mt-0">
+              <p class="text-base/7 text-gray-600 dark:text-gray-400">Kui raskus on keelel, siis kavandame ülesandeid,
+                mille sisu on lihtne (õppija ei pea arutlema, järeldama, sügavalt mõtlema). Kui raskus on uuel teadmisel
+                (nt õpetame pesu pesemise reegleid), siis on vaja kasutada lihtsat keelt (lihtsaid keelendeid).</p>
+            </dd>
+          </div>
+          <div class="py-8 first:pt-0 last:pb-0 lg:grid lg:grid-cols-12 lg:gap-8">
+            <dt class="text-base/7 font-semibold text-gray-900 lg:col-span-5 dark:text-white">Kõnelemisoskuse arendamine
+            </dt>
+            <dd class="mt-4 lg:col-span-7 lg:mt-0">
+              <p class="text-base/7 text-gray-600 dark:text-gray-400">HEV-õppijate puhul soovitatakse võimalikult palju
+                arendada nende keele mõistmise ja keeles rääkimise oskusi. Tähtis on tagada õppijatele tugi erinevate
+                piltvahendite (vajadusel tõlkevahendi kasutamine mõistmise jaoks) ja mallide (fraasid ja laused) kujul.
+              </p>
+            </dd>
+          </div>
+          <div class="py-8 first:pt-0 last:pb-0 lg:grid lg:grid-cols-12 lg:gap-8">
+            <dt class="text-base/7 font-semibold text-gray-900 lg:col-span-5 dark:text-white">Konkreetne (eksplitsiitne)
+              õpetamine tähendusrikkas kontekstis</dt>
+            <dd class="mt-4 lg:col-span-7 lg:mt-0">
+              <p class="text-base/7 text-gray-600 dark:text-gray-400">HEV-õppijate puhul on väga tähtis selge
+                eesmärgistamine ja tunnitegevuste seos nende eesmärkidega. Oluline on ka anda õppijatele keelelisi
+                mudeleid ja näiteid keelendite kasutamisest erinevates kontekstides.</p>
+            </dd>
+          </div>
+          <div class="py-8 first:pt-0 last:pb-0 lg:grid lg:grid-cols-12 lg:gap-8">
+            <dt class="text-base/7 font-semibold text-gray-900 lg:col-span-5 dark:text-white">Diferentseeritud tugi</dt>
+            <dd class="mt-4 lg:col-span-7 lg:mt-0">
+              <p class="text-base/7 text-gray-600 dark:text-gray-400">HEV-õppija puhul sõltuvad tema tugevused ja
+                arengukohad keeleõppijana (nt osaoskuste arengu tase ja kiirus) tema võimekusest ja vajadusest. Seega
+                õppija toetamise strateegiad peavad olema õppijakesksed. Siinkohal on oluline ka nende strateegiate
+                paindlikkus, st õpetaja valmisolek neid kohandada vastavalt sellele, kuidas õppija keeleliselt areneb.
+              </p>
+            </dd>
+          </div>
+          <div class="py-8 first:pt-0 last:pb-0 lg:grid lg:grid-cols-12 lg:gap-8">
+            <dt class="text-base/7 font-semibold text-gray-900 lg:col-span-5 dark:text-white">Omandatud keelendite
+              kinnistamine toetatud suhtlemisel tunnis</dt>
+            <dd class="mt-4 lg:col-span-7 lg:mt-0">
+              <p class="text-base/7 text-gray-600 dark:text-gray-400">Uue oskuse ja keelendi omandamisel ja selle
+                kinnistamisel on oluline tagada õppijatele turvalised võimalused nende harjutamiseks. Need võimalused on
+                paaris- ja rühmatöö, mille käigus õppijad kasutavad fraaside ja lausete malle, ning näidisküsimused ja
+                -vastused. Keelendeid aitab kinnistada ning õppijate turva- ja kindlustunnet tugevdab see, kui eri
+                ainete õpetajad kasutavad sama lähenemist.</p>
+            </dd>
+          </div>
+          <div class="py-8 first:pt-0 last:pb-0 lg:grid lg:grid-cols-12 lg:gap-8">
+            <dt class="text-base/7 font-semibold text-gray-900 lg:col-span-5 dark:text-white">Õppijate iseseisvuse
+              tugevdamine</dt>
+            <dd class="mt-4 lg:col-span-7 lg:mt-0">
+              <p class="text-base/7 text-gray-600 dark:text-gray-400">Omandatud suhtluskeele oskuste kinnistamine
+                erinevates toetatud suhtlusolukordades eestikeelses õppekeskkonnas annab õppijatele võimalusi suhelda
+                erinevate inimestega (mis on eriti tähtis, kui õppija ei suhtle eesti keeles väljaspool kutsekooli);
+                õpetab neid reageerima kõnele võimalikus spontaanses kõnesituatsioonis; arendab nende õpioskusi.</p>
+            </dd>
+          </div>
+          <div class="py-8 first:pt-0 last:pb-0 lg:grid lg:grid-cols-12 lg:gap-8">
+            <dt class="text-base/7 font-semibold text-gray-900 lg:col-span-5 dark:text-white">Õppesisu aktuaalsus ja
+              jõukohasus õppija jaoks</dt>
+            <dd class="mt-4 lg:col-span-7 lg:mt-0">
+              <p class="text-base/7 text-gray-600 dark:text-gray-400">Selleks, et keele õppimine oleks HEV-õppijat
+                motiveeriv, peab selle sisu olema õppija jaoks aktuaalne ja elulähedane ning õppimine peab olema
+                korraldatud sellisel viisil, mis võimaldab õppijal sellest osa võtta ja sellega hakkama saada.</p>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
   </main>
   <!-- Footer -->
   <footer class="bg-white shadow mt-auto">
@@ -103,4 +212,5 @@
     </div>
   </footer>
 </body>
+
 </html>
