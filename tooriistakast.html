@@ -160,14 +160,18 @@
             </div>
           </div>
           <div class="w-full sm:w-1/4 flex items-center gap-2">
-            <label for="sortSelect" class="text-sm text-gray-700 whitespace-nowrap">Sorteeri:</label>
-            <select id="sortSelect"
-              class="flex-1 rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none">
-              <option value="date-desc">Uuemad enne</option>
-              <option value="date-asc">Vanemad enne</option>
-              <option value="title-asc">Pealkiri A-Z</option>
-              <option value="title-desc">Pealkiri Z-A</option>
-            </select>
+            <label for="sortSelect" class="text-sm font-medium text-gray-900 whitespace-nowrap">Sorteeri:</label>
+            <div class="flex-1 grid grid-cols-1">
+              <select id="sortSelect" name="sortSelect" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6">
+                <option value="date-desc">Uuemad enne</option>
+                <option value="date-asc">Vanemad enne</option>
+                <option value="title-asc">Pealkiri A-Z</option>
+                <option value="title-desc">Pealkiri Z-A</option>
+              </select>
+              <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4">
+                <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+              </svg>
+            </div>
           </div>
         </div>
         <!-- Filters and Resource List -->
@@ -177,14 +181,19 @@
             class="w-full lg:w-72 bg-gray-50 rounded-2xl p-4 shadow-sm scrollbar-thin max-h-[700px] overflow-y-auto">
             <form id="filterForm" class="space-y-6">
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">Teema</label>
-                <select name="teema"
-                  class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-gray-900">
-                  <option value="">Kõik</option>
-                  <option value="Riik ja sümboolika">Riik ja sümboolika</option>
-                  <option value="Pere ja suhted">Pere ja suhted</option>
-                  <option value="Töö ja ametid">Töö ja ametid</option>
-                </select>
+                <label class="block text-sm/6 font-medium text-gray-900 mb-2">Teema</label>
+                <div class="grid grid-cols-1">
+                  <select name="teema"
+                    class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6">
+                    <option value="">Kõik</option>
+                    <option value="Riik ja sümboolika">Riik ja sümboolika</option>
+                    <option value="Pere ja suhted">Pere ja suhted</option>
+                    <option value="Töö ja ametid">Töö ja ametid</option>
+                  </select>
+                  <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4">
+                    <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+                  </svg>
+                </div>
               </div>
               <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Keeletase</label>
