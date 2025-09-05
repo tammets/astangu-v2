@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astangu Demo</title>
+    <title>Logi sisse - Astangu Demo</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4.0.0"></script>
     <script src="js/main.js"></script>
 </head>
@@ -30,8 +30,7 @@
                     <div class="hidden lg:ml-12 lg:flex lg:gap-x-10 lg:items-center lg:justify-between lg:w-full">
                         <div class="flex lg:gap-x-10">
                             <a href="index.html" class="text-sm font-semibold text-gray-900">Avaleht</a>
-                            <a href="hev-oppija.html" class="text-sm font-semibold text-gray-900">HEV-õppija
-                                keeleõppes</a>
+                            <a href="hev-oppija.html" class="text-sm font-semibold text-gray-900">HEV-õppija keeleõppes</a>
                             <div class="relative group pb-2">
                                 <button
                                     class="flex items-center gap-x-1 text-sm font-semibold text-gray-900 focus:outline-none">
@@ -63,14 +62,12 @@
                             <a href="edgarist.html" class="text-sm font-semibold text-gray-900">Edgarist</a>
                             <a href="kontakt.html" class="text-sm font-semibold text-gray-900">Kontakt</a>
                         </div>
-                        <a href="login.html"
-                            class="text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md transition-colors">Logi
-                            sisse</a>
+                        <a href="login.html" class="text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md transition-colors">Logi sisse</a>
                     </div>
                 </nav>
             </div>
         </div>
-        <!-- Mobile menu, show/hide based on menu open state. -->
+        <!-- Mobile menu -->
         <div id="mobile-menu-backdrop" class="lg:hidden fixed inset-0 z-50 hidden bg-black/20"></div>
         <div id="mobile-menu"
             class="lg:hidden fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 hidden">
@@ -128,65 +125,75 @@
                         <a href="kontakt.html"
                             class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Kontakt</a>
                         <a href="login.html"
-                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700">Logi
-                            sisse</a>
+                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700">Logi sisse</a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="flex-1">
-        <!-- Hero Section with new layout -->
-        <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
-            <div class="absolute inset-0 -z-10 overflow-hidden">
-                <svg aria-hidden="true"
-                    class="absolute top-0 left-[max(50%,25rem)] h-256 w-512 -translate-x-1/2 mask-[radial-gradient(64rem_64rem_at_top,white,transparent)] stroke-gray-200">
-                    <defs>
-                        <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1"
-                            patternUnits="userSpaceOnUse">
-                            <path d="M100 200V.5M.5 .5H200" fill="none" />
-                        </pattern>
-                    </defs>
-                    <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
-                        <path
-                            d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
-                            stroke-width="0" />
-                    </svg>
-                    <rect width="100%" height="100%" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
-                        stroke-width="0" />
-                </svg>
+    <div class="flex-1 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+            <div>
+                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+                    Logi oma kontole sisse
+                </h2>
+                <p class="mt-2 text-center text-sm text-gray-600">
+                    Sisesta oma kasutajaandmed
+                </p>
             </div>
-            <div
-                class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
-                <div
-                    class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-                    <div class="lg:pr-4">
-                        <div class="lg:max-w-lg">
-                            <h1
-                                class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-                                Keeleõppija HEV-õppijaga</h1>
-                            <p class="mt-6 text-xl/8 text-gray-700">Astangu Kutserehabilitatsiooni Keskuse haridusliku
-                                erivajadusega (HEV) õppijale suunatud keelekümbluse kursuse virtuaalne õpipesa
-                                õpetajatele
-                                ja teistele muukeelsete HEV-noortega töötavatele spetsialistidele.</p>
-                        </div>
+            <form class="mt-8 space-y-6" action="#" method="POST">
+                <div class="space-y-4">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">
+                            E-posti aadress
+                        </label>
+                        <input id="email" name="email" type="email" autocomplete="email" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                            placeholder="sinu@email.ee">
+                    </div>
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700">
+                            Parool
+                        </label>
+                        <input id="password" name="password" type="password" autocomplete="current-password" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                            placeholder="Sisesta parool">
                     </div>
                 </div>
-                <div
-                    class="mt-8 p-4 sm:-mt-12 sm:-ml-12 sm:p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-                    <img src="assets/index-bg1.png" alt=""
-                        class="w-full max-w-lg rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-3xl sm:max-w-none lg:w-228" />
-                </div>
-                <div
-                    class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-                    <div class="lg:pr-4">
-                        <div class="max-w-xl text-base/7 text-gray-600 lg:max-w-lg">
-                            <p class="text-xl/8 text-gray-700">Uudista, kohanda ja rakenda!</p>
-                        </div>
+
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember-me" name="remember-me" type="checkbox"
+                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="remember-me" class="ml-2 block text-sm text-gray-900">
+                            Jäta mind meelde
+                        </label>
+                    </div>
+
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-blue-600 hover:text-blue-500">
+                            Unustasid parooli?
+                        </a>
                     </div>
                 </div>
-            </div>
+
+                <div>
+                    <button type="submit"
+                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                        Logi sisse
+                    </button>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-sm text-gray-600">
+                        Pole veel kontot?
+                        <a href="#" class="font-medium text-blue-600 hover:text-blue-500">
+                            Registreeru siin
+                        </a>
+                    </p>
+                </div>
+            </form>
         </div>
     </div>
 
