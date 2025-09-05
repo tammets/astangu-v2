@@ -137,7 +137,9 @@
               Tagasi tööriistakasti
             </a>
           </div>
-          <h1 id="materialTitle" class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl" style="color: #5d0f57;">Materjali pealkiri</h1>
+          <h1 id="materialTitle"
+            class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+            style="color: #5d0f57;">Materjali pealkiri</h1>
           <p class="mt-2 text-lg text-gray-600 max-w-2xl">Vaata õppematerjali üksikasju ja metaandmeid.</p>
         </div>
 
@@ -146,70 +148,87 @@
             <!-- Material Content -->
             <div class="p-8">
               <div class="space-y-8">
-                <!-- Basic Information -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Põhiinfo</h3>
-                    <div class="space-y-4">
-                      <div>
-                        <dt class="text-sm font-medium text-gray-500">Pealkiri</dt>
-                        <dd id="displayTitle" class="mt-1 text-base text-gray-900">-</dd>
+                <!-- Collapsible Section Toggle -->
+                <div class="border-b border-gray-200 pb-4">
+                  <button type="button" id="toggleMetadata" class="flex items-center justify-between w-full text-left">
+                    <h2 class="text-xl font-semibold text-gray-900">Materjali andmed</h2>
+                    <div class="flex items-center space-x-2">
+                      <span id="toggleText" class="text-sm text-gray-500">Sulge</span>
+                      <svg id="toggleIcon" class="w-5 h-5 text-gray-500 transition-transform duration-200" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+
+                <!-- Collapsible Content -->
+                <div id="metadataContent" class="space-y-8">
+                  <!-- Basic Information -->
+                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                      <h3 class="text-lg font-semibold text-gray-900 mb-4">Põhiinfo</h3>
+                      <div class="space-y-4">
+                        <div>
+                          <dt class="text-sm font-medium text-gray-500">Pealkiri</dt>
+                          <dd id="displayTitle" class="mt-1 text-base text-gray-900">-</dd>
+                        </div>
+                        <div>
+                          <dt class="text-sm font-medium text-gray-500">Kirjeldus</dt>
+                          <dd id="displayDescription" class="mt-1 text-base text-gray-900">-</dd>
+                        </div>
+                        <div>
+                          <dt class="text-sm font-medium text-gray-500">Teema</dt>
+                          <dd id="displayTeema" class="mt-1 text-base text-gray-900">-</dd>
+                        </div>
                       </div>
-                      <div>
-                        <dt class="text-sm font-medium text-gray-500">Kirjeldus</dt>
-                        <dd id="displayDescription" class="mt-1 text-base text-gray-900">-</dd>
-                      </div>
-                      <div>
-                        <dt class="text-sm font-medium text-gray-500">Teema</dt>
-                        <dd id="displayTeema" class="mt-1 text-base text-gray-900">-</dd>
+                    </div>
+
+                    <div>
+                      <h3 class="text-lg font-semibold text-gray-900 mb-4">Metaandmed</h3>
+                      <div class="space-y-4">
+                        <div>
+                          <dt class="text-sm font-medium text-gray-500">Autor</dt>
+                          <dd id="displayAutor" class="mt-1 text-base text-gray-900">-</dd>
+                        </div>
+                        <div>
+                          <dt class="text-sm font-medium text-gray-500">Sildid</dt>
+                          <dd id="displayTags" class="mt-1">
+                            <div class="flex flex-wrap gap-2">
+                              <!-- Tags will be populated here -->
+                            </div>
+                          </dd>
+                        </div>
+                        <div>
+                          <dt class="text-sm font-medium text-gray-500">Materjali tüüp</dt>
+                          <dd id="displayResourceType" class="mt-1">
+                            <div class="flex flex-wrap gap-2">
+                              <!-- Resource types will be populated here -->
+                            </div>
+                          </dd>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  
+
+                  <!-- Language Skills and Learning Outcomes -->
                   <div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Metaandmed</h3>
-                    <div class="space-y-4">
-                      <div>
-                        <dt class="text-sm font-medium text-gray-500">Autor</dt>
-                        <dd id="displayAutor" class="mt-1 text-base text-gray-900">-</dd>
-                      </div>
-                      <div>
-                        <dt class="text-sm font-medium text-gray-500">Sildid</dt>
-                        <dd id="displayTags" class="mt-1">
-                          <div class="flex flex-wrap gap-2">
-                            <!-- Tags will be populated here -->
-                          </div>
-                        </dd>
-                      </div>
-                      <div>
-                        <dt class="text-sm font-medium text-gray-500">Materjali tüüp</dt>
-                        <dd id="displayResourceType" class="mt-1">
-                          <div class="flex flex-wrap gap-2">
-                            <!-- Resource types will be populated here -->
-                          </div>
-                        </dd>
-                      </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Keelelised osaoskused ja õpiväljundid</h3>
+                    <div id="displaySkillSets" class="space-y-4">
+                      <!-- Skill sets will be populated here -->
+                    </div>
+                  </div>
+
+                  <!-- Lesson Parts -->
+                  <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Tunni osa</h3>
+                    <div id="displayTunniosa" class="flex flex-wrap gap-2">
+                      <!-- Lesson parts will be populated here -->
                     </div>
                   </div>
                 </div>
 
-                <!-- Language Skills and Learning Outcomes -->
-                <div>
-                  <h3 class="text-lg font-semibold text-gray-900 mb-4">Keelelised osaoskused ja õpiväljundid</h3>
-                  <div id="displaySkillSets" class="space-y-4">
-                    <!-- Skill sets will be populated here -->
-                  </div>
-                </div>
-
-                <!-- Lesson Parts -->
-                <div>
-                  <h3 class="text-lg font-semibold text-gray-900 mb-4">Tunni osa</h3>
-                  <div id="displayTunniosa" class="flex flex-wrap gap-2">
-                    <!-- Lesson parts will be populated here -->
-                  </div>
-                </div>
-
-                <!-- Material Content -->
+                <!-- Material Content (Always Visible) -->
                 <div id="materialContent" class="space-y-6">
                   <h3 class="text-lg font-semibold text-gray-900">Materjali sisu</h3>
                   <!-- Dynamic content will be populated here -->
@@ -220,17 +239,17 @@
             <!-- Action Buttons -->
             <div class="bg-gray-50 px-8 py-4 flex items-center justify-between">
               <div class="flex items-center gap-4">
-                <button type="button" class="text-indigo-600 hover:text-indigo-800 font-semibold text-sm">
+                <button type="button"
+                  class="rounded-sm bg-white px-2 py-1 text-xs font-semibold text-gray-900 shadow-xs inset-ring inset-ring-gray-300 hover:bg-gray-50 dark:bg-white/10 dark:text-white dark:shadow-none dark:inset-ring-white/5 dark:hover:bg-white/20">
                   Muuda
                 </button>
-                <button type="button" class="text-red-600 hover:text-red-800 font-semibold text-sm">
+                <button type="button"
+                  class="rounded-sm bg-red-600 px-2 py-1 text-xs font-semibold text-white shadow-xs hover:bg-red-500 dark:bg-red-600 dark:hover:bg-red-500">
                   Kustuta
                 </button>
               </div>
               <div class="flex items-center gap-4">
-                <a href="opilase-vaade.html" target="_blank" class="text-gray-600 hover:text-gray-800 font-semibold text-sm">
-                  Õpilase vaade
-                </a>
+                <!-- Õpilase vaade removed -->
               </div>
             </div>
           </div>
@@ -257,13 +276,13 @@
       resourceTypes: ["H5P", "URL"],
       skillSets: [
         {
-          osaoskus: "Kuulamine, kuurdust mõistmine",
+          osaoskus: "Kuulamine, kuuldust mõistmine",
           keeletase: "A1",
           opivaljund: "eristab ja leiab tuttavaid sõnu ja fraase aeglaselt ja selgelt edastatud kõnes"
         },
         {
           osaoskus: "Rääkimine",
-          keeletase: "A1", 
+          keeletase: "A1",
           opivaljund: "kasutab lihtsaid väljendeid ja lauseid enda ja tuttavate inimeste kirjeldamiseks"
         }
       ],
@@ -342,10 +361,10 @@
       // Material content
       const contentContainer = document.getElementById('materialContent');
       let contentHTML = '<h3 class="text-lg font-semibold text-gray-900">Materjali sisu</h3>';
-      
+
       if (material.content.h5p) {
         contentHTML += `
-          <div class="border rounded-lg p-4">
+          <div class="p-4">
             <h4 class="font-medium text-gray-900 mb-2">H5P interaktiivne sisu</h4>
             <div class="w-full overflow-hidden rounded-lg">
               <img src="assets/h5pdemo.jpeg" alt="H5P interaktiivne sisu demo" class="w-full h-auto">
@@ -353,10 +372,14 @@
           </div>
         `;
       }
-      
+
+      if (material.content.h5p && material.content.url) {
+        contentHTML += `<hr class="border-gray-200 my-6">`;
+      }
+
       if (material.content.url) {
         contentHTML += `
-          <div class="border rounded-lg p-4">
+          <div class="p-4">
             <h4 class="font-medium text-gray-900 mb-2">Välislink</h4>
             <a href="${material.content.url}" target="_blank" class="text-indigo-600 hover:text-indigo-800 underline">
               ${material.content.url}
@@ -364,15 +387,38 @@
           </div>
         `;
       }
-      
+
       contentContainer.innerHTML = contentHTML;
     }
 
+    // Toggle functionality for metadata section
+    function initializeToggle() {
+      const toggleButton = document.getElementById('toggleMetadata');
+      const metadataContent = document.getElementById('metadataContent');
+      const toggleIcon = document.getElementById('toggleIcon');
+      const toggleText = document.getElementById('toggleText');
+
+      toggleButton.addEventListener('click', function () {
+        const isHidden = metadataContent.classList.contains('hidden');
+
+        if (isHidden) {
+          metadataContent.classList.remove('hidden');
+          toggleIcon.style.transform = 'rotate(0deg)';
+          toggleText.textContent = 'Sulge';
+        } else {
+          metadataContent.classList.add('hidden');
+          toggleIcon.style.transform = 'rotate(-90deg)';
+          toggleText.textContent = 'Ava';
+        }
+      });
+    }
+
     // Load material data when page loads
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // In a real application, you would get the material ID from URL params
       // and fetch the data from an API
       populateMaterialView(sampleMaterial);
+      initializeToggle();
     });
   </script>
 </body>

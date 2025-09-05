@@ -139,7 +139,8 @@
     <section class="py-12 sm:py-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mb-8">
-          <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl" style="color: #5d0f57;">Tööriistakast</h1>
+          <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+            style="color: #5d0f57;">Tööriistakast</h1>
           <p class="mt-2 text-lg text-gray-600 max-w-2xl">Siit leiad tunnikavad ja õppematerjalid, mida saad sortida,
             filtreerida ja otsida vastavalt oma vajadustele.</p>
         </div>
@@ -162,14 +163,18 @@
           <div class="w-full sm:w-1/4 flex items-center gap-2">
             <label for="sortSelect" class="text-sm font-medium text-gray-900 whitespace-nowrap">Sorteeri:</label>
             <div class="flex-1 grid grid-cols-1">
-              <select id="sortSelect" name="sortSelect" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6">
+              <select id="sortSelect" name="sortSelect"
+                class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6">
                 <option value="date-desc">Uuemad enne</option>
                 <option value="date-asc">Vanemad enne</option>
                 <option value="title-asc">Pealkiri A-Z</option>
                 <option value="title-desc">Pealkiri Z-A</option>
               </select>
-              <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4">
-                <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+              <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true"
+                class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4">
+                <path
+                  d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                  clip-rule="evenodd" fill-rule="evenodd" />
               </svg>
             </div>
           </div>
@@ -190,8 +195,11 @@
                     <option value="Pere ja suhted">Pere ja suhted</option>
                     <option value="Töö ja ametid">Töö ja ametid</option>
                   </select>
-                  <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4">
-                    <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+                  <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true"
+                    class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4">
+                    <path
+                      d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd" fill-rule="evenodd" />
                   </svg>
                 </div>
               </div>
@@ -215,15 +223,15 @@
 
               <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Tunni osa</label>
-                <div class="flex flex-wrap gap-2">
-                  <label><input type="checkbox" name="tunniosa" value="Häälestamine" class="mr-1">Häälestamine</label>
-                  <label><input type="checkbox" name="tunniosa" value="Eesmärgistamine"
-                      class="mr-1">Eesmärgistamine</label>
-                  <label><input type="checkbox" name="tunniosa" value="Uue materjali tutvustamine" class="mr-1">Uue
-                    materjali tutvustamine</label>
-                  <label><input type="checkbox" name="tunniosa" value="Harjutamine" class="mr-1">Harjutamine</label>
-                  <label><input type="checkbox" name="tunniosa" value="Kinnistamine" class="mr-1">Kinnistamine</label>
-                  <label><input type="checkbox" name="tunniosa" value="Kokkuvõte" class="mr-1">Kokkuvõte</label>
+                <div class="space-y-2">
+                  <label class="block"><input type="checkbox" name="tunniosa" value="Häälestamine"
+                      class="mr-1">Häälestamine</label>
+                  <label class="block"><input type="checkbox" name="tunniosa" value="Uue materjali tutvustamine"
+                      class="mr-1">Uue materjali tutvustamine</label>
+                  <label class="block"><input type="checkbox" name="tunniosa" value="Harjutamine"
+                      class="mr-1">Harjutamine</label>
+                  <label class="block"><input type="checkbox" name="tunniosa" value="Kinnistamine"
+                      class="mr-1">Kinnistamine</label>
                 </div>
               </div>
               <button type="button" id="resetFilters"
