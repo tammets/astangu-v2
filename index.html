@@ -9,7 +9,7 @@
     <script src="js/main.js"></script>
 </head>
 
-<body class="bg-gray-50 min-h-screen">
+<body class="bg-gray-50 min-h-screen flex flex-col">
     <!-- Header -->
     <header class="relative inset-x-0 top-0 z-50 py-6">
         <div class="mx-auto max-w-7xl">
@@ -126,151 +126,66 @@
             </div>
         </div>
     </header>
-    <!-- Hero Section with background image and overlay -->
-    <div class="relative overflow-hidden">
-        <div class="absolute inset-0 -z-10">
-            <img src="assets/bg21.png" alt=""
-                class="w-full h-full object-cover object-center brightness-75 blur-sm scale-105"
-                style="filter: blur(4px) brightness(0.85) saturate(1.2);" />
-            <div class="absolute inset-0 bg-gradient-to-r from-white/80 via-white/60 to-white/80 mix-blend-lighten">
-            </div>
-        </div>
-        <div class="mx-auto max-w-7xl">
-            <div class="relative z-10 pt-14 lg:w-full lg:max-w-2xl">
-                <div class="relative px-6 py-32 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
-                    <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-                        <div class="hidden sm:mb-10 sm:flex">
 
+    <div class="flex-1">
+        <!-- Hero Section with new layout -->
+        <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+            <div class="absolute inset-0 -z-10 overflow-hidden">
+                <svg aria-hidden="true"
+                    class="absolute top-0 left-[max(50%,25rem)] h-256 w-512 -translate-x-1/2 mask-[radial-gradient(64rem_64rem_at_top,white,transparent)] stroke-gray-200">
+                    <defs>
+                        <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1"
+                            patternUnits="userSpaceOnUse">
+                            <path d="M100 200V.5M.5 .5H200" fill="none" />
+                        </pattern>
+                    </defs>
+                    <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+                        <path
+                            d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+                            stroke-width="0" />
+                    </svg>
+                    <rect width="100%" height="100%" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
+                        stroke-width="0" />
+                </svg>
+            </div>
+            <div
+                class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+                <div
+                    class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+                    <div class="lg:pr-4">
+                        <div class="lg:max-w-lg">
+                            <h1
+                                class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
+                                Keeleõppija HEV-õppijaga</h1>
+                            <p class="mt-6 text-xl/8 text-gray-700">Astangu Kutserehabilitatsiooni Keskuse haridusliku
+                                erivajadusega (HEV) õppijale suunatud keelekümbluse kursuse virtuaalne õpipesa
+                                õpetajatele
+                                ja teistele muukeelsete HEV-noortega töötavatele spetsialistidele.</p>
                         </div>
-                        <h1
-                            class="font-serif text-5xl font-medium tracking-tight text-pretty text-gray-900 sm:text-5xl">
-                            Keeleõppija HEV-õppijaga</h1>
-                        <p class="mt-8 text-lg text-pretty font-light text-gray-500 sm:text-xl/8">Astangu
-                            Kutserehabilitatsiooni Keskuse
-                            haridusliku erivajadusega (HEV) õppijale suunatud
-                            keelekümbluse kursuse virtuaalne õpipesa õpetajatele ja teistele muukeelsete HEV-noortega
-                            töötavatele spetsialistidele.</p>
-                        <p class="mt-8 text-lg text-pretty font-light text-gray-500 sm:text-xl/8">Uudista, kohanda ja
-                            rakenda!</p>
+                    </div>
+                </div>
+                <div
+                    class="mt-8 p-4 sm:-mt-12 sm:-ml-12 sm:p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+                    <img src="assets/index-bg1.png" alt=""
+                        class="w-full max-w-lg rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-3xl sm:max-w-none lg:w-228" />
+                </div>
+                <div
+                    class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+                    <div class="lg:pr-4">
+                        <div class="max-w-xl text-base/7 text-gray-600 lg:max-w-lg">
+                            <p class="text-xl/8 text-gray-700">Uudista, kohanda ja rakenda!</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div
-            class="relative overflow-hidden bg-gray-900 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 shadow-xl sm:rounded-3xl sm:rounded-r-none">
-            <img class="absolute inset-0 size-full object-cover sm:rounded-l-3xl sm:rounded-r-none"
-                src="assets/index-bg1.png" alt="" />
-            <div class="absolute -top-56 -left-80 transform-gpu blur-3xl pointer-events-none" aria-hidden="true">
-                <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-[#ff4694] to-[#776fff] opacity-[0.45]"
-                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
-                </div>
-            </div>
-            <div class="hidden md:absolute md:bottom-16 md:left-80 md:block md:transform-gpu md:blur-3xl pointer-events-none"
-                aria-hidden="true">
-                <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-[#ff4694] to-[#776fff] opacity-25"
-                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Stats Section (Replaced) -->
-    <div class="relative py-24 sm:py-32">
-        <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-            <div class="max-w-4xl">
-                <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-                    Keelekümbluse aasta Astangu keskuses</h1>
-                <p class="mt-6 text-xl/8 text-balance text-gray-700">2022. aasta sügisel alustas Astangu keskuses
-                    esimene teise emakeelega HEV-noortele suunatud keelekümbluse kohanemiskursus nimega Edgar.
-                    Muukeelsete HEV-noorte vanemate huvi edasiõppimise võimaluste vastu ning muutused haridusmaastikul
-                    olid tõukejõuks, et selline kursus sai ellu kutsutud. Lisaks oli üheks suurimaks inspiratsiooniks
-                    meie õppija Edgar. </p>
-            </div>
-            <section class="mt-8 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16">
-                <div class="lg:pr-8">
-                    <p class="mt-6 text-base/7 text-gray-600">Siia kodulehele oleme kokku kogunud õppeaasta jooksul
-                        tekkinud taipamised ning õpetajate koostatud õppematerjalid. Kindlasti tuleb välja tuua, et nii
-                        keeleõppe mudel kui ka Edgari õpetajate tööriistade kast on elavad ja muutuvad dokumendid, mis
-                        täienevad ja aina arenevad, oodates tagasisidet ja ettepanekuid. Võta meiega ühendust, kui sul
-                        on jagada mõni kogemus, millest meie õppijad võiksid kasu saada, ning kasuta vabalt Astangu
-                        virtuaalses keeleõppe õpipesas olevaid ressursse.</p>
-                    <p class="mt-8 text-base/7 text-gray-600">Uudista kodulehel ringi, leia huvipakkuvaid õppematerjale,
-                        kohanda vastavalt vajadusele ning rakenda töös enda noortega!</p>
-                </div>
-                <div class="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
-                    <div
-                        class="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
-                        <div
-                            class="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10">
-                            <img alt=""
-                                src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?&auto=format&fit=crop&crop=center&w=560&h=560&q=90"
-                                class="block size-full object-cover" />
-                        </div>
-                        <div
-                            class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
-                            <img alt=""
-                                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?&auto=format&fit=crop&crop=left&w=560&h=560&q=90"
-                                class="block size-full object-cover" />
-                        </div>
-                        <div
-                            class="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10">
-                            <img alt=""
-                                src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?&auto=format&fit=crop&crop=left&w=560&h=560&q=90"
-                                class="block size-full object-cover" />
-                        </div>
-                        <div
-                            class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
-                            <img alt=""
-                                src="https://images.unsplash.com/photo-1598257006458-087169a1f08d?&auto=format&fit=crop&crop=center&w=560&h=560&q=90"
-                                class="block size-full object-cover" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
     </div>
 
-    <!-- Team Section (Replaced CTA) -->
-    <div class="bg-white py-24 sm:py-32">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto max-w-2xl lg:mx-0">
-                <h2 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Siit leheküljelt
-                    leiad</h2>
-
-            </div>
-            <ul role="list"
-                class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4">
-                <li>
-                    <img class="aspect-1/1 w-full rounded-2xl object-cover" src="assets/1.png"
-                        alt="HEV-õppija keeleõppes" />
-                    <h3 class="mt-6 text-lg/8 font-semibold tracking-tight text-gray-900">HEV-õppija keeleõppes</h3>
-
-                </li>
-                <li>
-                    <img class="aspect-1/1 w-full rounded-2xl object-cover" src="assets/2.png"
-                        alt="Õppetöö kavandamine" />
-                    <h3 class="mt-6 text-lg/8 font-semibold tracking-tight text-gray-900">Õppetöö kavandamine</h3>
-
-                </li>
-                <li>
-                    <img class="aspect-1/1 w-full rounded-2xl object-cover" src="assets/3.png" alt="Lisamaterjalid" />
-                    <h3 class="mt-6 text-lg/8 font-semibold tracking-tight text-gray-900">Lisamaterjalid</h3>
-
-                </li>
-                <li>
-                    <img class="aspect-1/1 w-full rounded-2xl object-cover" src="assets/4.png"
-                        alt="Keelekümbluse kohanemiskursuse 'Edgar' kogemus" />
-                    <h3 class="mt-6 text-lg/8 font-semibold tracking-tight text-gray-900">Keelekümbluse kohanemiskursuse
-                        "Edgar" kogemus</h3>
-
-                </li>
-            </ul>
-        </div>
-    </div>
     <!-- Footer -->
-    <footer class="bg-white shadow mt-12">
+    <footer class="bg-white shadow mt-auto">
         <div class="container mx-auto px-4 py-6 text-center text-gray-500 text-sm">
-            <div class="mb-2">Loome koos paremat elu!
-            </div>
+            <div class="mb-2">Loome koos paremat elu!</div>
+        </div>
     </footer>
 </body>
 
