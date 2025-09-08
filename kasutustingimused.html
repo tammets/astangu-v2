@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasutustingimused - Astangu Demo</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4.0.0"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="relative inset-x-0 top-0 z-50 py-6">
+        <div class="mx-auto max-w-7xl">
+            <div class="px-6 max-w-7xl mx-auto">
+                <nav class="flex items-center justify-between lg:justify-start" aria-label="Global">
+                    <a href="index.html" class="-m-1.5 p-1.5 flex items-center gap-2">
+                        <img alt="Astangu logo" class="h-8 w-auto" src="assets/astangu-logo.svg" />
+                        <span class="sr-only">Astangu</span>
+                    </a>
+                    <button type="button" data-menu-open class="-m-2.5 rounded-md p-2.5 text-gray-700 lg:hidden">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            aria-hidden="true" data-slot="icon">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                    <div class="hidden lg:ml-12 lg:flex lg:gap-x-10 lg:items-center lg:justify-between lg:w-full">
+                        <div class="flex lg:gap-x-10">
+                            <a href="index.html" class="text-sm font-semibold text-gray-900">Avaleht</a>
+                            <a href="hev-oppija.html" class="text-sm font-semibold text-gray-900">HEV-õppija
+                                keeleõppes</a>
+                            <div class="relative group pb-2">
+                                <button
+                                    class="flex items-center gap-x-1 text-sm font-semibold text-gray-900 focus:outline-none">
+                                    <span>Õppetöö kavandamine</span>
+                                    <svg class="h-5 w-5 flex-none text-gray-400 group-hover:text-gray-500"
+                                        viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <div
+                                    class="absolute -left-8 top-full z-10 w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5 hidden group-hover:block">
+                                    <a href="oppetoo-kavandamine.html"
+                                        class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Ülevaade</a>
+                                    <a href="oppekeskkond.html"
+                                        class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Õppekeskkond</a>
+                                    <a href="keeleoppe-etapid.html"
+                                        class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Keeleõppe
+                                        etapid</a>
+                                    <a href="diferentseerimine.html"
+                                        class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Diferentseerimine</a>
+                                    <a href="hindamine.html"
+                                        class="block rounded-lg py-2 px-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">Hindamine</a>
+                                </div>
+                            </div>
+                            <a href="lisamaterjalid.html" class="text-sm font-semibold text-gray-900">Lisamaterjalid</a>
+                            <a href="tooriistakast.html" class="text-sm font-semibold text-gray-900">Tööriistakast</a>
+                            <a href="edgarist.html" class="text-sm font-semibold text-gray-900">Edgarist</a>
+                            <a href="kontakt.html" class="text-sm font-semibold text-gray-900">Kontakt</a>
+                        </div>
+                        <a href="login.html"
+                            class="text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md transition-colors">Logi
+                            sisse</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu-backdrop" class="lg:hidden fixed inset-0 z-50 hidden bg-black/20"></div>
+        <div id="mobile-menu"
+            class="lg:hidden fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 hidden">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="-m-1.5 p-1.5">
+                    <span class="sr-only">Astangu</span>
+                    <img class="h-8 w-auto" src="assets/astangu-logo.svg" alt="" />
+                </a>
+                <button type="button" data-menu-close class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Close menu</span>
+                    <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true" data-slot="icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="mt-6 flow-root">
+                <div class="-my-6 divide-y divide-gray-500/10">
+                    <div class="space-y-2 py-6">
+                        <a href="index.html"
+                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Avaleht</a>
+                        <a href="hev-oppija.html"
+                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">HEV-õppija
+                            keeleõppes</a>
+                        <div>
+                            <button type="button" data-collapse-toggle="dropdown-oppetoo"
+                                class="flex items-center justify-between w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">
+                                <span>Õppetöö kavandamine</span>
+                                <svg class="w-4 h-4 transition-transform" aria-hidden="true" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="dropdown-oppetoo" class="hidden py-2 space-y-2 pl-6">
+                                <a href="oppetoo-kavandamine.html"
+                                    class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Ülevaade</a>
+                                <a href="oppekeskkond.html"
+                                    class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Õppekeskkond</a>
+                                <a href="keeleoppe-etapid.html"
+                                    class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Keeleõppe
+                                    etapid</a>
+                                <a href="diferentseerimine.html"
+                                    class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Diferentseerimine</a>
+                                <a href="hindamine.html"
+                                    class="block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Hindamine</a>
+                            </div>
+                        </div>
+                        <a href="lisamaterjalid.html"
+                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Lisamaterjalid</a>
+                        <a href="tooriistakast.html"
+                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Tööriistakast</a>
+                        <a href="edgarist.html"
+                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Edgarist</a>
+                        <a href="kontakt.html"
+                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Kontakt</a>
+                        <a href="login.html"
+                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700">Logi
+                            sisse</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex-1">
+        <!-- Main Content -->
+        <div class="bg-white px-6 py-24 sm:py-32 lg:px-8">
+            <div class="mx-auto max-w-4xl text-base/7 text-gray-700">
+                <h1 class="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Kasutustingimused</h1>
+
+                <div class="mt-10 ">
+                    <p class="text-xl/8 text-gray-700 mb-6">
+                        Astangu Kutserehabilitatsiooni Keskuse Tööriistakast (edaspidi Tööriistakast) on asutatud
+                        eesmärgiga pakkuda õppematerjalide loomiseks vastavat keskkonda.
+                    </p>
+                    <p class="text-xl/8 text-gray-700 mb-6">
+                        Astangu Kutserehabilitatsiooni Keskus on Tööriistakasti kui keskkonna omaja ja Tööriistakastis
+                        töödeldavate isikuandmete vastutavad töötleja.
+                    </p>
+                    <p class="text-xl/8 text-gray-700">
+                        Tööriistakasti sisestatud materjalide jm andmete osas on Astangu Kutserehabilitatsiooni Keskus
+                        volitatud töötleja, võimaldades andmete töötlemiseks kasutada Tööriistakasti, pakkudes
+                        Tööriistakasti kasutamisel kasutajatuge ja majutades Tööriistakastis sisalduvaid andmeid oma
+                        serverites. Tööriistakasti kasutajad on kõik füüsilised isikud, kes kasutavad Tööriistakasti
+                        keskkonda. Astangu Kutserehabilitatsiooni Keskus kohustub kaitsma Tööriistakastis töödeldavaid
+                        isikuandmeid ja nende privaatsust.
+                    </p>
+                </div>
+
+                <div class="mt-16 space-y-12">
+                    <!-- Sissejuhatus -->
+                    <section>
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">1. Üldtingimused</h2>
+                        <div class="space-y-4">
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Tööriistakasti kasutamiseks loetakse mistahes Tööriistakastis asuva teabe või
+                                    andmehulga kasutamist mistahes viisil või eesmärgil.</li>
+                                <li>Tööriistakasti võib kasutada ainult selleks ettenähtud eesmärgil õppematerjalide
+                                    loomise keskkonnana.</li>
+                                <li>Tööriistakasti ei tohi kasutada illegaalsetel eesmärkidel.</li>
+                                <li>Astangu Kutserehabilitatsiooni Keskusel on õigus vaadata üle, keelduda avaldamast,
+                                    eemaldada sisu või osa sellest kui mingi osa sisust näib Astangu
+                                    Kutserehabilitatsiooni Keskusele kohatu.</li>
+                                <li>Tööriistakasti kasutaja informeerib Astangu Kutserehabilitatsiooni Keskusest
+                                    viivitamatult olemasolevatest puudustest keskkonna kasutamisel (näiteks tehnilised
+                                    puudused või sobimatu sisu) kirjutades sellest kasutajatoele XXX Tööriistakasti
+                                    kasutama asudes nõustub kasutaja kõigi Tööriistakasti kasutustingimustega.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Mõisted -->
+                    <section>
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">2. Tööriista keskkonna kasutajakonto
+                            loomine ja kustutamine</h2>
+                        <div class="space-y-4">
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Tööriistakasti keskkonda saab luua kasutajakonto lokaalse konto</li>
+                                <li>Kasutajakonto loomisel on kasutajal võimalus luua ja kopeerida materjale
+                                    vastavalt litsentsitingimustele.</li>
+                                <li>Kasutajakonto kustutamiseks peab isik esitama taotluse kasutajatoele (XXX)</li>
+                                <li>Peale kasutajakonto kustutamist ei ole kasutajal võimalik Tööriistakastis
+                                    materjale luua ega kopeerida.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Teenuse kasutamine -->
+                    <section>
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">3. Isikuandmete kaitse</h2>
+                        <div class="space-y-4">
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Isikuandmete kogumise ja töötlemise eesmärk on kasutajakontode loomine ning
+                                    haldamine</li>
+                                <li>Tööriistakast töötleb isikuandmeid kooskõlas Euroopa Liidu isikuandmete kaitse
+                                    üldmääruse ning isikuandmete kaitse seadusega</li>
+                                <li>Isikuandmete töötlemisel rakendatakse kõiki asjakohaseid organisatsioonilisi,
+                                    tehnilisi ja füüsilisi kaitsemeetmeid</li>
+                                <li>Isikuandmeid võib isiku nõusolekuta edastada üksnes asutusele või isikule, kellel on
+                                    selleks otsene seadusest tulenev õigus (näiteks kohus või kohtueelne menetleja) ja
+                                    põhjendatud vajadus</li>
+                                <li>Kasutajakonto kustutamisel võivad isikuandmed piiratud aja jooksul säilida
+                                    Tööriistakasti varukoopias</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Töödeldavad kasutajaandmed -->
+                    <section>
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">4. Töödeldavad kasutajaandmed</h2>
+                        <div class="space-y-4">
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Kasutajakonto loomiseks vajalikud isikuandmed on isiku eesnimi, perekonnanimi ning
+                                    e-posti aadress. Lisaks küsitakse kasutajalt registreerimisel organisatsiooni nime
+                                    ja rolli organisatsioonis</li>
+                                <li>Statistiliseks uuringuks töötleb Tööriistakast isikuandmeid, et koostada raporteid
+                                    ja statistilisi aruandeid e-õppevaraga seotud tegevuste jälgimiseks, hindamiseks ja
+                                    parandamiseks teaduslikel eesmärkidel. Koostatud raportites ja aruannetes
+                                    isikustatud andmeid ei esitata</li>
+                                <li>Õiguste (nt autoriõiguste) rikkumise kahtluse puhul võime vajadusel edastada
+                                    kasutaja isikuandmed vaidluse teisele poolele. Tööriistakasti kasutajate ja
+                                    kolmandate isikute intellektuaalomandi, isikuandmete ja muude taoliste õigushüvede
+                                    kaitsmise eesmärgil vahendab Tööriistakast rikkumise teate saamisel teate saatja ja
+                                    vaidlusaluse õppevara lisaja kontaktandmeid. Kontaktandmete vahendamise eesmärk on
+                                    võimaldada vaidluspooltel välja selgitada võimaliku rikkumise asjaolud ja vajadusel
+                                    jätkata vaidlust õiguskaitseorganites</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Andmekaitse -->
+                    <section>
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">5. Kui kaua Sinu isikuandmeid
+                            säilitatakse?</h2>
+                        <div class="space-y-4">
+                            <p>
+                                Sinult nõutavaid isikuandmeid säilitatakse digitaalse õppevara infosüsteemis nii kaua,
+                                kuni selle sätestavad kas:
+                            </p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>reeglid Euroopa Liidu Sotsiaalfondi (ESF) ja/või riiklikult rahastatud e-õppevara
+                                    loomisel (nö seadusandliku akti alusel säilitamine);</li>
+                                <li>e-õppevarale kehtestatud reeglid ja suunised (lepingulise suhte alusel säilitamine);
+                                </li>
+                                <li>Sinu vaba tahe:</li>
+                            </ul>
+                            <p>
+                                Kui Sa ei ole oma digitaalse õppevara infosüsteemi kasutajakontot kasutanud 3 aasta
+                                jooksul, siis meil on õigus määrata Sinu kasutajakonto staatus mitteaktiivseks.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Vastutus -->
+                    <section>
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">6. Andmete õigsuse tagamine, andmete
+                            muutmine ja parandamine</h2>
+                        <div class="space-y-4">
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Andmete töötlemine Tööriistakastis toimub üksnes üle turvalise ühenduse (https).
+                                </li>
+                                <li>Juurdepääs andmete töötlemiseks on ainult selleks volitatud ja juhendatud isikutel
+                                    nende tööülesannete täitmiseks vajalikus ulatuses.</li>
+                                <li>Tööriistakasti esitatud andmete õigsuse eest vastutab andmete sisestaja.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Muudatused -->
+                    <section>
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">7. Osalejate vastutus andmetöötluses</h2>
+                        <div class="space-y-4">
+<ul class="list-disc pl-6 space-y-2">
+                                <li>Tööriistakast on majutatud Euroopa Liidu territooriumil asuvates serverites. Serverite ja Tööriistakasti tarkvara hooldatakse jooksvalt ajakohaste turvavärskendustega.</li>
+                                <li>Astangu Kutserehabilitatsiooni Keskus vastutab Tööriistakasi tõrgeteta töö ning vajalike arendustööde korraldamise eest, pakub infosüsteemi kasutajatuge, korraldab Tööriistakastis sisalduvate andmete säilimise ja varukoopiate tegemise. Teenuse planeeritud katkestusest ette teatamise aeg on minimaalselt 12 tundi.</li>
+                                <li>Astangu Kutserehabilitatsiooni Keskus ei vastuta Tööriistakasti tõrgete eest, mis on põhjustatud Astangu Kutserehabilitatsiooni Keskuse kontrolli alt väljas olevatest asjaoludest.</li>
+                                <li>Astangu Kutserehabilitatsiooni Keskus ei vastuta kasutajate poolt Tööriistakasti sisestatud andmete ja sisu eest.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Lõpetamine -->
+                    <section>
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">8. Kasutaja vastutab</h2>
+                        <div class="space-y-4">
+<ul class="list-disc pl-6 space-y-2">
+                                <li>Kasutaja kohustus on teavitada Astangu Kutserehabilitatsiooni Keskuse kasutajatuge aadressil XXX turvalisust häirivatest või rikkuvatest juhtumitest.</li>
+                                <li>Igal kasutajal on õigus luua Tööriistakasis materjale. Materjal on privaatne, kuni kasutaja teeb selle avalikuks.</li>
+                                <li>Kui materjal sisaldab kellegi teise poolt loodud sisu, mis laetakse Tööriistakasti üles, vastutab kasutaja, et üles laetava materjalil on vastavad autoriõigused.</li>
+                                <li>Teise autori poolt loodud materjali kopeerimisel vastutab kasutaja, et kopeeritava materjali litsentsitingimused seda võimaldavad.</li>
+                                <li>Kasutaja vastutab, et kogu sisu, mida ta ise Tööriistakastis loob, on ajakohane ja sisuliste vigadeta, ei sisalda muuhulgas roppusi, täiskasvanutele mõeldud sisu, põhjendamatut vägivalda, kohalduvat õigust mistahes viisil rikkuvaid elemente, jne.</li>
+                                <li>Kui kasutaja leiab Tööriistakastist ebasobivat sisu, annab ta sellest Tööriistakasti haldajale teada, saates e-kirja kasutajatoele XXX.</li>
+                                <li>Teavituse saamisel ebasobivast sisust eemaldab Tööriistakasti administraator vastava materjali avalikust vaatest. Kui Tööriistakasti hinnangul on teavitus põhjendatud ja vaidlusalune sisu on ebasobiv, eemaldatakse vastav materjal.</li>
+                                <li>Kasutaja vastutab, et sisuga, mida ta ise Tööriistakastis loob, ei rikutaks kellegi mistahes õigusi, sh õigusi isikuandmete kaitsele, ega muid õigusaktides sätestatud piiranguid ja keeldusid.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Kontaktandmed -->
+                    <section>
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">9. Kasutaja lisatud sisu säilitamine, kustutamine ja muutmine</h2>
+                        <div class="space-y-4">
+                            <p>Tööriistakastil on aegunud sisu kuhjumise vältimiseks õigus (kuid mitte kohustus) kustutada materjal, kui seda ei ole avatud või muudetud vähemalt 3 aasta jooksul. Juhul, kui kasutaja soovib kindlustada materjali säilimist, soovitame selle enda andmekandjale salvestada.
+</p>
+                        </div>
+                    </section>
+
+                    <!-- Jõustumine -->
+                    <section>
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">10. Teenuse sisu ja kvaliteet</h2>
+                        <div class="space-y-4">
+<ul class="list-disc pl-6 space-y-2">
+                                <li>Tööriistakast pakub teenust (keskkonna kasutamise võimalust) tasuta.</li>
+                                <li>Sisuloome ei vastuta teenuse ega selle osade kättesaadavuse ega säilimise eest.</li>
+                            </ul>
+                            
+                            <p>
+                                Kui Sul tekib küsimusi seoses oma isikuandmete töötlemisega, palun võta ühendust (XXX) . Kui Sa ei ole saadud vastusega rahul, on Sul õigus pöörduda Andmekaitse inspektsiooni või kohtu poole.
+
+                            </p>
+                        </div>
+                    </section>
+
+<!-- Kontaktandmed -->
+                    <section>
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">9. Vastutavate töötlejate kontaktandmed</h2>
+                        <div class="space-y-4">
+                            <p>Astangu Kutserehabilitatsiooni Keskus, registrikood XXX</p>
+<ul class="list-disc pl-6 space-y-2">
+                                <li>Juriidiline aadress: XXX</li>
+                                <li>E-posti aadress: XXX</li>
+                            </ul>
+                            
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow mt-auto">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-500 text-sm">
+            <div class="mb-2">Loome koos paremat elu!</div>
+        </div>
+    </footer>
+</body>
+
+</html>
