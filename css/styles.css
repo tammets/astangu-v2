@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'Scala Sans';
+    src: url('../fonts/ScalaSansOT-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Scala Sans';
+    src: url('../fonts/ScalaSansOT-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Scala Sans';
+    src: url('../fonts/ScalaSansOT-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Scala Sans Condensed';
+    src: url('../fonts/ScalaSansOT-CondRegular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Scala Sans Condensed';
+    src: url('../fonts/ScalaSansOT-CondBold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Scala Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.site-header {
+    background-color: #b7d333;
+}
+
+.main-nav {
+    background-color: #b7d333;
+    color: #611e59;
+    font-family: 'Scala Sans Condensed', 'Scala Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.main-nav a,
+.main-nav button:not([data-menu-open]) {
+    color: #611e59;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.main-nav a:not(.login-button):hover,
+.main-nav button:not([data-menu-open]):hover {
+    color: #611e59;
+    opacity: 0.85;
+}
+
+.main-nav svg {
+    color: #611e59;
+}
+
+.main-nav .login-button,
+.mobile-menu .login-button {
+    background-color: #611e59;
+    color: #b7d333;
+    border: none;
+    text-shadow: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.main-nav .login-button:hover,
+.mobile-menu .login-button:hover {
+    background-color: #53184f;
+    color: #b7d333;
+}
+
+.mobile-menu {
+    background-color: #b7d333;
+    color: #611e59;
+}
+
+.mobile-menu a,
+.mobile-menu button {
+    color: #611e59;
+}
+
+.mobile-menu svg {
+    color: #611e59;
+}
+
+footer {
+    font-family: 'Scala Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+}
+
+.footer-section {
+    background-color: #ffffff;
+    color: #4b1d70;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.footer-title {
+    font-family: 'Scala Sans Condensed', 'Scala Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+}
+
+.footer-line {
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    line-height: 1.8;
+}
+
+.footer-item {
+    display: inline-block;
+    margin: 0 0.75rem;
+}
