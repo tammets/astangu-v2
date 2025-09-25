@@ -29,13 +29,33 @@
                         </svg>
                     </button>
                     <div class="hidden lg:ml-12 lg:flex lg:gap-x-10 lg:items-center lg:justify-between lg:w-full">
-                        <div class="flex lg:gap-x-10">
+                        <div class="flex lg:gap-x-10 items-center">
                             <a href="index.html" class="text-sm font-semibold">Avaleht</a>
-                            <a href="hev-oppija.html" class="text-sm font-semibold">HEV-õppija
-                                keeleõppes</a>
-                            <a href="lisamaterjalid.html" class="text-sm font-semibold">Lisamaterjalid</a>
+                            <div class="relative group">
+                                <a href="lak-ope-astangul.html"
+                                    class="text-sm font-semibold inline-flex items-center gap-1">
+                                    LAK-õpe Astangul
+                                    <svg class="size-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                                <div
+                                    class="absolute left-0 top-full hidden min-w-48 pt-2 group-hover:block group-focus-within:block">
+                                    <div class="rounded-lg bg-white shadow-lg ring-1 ring-gray-900/10 flex flex-col p-2">
+                                        <a href="lak-ope-astangul-ajalugu.html"
+                                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Ajalugu</a>
+                                        <a href="lak-ope-astangul-projekti-kirjeldus.html"
+                                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Projekti
+                                            kirjeldus</a>
+                                        <a href="lak-ope-astangul-edulood.html"
+                                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Edulood</a>
+                                    </div>
+                                </div>
+                            </div>
                             <a href="tooriistakast.html" class="text-sm font-semibold">Tööriistakast</a>
-                            <a href="edgarist.html" class="text-sm font-semibold">Edgarist</a>
                             <a href="kontakt.html" class="text-sm font-semibold">Kontakt</a>
                         </div>
                             <a href="login.html"
@@ -67,15 +87,21 @@
                     <div class="space-y-2 py-6">
                         <a href="index.html"
                             class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:bg-gray-50">Avaleht</a>
-                        <a href="hev-oppija.html"
-                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:bg-gray-50">HEV-õppija
-                            keeleõppes</a>
-                        <a href="lisamaterjalid.html"
-                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:bg-gray-50">Lisamaterjalid</a>
+                        <div class="space-y-2">
+                            <a href="lak-ope-astangul.html"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:bg-gray-50">LAK-õpe
+                                Astangul</a>
+                            <div class="ml-4 space-y-1">
+                                <a href="lak-ope-astangul-ajalugu.html"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Ajalugu</a>
+                                <a href="lak-ope-astangul-projekti-kirjeldus.html"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Projekti kirjeldus</a>
+                                <a href="lak-ope-astangul-edulood.html"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Edulood</a>
+                            </div>
+                        </div>
                         <a href="tooriistakast.html"
                             class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:bg-gray-50">Tööriistakast</a>
-                        <a href="edgarist.html"
-                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:bg-gray-50">Edgarist</a>
                         <a href="kontakt.html"
                             class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:bg-gray-50">Kontakt</a>
                         <a href="login.html"
@@ -89,55 +115,34 @@
 
     <div class="flex-1">
         <!-- Hero Section with new layout -->
-        <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
-            <div class="absolute inset-0 -z-10 overflow-hidden">
-                <svg aria-hidden="true"
-                    class="absolute top-0 left-[max(50%,25rem)] h-256 w-512 -translate-x-1/2 mask-[radial-gradient(64rem_64rem_at_top,white,transparent)] stroke-gray-200">
-                    <defs>
-                        <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1"
-                            patternUnits="userSpaceOnUse">
-                            <path d="M100 200V.5M.5 .5H200" fill="none" />
-                        </pattern>
-                    </defs>
-                    <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
-                        <path
-                            d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
-                            stroke-width="0" />
-                    </svg>
-                    <rect width="100%" height="100%" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
-                        stroke-width="0" />
-                </svg>
-            </div>
-            <div
-                class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
-                <div
-                    class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-                    <div class="lg:pr-4">
-                        <div class="lg:max-w-lg">
-                            <h1
-                                class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-                                Keeleõppija HEV-õppijaga</h1>
-                            <p class="mt-6 text-xl/8 text-gray-700">Astangu Kutserehabilitatsiooni Keskuse haridusliku
+        
+            
+
+    <div class="relative">
+        <div aria-hidden="true" class="absolute hidden h-full w-1/2 bg-gray-100 lg:block"></div>
+        <div class="relative bg-gray-100 lg:bg-transparent">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:grid lg:grid-cols-2 lg:px-8">
+            <div class="mx-auto max-w-2xl py-24 lg:max-w-none lg:py-64">
+              <div class="lg:pr-16">
+                <h1 class="text-4xl font-normal tracking-tight text-gray-900 sm:text-5xl xl:text-5xl">Keeleõppija HEV-õppijaga</h1>
+                <p class="mt-4 text-xl text-gray-600">Astangu Kutserehabilitatsiooni Keskuse haridusliku
                                 erivajadusega (HEV) õppijale suunatud keelekümbluse kursuse virtuaalne õpipesa
                                 õpetajatele
                                 ja teistele muukeelsete HEV-noortega töötavatele spetsialistidele.</p>
-                        </div>
-                    </div>
+                <p class="mt-4 text-xl text-gray-600">Uudista, kohanda ja rakenda!</p>
+                <div class="mt-6">
+                  <a href="tooriistakast.html" class="inline-flex items-center justify-center rounded-md px-6 py-3 text-base font-normal cta-button">Tutvu tööriistakastiga</a>
                 </div>
-                <div
-                    class="mt-8 p-4 sm:-mt-12 sm:-ml-12 sm:p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-                    <img src="assets/index-bg1.png" alt=""
-                        class="w-full max-w-lg rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-3xl sm:max-w-none lg:w-228" />
-                </div>
-                <div
-                    class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-                    <div class="lg:pr-4">
-                        <div class="max-w-xl text-base/7 text-gray-600 lg:max-w-lg">
-                            <p class="text-xl/8 text-gray-700">Uudista, kohanda ja rakenda!</p>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
+        </div>
+        <div class="h-48 w-full sm:h-64 lg:absolute lg:top-0 lg:right-0 lg:h-full lg:w-1/2">
+          <img src="assets/index-bg1.png" alt="" class="size-full object-cover" />
+        </div>
+      </div>
+    </div>
+
         </div>
     </div>
 

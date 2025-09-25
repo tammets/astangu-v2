@@ -57,7 +57,7 @@ body {
     color: #611e59;
     display: inline-flex;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.125rem;
     line-height: 1.5;
 }
 
@@ -74,7 +74,7 @@ body {
 .main-nav .login-button,
 .mobile-menu .login-button {
     background-color: #611e59;
-    color: #b7d333;
+    color: #ffffff;
     border: none;
     text-shadow: none;
     transition: background-color 0.2s ease, color 0.2s ease;
@@ -82,6 +82,19 @@ body {
 
 .main-nav .login-button:hover,
 .mobile-menu .login-button:hover {
+    background-color: #53184f;
+    color: #b7d333;
+}
+
+.cta-button {
+    background-color: #611e59;
+    color: #ffffff;
+    border: none;
+    text-shadow: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cta-button:hover {
     background-color: #53184f;
     color: #b7d333;
 }
