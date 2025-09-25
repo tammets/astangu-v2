@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="et">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registreeru - Astangu Demo</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://unpkg.com/@tailwindcss/browser@4.0.0"></script>
-    <script src="js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAK-õpe Astangul</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/@tailwindcss/browser@4.0.0"></script>
+  <script src="js/main.js"></script>
 </head>
-
-<body class="bg-gray-50 min-h-screen flex flex-col">
-    <!-- Header -->
-    <header class="relative inset-x-0 top-0 z-50 py-6 site-header">
+<body class="bg-gray-50 min-h-screen">
+  <!-- Header -->
+  <header class="relative inset-x-0 top-0 z-50 py-6 site-header">
         <div class="mx-auto max-w-7xl">
             <div class="px-6 max-w-7xl mx-auto">
                 <nav class="main-nav flex items-center justify-between lg:justify-start" aria-label="Global">
@@ -112,118 +110,64 @@
             </div>
         </div>
     </header>
-
-    <div class="flex-1 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-md w-full space-y-8">
-            <div>
-                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-                    Loo uus konto
-                </h2>
-                <p class="mt-2 text-center text-sm text-gray-600">
-                    Täida kõik väljad registreerimiseks
-                </p>
-            </div>
-            <form class="mt-8 space-y-6" action="#" method="POST">
-                <div class="space-y-4">
-                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                        <div>
-                            <label for="first-name" class="block text-sm font-medium text-gray-700">
-                                Eesnimi
-                            </label>
-                            <input id="first-name" name="first-name" type="text" autocomplete="given-name" required
-                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                                placeholder="Sinu eesnimi">
-                        </div>
-                        <div>
-                            <label for="last-name" class="block text-sm font-medium text-gray-700">
-                                Perekonnanimi
-                            </label>
-                            <input id="last-name" name="last-name" type="text" autocomplete="family-name" required
-                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                                placeholder="Sinu perekonnanimi">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700">
-                            E-posti aadress
-                        </label>
-                        <input id="email" name="email" type="email" autocomplete="email" required
-                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                            placeholder="sinu@email.ee">
-                    </div>
-
-                    <div>
-                        <label for="password" class="block text-sm font-medium text-gray-700">
-                            Parool
-                        </label>
-                        <input id="password" name="password" type="password" autocomplete="new-password" required
-                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                            placeholder="Vähemalt 8 tähemärki">
-                    </div>
-
-                    <div>
-                        <label for="confirm-password" class="block text-sm font-medium text-gray-700">
-                            Kinnita parool
-                        </label>
-                        <input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password"
-                            required
-                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                            placeholder="Korda parooli">
-                    </div>
-
-                    <div>
-                        <label for="organisation" class="block text-sm font-medium text-gray-700">
-                            Organisatsioon
-                        </label>
-                        <input id="organisation" name="organisation" type="text" autocomplete="organization" required
-                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                            placeholder="Sinu organisatsiooni nimi">
-                    </div>
-
-                    <div>
-                        <label for="role" class="block text-sm font-medium text-gray-700">
-                            Roll organisatsioonis
-                        </label>
-                        <input id="role" name="role" type="text" autocomplete="organization-title" required
-                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                            placeholder="Näiteks: õpetaja, spetsialist, koordinaator">
-                    </div>
-                </div>
-
-                <div class="flex items-center">
-                    <input id="terms" name="terms" type="checkbox" required
-                        class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                    <label for="terms" class="ml-2 block text-sm text-gray-900">
-                        Nõustun <a href="kasutustingimused.html" class="text-blue-600 hover:text-blue-500">kasutustingimustega</a>
-                    </label>
-                </div>
-
-                <div>
-                    <button type="submit"
-                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
-                        Registreeru
-                    </button>
-                </div>
-
-                <div class="text-center">
-                    <p class="text-sm text-gray-600">
-                        Juba on konto olemas?
-                        <a href="login.html" class="font-medium text-blue-600 hover:text-blue-500">
-                            Logi sisse
-                        </a>
-                    </p>
-                </div>
-            </form>
+  <main>
+    <div class="bg-white py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:mx-0">
+          <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl" style="color: #5d0f57;">LAK-õpe Astangul</h1>
+          <p class="mt-6 text-base/7 text-gray-700">Astangu LAK-õpe ühendab eriala- ja keeleõppe ühtsesse tervikusse, et pakkuda haridusliku erivajadusega õppijale turvalist ja mõtestatud arengukeskkonda. Koostöös õpetajate, tugispetsialistide ja praktikapartneritega kujundame õpirajad, mis toetavad nii eesti keele omandamist kui ka iseseisvat toimetulekut.</p>
+          <p class="mt-6 text-base/7 text-gray-700">Meie õpikeskkond on üles ehitatud samm-sammulisele toele ning praktilistele tegevustele. Õppija saab igal etapil tagasisidet, mis aitab tal märgata oma tugevusi, seada uusi eesmärke ning leida motivatsiooni jätkata.</p>
         </div>
+        <dl class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          <div>
+            <dt class="font-semibold text-gray-900 text-base/7">Õppija tugevustest lähtuv kavandamine</dt>
+            <dd class="mt-1 text-gray-600 text-base/7">Kaardistame iga õppija oskused, huvid ja harjumused ning seome nendega tunnitegevused. Selge tunniraam, visualiseeritud sõnavara ja eelhäälestavad tegevused aitavad õppijal julgelt kaasa mõelda.</dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-gray-900 text-base/7">Keele ja eriala lõiming igas tunnis</dt>
+            <dd class="mt-1 text-gray-600 text-base/7">Õppeained ja keeleõpe liiguvad käsikäes: praktilised ülesanded, rollimängud ja projektipõhine töö annavad õppijale võimaluse kasutada eesti keelt päriselulistes olukordades.</dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-gray-900 text-base/7">Toetatud praktika ja võrgustik</dt>
+            <dd class="mt-1 text-gray-600 text-base/7">Tugevdame õppija eneseusku praktikakohtadel, kaasates juhendajate kõrvale tugispetsialistid ja mentorluse. Kool, pere ja partnerid teevad koostööd ühise eesmärgi nimel.</dd>
+          </div>
+        </dl>
+      </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="bg-white shadow mt-auto">
-        <div class="container mx-auto px-4 py-6 text-center text-gray-500 text-sm">
-            <div class="mb-2">Loome koos paremat elu!</div>
+    <div class="bg-white py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          <div class="lg:pr-4">
+            <div class="relative overflow-hidden rounded-3xl flex items-center justify-center bg-white p-0">
+              <div style="position: relative; width: 100%; height: 0; padding-top: 75.0000%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https://www.canva.com/design/DAGyGrqHmdQ/qW_43vw65AgAhZjE0DbdeA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+            </div>
+          </div>
+          <div>
+            <div class="text-base/7 text-gray-700 lg:max-w-lg">
+              <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Kuidas õpe toimub?</h1>
+              <div class="max-w-xl">
+                <p class="mt-6">LAK-õpe Astangul tähendab, et iga nädalalõik on üles ehitatud konkreetse teema ümber. Õpilased loovad sõnavara kaarte, filmivad õppevideoid, analüüsivad olukordi ja katsetavad oma oskusi tegelikes töötubades.</p>
+                <p class="mt-8">Õpetajad kavandavad tunnid koos tugispetsialistidega, et tagada selge struktuur ja võimalus kordamiseks. Õppijat toetatakse eneseanalüüsi tööriistadega ning tõstetakse esile väikeseid võite, mis kogunedes loovad suure muutuse.</p>
+              </div>
+            </div>
+          </div>
         </div>
-    </footer>
-</body>
+      </div>
+    </div>
+  </main>
 
+  <!-- Footer -->
+  <footer class="bg-white shadow mt-12">
+    <div class="container mx-auto px-4 py-6 text-center text-gray-500 text-sm">
+      <div class="mb-2">Loome koos paremat elu!
+      </div>
+    </div>
+  </footer>
+</body>
 </html>

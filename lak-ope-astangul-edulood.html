@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="et">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registreeru - Astangu Demo</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://unpkg.com/@tailwindcss/browser@4.0.0"></script>
-    <script src="js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edulood – LAK-õpe Astangul</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/@tailwindcss/browser@4.0.0"></script>
+  <script src="js/main.js"></script>
 </head>
-
-<body class="bg-gray-50 min-h-screen flex flex-col">
-    <!-- Header -->
-    <header class="relative inset-x-0 top-0 z-50 py-6 site-header">
+<body class="bg-gray-50 min-h-screen">
+  <!-- Header -->
+  <header class="relative inset-x-0 top-0 z-50 py-6 site-header">
         <div class="mx-auto max-w-7xl">
             <div class="px-6 max-w-7xl mx-auto">
                 <nav class="main-nav flex items-center justify-between lg:justify-start" aria-label="Global">
@@ -113,117 +111,87 @@
         </div>
     </header>
 
-    <div class="flex-1 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-md w-full space-y-8">
-            <div>
-                <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-                    Loo uus konto
-                </h2>
-                <p class="mt-2 text-center text-sm text-gray-600">
-                    Täida kõik väljad registreerimiseks
-                </p>
+  <main class="bg-white">
+    <section class="py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl" style="color: #5d0f57;">Edulood</h1>
+          <p class="mt-6 text-base/7 text-gray-600">
+            LAK-õppe õpikeskkond on aidanud kümnetel õppijatel leida enesekindlus, keelelised oskused ja motivatsiooni areneda edasi. Jagame kolme lugu, mis kirjeldavad, kuidas koostöös õpetajate ja tugivõrgustikuga jõuti tähendusrikaste tulemusteni.
+          </p>
+        </div>
+
+        <div class="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="flex flex-col rounded-2xl bg-white p-8 shadow-lg ring-1 ring-gray-900/5">
+            <div class="flex items-center gap-4">
+              <div class="h-12 w-12 rounded-full bg-indigo-600/10 flex items-center justify-center text-indigo-600 font-semibold">1</div>
+              <div>
+                <h2 class="text-lg font-semibold text-gray-900">Amina – julgus rääkida</h2>
+                <p class="text-sm text-gray-500">Kohanemiskursus, 2023</p>
+              </div>
             </div>
-            <form class="mt-8 space-y-6" action="#" method="POST">
-                <div class="space-y-4">
-                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                        <div>
-                            <label for="first-name" class="block text-sm font-medium text-gray-700">
-                                Eesnimi
-                            </label>
-                            <input id="first-name" name="first-name" type="text" autocomplete="given-name" required
-                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                                placeholder="Sinu eesnimi">
-                        </div>
-                        <div>
-                            <label for="last-name" class="block text-sm font-medium text-gray-700">
-                                Perekonnanimi
-                            </label>
-                            <input id="last-name" name="last-name" type="text" autocomplete="family-name" required
-                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                                placeholder="Sinu perekonnanimi">
-                        </div>
-                    </div>
+            <p class="mt-6 text-base/7 text-gray-600">Amina saabus Astangule tagasihoidliku õppijana, kelle jaoks avalik esinemine oli suurim hirm. Fookus sõnavara visualiseerimisel ja rollimängudel andis talle turvalise keskkonna ning aasta lõpuks juhtis ta klassis arutelusid ise.</p>
+            <blockquote class="mt-4 border-l-4 border-indigo-200 pl-4 text-sm/6 italic text-gray-500">“Kõige olulisem oli teadmine, et õpetaja kuulab ja kohandab tunni minu tempo järgi.”</blockquote>
+          </article>
 
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700">
-                            E-posti aadress
-                        </label>
-                        <input id="email" name="email" type="email" autocomplete="email" required
-                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                            placeholder="sinu@email.ee">
-                    </div>
+          <article class="flex flex-col rounded-2xl bg-white p-8 shadow-lg ring-1 ring-gray-900/5">
+            <div class="flex items-center gap-4">
+              <div class="h-12 w-12 rounded-full bg-emerald-600/10 flex items-center justify-center text-emerald-600 font-semibold">2</div>
+              <div>
+                <h2 class="text-lg font-semibold text-gray-900">Markus – erialakeele läbimurre</h2>
+                <p class="text-sm text-gray-500">Digitehnoloogia suund, 2022</p>
+              </div>
+            </div>
+            <p class="mt-6 text-base/7 text-gray-600">Markusel oli raskusi tehniliste terminiteta. Integreeritud tunnikavad ja praktilised projektid aitasid siduda erialase sõnavara päriseluliste olukordadega. Praktikakohast sai ta hiljem oma esimese tööpakkumise.</p>
+            <blockquote class="mt-4 border-l-4 border-emerald-200 pl-4 text-sm/6 italic text-gray-500">“Kui sain ise prototüüpi selgitada, tundsin, et valdan lõpuks erialast eesti keelt.”</blockquote>
+          </article>
 
-                    <div>
-                        <label for="password" class="block text-sm font-medium text-gray-700">
-                            Parool
-                        </label>
-                        <input id="password" name="password" type="password" autocomplete="new-password" required
-                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                            placeholder="Vähemalt 8 tähemärki">
-                    </div>
-
-                    <div>
-                        <label for="confirm-password" class="block text-sm font-medium text-gray-700">
-                            Kinnita parool
-                        </label>
-                        <input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password"
-                            required
-                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                            placeholder="Korda parooli">
-                    </div>
-
-                    <div>
-                        <label for="organisation" class="block text-sm font-medium text-gray-700">
-                            Organisatsioon
-                        </label>
-                        <input id="organisation" name="organisation" type="text" autocomplete="organization" required
-                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                            placeholder="Sinu organisatsiooni nimi">
-                    </div>
-
-                    <div>
-                        <label for="role" class="block text-sm font-medium text-gray-700">
-                            Roll organisatsioonis
-                        </label>
-                        <input id="role" name="role" type="text" autocomplete="organization-title" required
-                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                            placeholder="Näiteks: õpetaja, spetsialist, koordinaator">
-                    </div>
-                </div>
-
-                <div class="flex items-center">
-                    <input id="terms" name="terms" type="checkbox" required
-                        class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                    <label for="terms" class="ml-2 block text-sm text-gray-900">
-                        Nõustun <a href="kasutustingimused.html" class="text-blue-600 hover:text-blue-500">kasutustingimustega</a>
-                    </label>
-                </div>
-
-                <div>
-                    <button type="submit"
-                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
-                        Registreeru
-                    </button>
-                </div>
-
-                <div class="text-center">
-                    <p class="text-sm text-gray-600">
-                        Juba on konto olemas?
-                        <a href="login.html" class="font-medium text-blue-600 hover:text-blue-500">
-                            Logi sisse
-                        </a>
-                    </p>
-                </div>
-            </form>
+          <article class="flex flex-col rounded-2xl bg-white p-8 shadow-lg ring-1 ring-gray-900/5">
+            <div class="flex items-center gap-4">
+              <div class="h-12 w-12 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500 font-semibold">3</div>
+              <div>
+                <h2 class="text-lg font-semibold text-gray-900">Kertu ja Kärt – tandemõppe jõud</h2>
+                <p class="text-sm text-gray-500">Hooldusteeninduse praktika, 2021</p>
+              </div>
+            </div>
+            <p class="mt-6 text-base/7 text-gray-600">Õde-õde tandem tõi rühmatöödesse sünergia. Ühiselt üles ehitatud õppemärkmikud ja paarisõpe võimaldasid üksteist toetada ning praktikal kiideti neid kliendisuhtluse ja meeskonnatöö eest.</p>
+            <blockquote class="mt-4 border-l-4 border-amber-200 pl-4 text-sm/6 italic text-gray-500">“Koos õppides tekkis julgus küsida, vaielda ja leida oma häält eesti keeles.”</blockquote>
+          </article>
         </div>
+
+        <div class="mt-20 grid gap-10 lg:grid-cols-2">
+          <div class="rounded-2xl bg-indigo-50 p-8 ring-1 ring-indigo-200">
+            <h2 class="text-2xl font-semibold text-gray-900">Mis teeb eduloo võimalikuks?</h2>
+            <ul class="mt-6 space-y-4 text-base/7 text-gray-600">
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-indigo-400"></span>
+                Õppija vajadustest lähtuvad eesmärgid ja kovisioonid õpetajatega.
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-indigo-400"></span>
+                Mitmekeelne ja visuaalne tugi, mis aitab keerukamaid teemasid mõtestada.
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-indigo-400"></span>
+                Pidev tagasiside õppijalt ning tugispetsialistidelt, et kohandada tempot.
+              </li>
+            </ul>
+          </div>
+          <div class="rounded-2xl bg-white p-8 shadow-lg ring-1 ring-gray-900/5">
+            <h2 class="text-2xl font-semibold text-gray-900">Jaga oma lugu</h2>
+            <p class="mt-6 text-base/7 text-gray-600">Kas oled seotud LAK-õppega ja soovid jagada oma kogemust? Kirjuta meile ning leiame viisi, kuidas sinu lugu kõnetaks ka teisi õppijaid ja õpetajaid.</p>
+            <a href="kontakt.html" class="mt-8 inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700">Võta ühendust</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow mt-12">
+    <div class="container mx-auto px-4 py-6 text-center text-gray-500 text-sm">
+      <div class="mb-2">Loome koos paremat elu!</div>
     </div>
-
-    <!-- Footer -->
-    <footer class="bg-white shadow mt-auto">
-        <div class="container mx-auto px-4 py-6 text-center text-gray-500 text-sm">
-            <div class="mb-2">Loome koos paremat elu!</div>
-        </div>
-    </footer>
+  </footer>
 </body>
-
 </html>
