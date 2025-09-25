@@ -62,8 +62,8 @@ function renderResources(list) {
     const card = document.createElement('div');
     card.className = 'bg-white rounded-xl shadow p-6 flex flex-col gap-2 border border-gray-100';
     card.innerHTML = `
-      <h2 class="text-lg font-semibold text-gray-900">${res.title}</h2>
-      <p class="text-gray-600 text-sm mb-2">${res.description}</p>
+      <h2 class="text-lg font-normal text-[#5d0f57]">${res.title}</h2>
+      <p class="text-gray-600 text-m mb-2">${res.description}</p>
       <div class="space-y-2 text-xs text-gray-500 mb-2">
         <div class="flex flex-wrap gap-2">
           <span class="bg-gray-100 rounded px-2 py-0.5">${res.teema}</span>
@@ -79,7 +79,7 @@ function renderResources(list) {
         </div>
       </div>
       <div class="text-xs text-gray-400">${res.date}</div>
-      <a href="materjal.html" class="mt-2 w-fit rounded bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 hover:bg-indigo-100 transition">Ava materjal</a>
+      <a href="materjal.html" class="mt-2 w-full bg-[#611e59] hover:bg-[#611e59] text-white font-normal py-2 px-4 rounded transition block text-center">Ava materjal</a>
     `;
     container.appendChild(card);
   });
