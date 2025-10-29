@@ -129,36 +129,36 @@
               Tagasi tööriistakasti
             </a>
           </div>
-          <h1 class="mt-2 text-4xl tracking-tight text-pretty text-gray-900 sm:text-5xl" style="color: #5d0f57;">Lisa uus materjal</h1>
-          <p class="mt-2 text-lg text-gray-600 max-w-2xl">Loo uus õppematerjal koos metaandmetega, mida saab hiljem
+          <h1 class="heading-cond-bold mt-12 text-4xl tracking-tight sm:text-5xl" style="color: #5d0f57;">Lisa uus materjal</h1>
+          <p class="mt-2 text-lg text-gray-600 ">Loo uus õppematerjal koos metaandmetega, mida saab hiljem
             tööriistakastis filtreerida ja otsida.</p>
         </div>
 
         <div class="max-w-2xl mx-auto"></div>
         <form id="addResourceForm" class="space-y-8 bg-white">
           <div>
-            <label for="title" class="block text-m/6 font-medium text-gray-900 mb-2">Pealkiri</label>
+            <label for="title" class="form-label block text-m/6 text-gray-900 mb-2">Pealkiri</label>
             <div class="mt-2">
               <input type="text" name="title" id="title" required
                 class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
             </div>
           </div>
           <div>
-            <label for="description" class="block text-m/6 font-medium text-gray-900 mb-2">Kirjeldus</label>
+            <label for="description" class="form-label block text-m/6 text-gray-900 mb-2">Kirjeldus</label>
             <div class="mt-2">
               <textarea name="description" id="description" rows="4" required
                 class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
             </div>
           </div>
           <div>
-            <label for="teema" class="block text-m/6 font-medium text-gray-900 mb-2">Teema</label>
+            <label for="teema" class="form-label block text-m/6 text-gray-900 mb-2">Teema</label>
             <div class="mt-2">
               <input type="text" name="teema" id="teema" required
                 class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
             </div>
           </div>
           <div>
-            <label class="block text-m/6 font-medium text-gray-900 mb-3">Keelelised osaoskused ja õpiväljundid
+            <label class="form-label block text-m/6 text-gray-900 mb-3">Keelelised osaoskused ja õpiväljundid
               *</label>
             <div id="skillSets" class="space-y-4">
               <!-- Dynamic skill sets will be added here -->
@@ -175,34 +175,34 @@
             </div>
           </div>
 
-          <fieldset>
-            <legend class="text-m/6 font-medium text-gray-900">Tunni osa</legend>
-            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div>
+            <label id="tunniosa-label" class="form-label block text-m/6 text-gray-900 mb-3">Tunni osa</label>
+            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" role="group" aria-labelledby="tunniosa-label">
               <div class="flex items-center">
                 <input id="tunniosa-uus" name="tunniosa" type="checkbox" value="Uue materjali tutvustamine"
                   class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="tunniosa-uus" class="ml-3 text-sm/6 font-medium text-gray-900">Uue materjali
+                <label for="tunniosa-uus" class="ml-3 text-sm/6 text-gray-900 font-normal">Uue materjali
                   tutvustamine</label>
               </div>
               <div class="flex items-center">
                 <input id="tunniosa-harjutamine" name="tunniosa" type="checkbox" value="Harjutamine"
                   class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="tunniosa-harjutamine" class="ml-3 text-sm/6 font-medium text-gray-900">Harjutamine</label>
+                <label for="tunniosa-harjutamine" class="ml-3 text-sm/6 text-gray-900 font-normal">Harjutamine</label>
               </div>
               <div class="flex items-center">
                 <input id="tunniosa-kinnistamine" name="tunniosa" type="checkbox" value="Kinnistamine"
                   class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="tunniosa-kinnistamine" class="ml-3 text-sm/6 font-medium text-gray-900">Kinnistamine</label>
+                <label for="tunniosa-kinnistamine" class="ml-3 text-sm/6 text-gray-900 font-normal">Kinnistamine</label>
               </div>
               <div class="flex items-center">
                 <input id="tunniosa-haalestamine" name="tunniosa" type="checkbox" value="Häälestamine"
                   class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="tunniosa-haalestamine" class="ml-3 text-sm/6 font-medium text-gray-900">Häälestamine</label>
+                <label for="tunniosa-haalestamine" class="ml-3 text-sm/6 text-gray-900 font-normal">Häälestamine</label>
               </div>
             </div>
-          </fieldset>
+          </div>
           <div>
-            <label for="tags" class="block text-m/6 font-medium text-gray-900 mb-2">Sildid (komaga
+            <label for="tags" class="form-label block text-m/6 text-gray-900 mb-2">Sildid (komaga
               eraldatud)</label>
             <div class="mt-2">
               <input type="text" name="tags" id="tags"
@@ -210,34 +210,34 @@
             </div>
           </div>
           <div>
-            <label for="autor" class="block text-m/6 font-medium text-gray-900 mb-2">Autor</label>
+            <label for="autor" class="form-label block text-m/6 text-gray-900 mb-2">Autor</label>
             <div class="mt-2">
               <input type="text" name="autor" id="autor" required
                 class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
             </div>
           </div>
           <fieldset>
-            <legend class="text-m/6 font-medium text-gray-900 mb-3">Õppematerjali tüüp</legend>
-            <div class="mt-4 space-y-3">
+            <legend class="form-label block text-m/6 text-gray-900 mb-3">Õppematerjali tüüp</legend>
+            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div class="flex items-center">
                 <input id="h5p" name="resourceType" type="checkbox" value="h5p"
                   class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="h5p" class="ml-3 text-sm/6 font-medium text-gray-900">H5P</label>
+                <label for="h5p" class="ml-3 text-sm/6 text-gray-900 font-normal">H5P</label>
               </div>
               <div class="flex items-center">
                 <input id="url" name="resourceType" type="checkbox" value="url"
                   class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="url" class="ml-3 text-sm/6 font-medium text-gray-900">URL</label>
+                <label for="url" class="ml-3 text-sm/6 text-gray-900 font-normal">URL</label>
               </div>
               <div class="flex items-center">
                 <input id="text" name="resourceType" type="checkbox" value="text"
                   class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="text" class="ml-3 text-sm/6 font-medium text-gray-900">Tekst (WYSIWYG)</label>
+                <label for="text" class="ml-3 text-sm/6 text-gray-900 font-normal">Tekst (WYSIWYG)</label>
               </div>
               <div class="flex items-center">
                 <input id="file" name="resourceType" type="checkbox" value="file"
                   class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="file" class="ml-3 text-sm/6 font-medium text-gray-900">Fail</label>
+                <label for="file" class="ml-3 text-sm/6 text-gray-900 font-normal">Fail</label>
               </div>
             </div>
           </fieldset>
