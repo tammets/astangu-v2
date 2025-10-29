@@ -18,7 +18,7 @@
             <div class="px-6 max-w-7xl mx-auto">
                 <nav class="main-nav flex items-center justify-between lg:justify-start" aria-label="Global">
                     <a href="index.html" class="-m-1.5 p-1.5 flex items-center gap-2">
-                        <img alt="Astangu logo" class="h-8 w-auto" src="assets/astangu-logo.svg" />
+                        <img alt="Astangu logo" class="h-10 w-auto lg:h-12" src="assets/astangu-logo.svg" />
                         <span class="sr-only">Astangu</span>
                     </a>
                     <button type="button" data-menu-open class="-m-2.5 rounded-md p-2.5 lg:hidden">
@@ -31,12 +31,12 @@
                     </button>
                     <div class="hidden lg:ml-12 lg:flex lg:gap-x-10 lg:items-center lg:justify-between lg:w-full">
                         <div class="flex lg:gap-x-10 items-center">
-                            <a href="index.html" class="text-sm font-semibold">Avaleht</a>
+                            <a href="index.html" class="text-base font-semibold lg:text-lg">Avaleht</a>
                             <div class="relative group">
                                 <a href="lak-ope-astangul.html"
-                                    class="text-sm font-semibold inline-flex items-center gap-1">
+                                    class="text-base font-semibold lg:text-lg inline-flex items-center gap-1">
                                     LAK-õpe Astangul
-                                    <svg class="size-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor"
+                                    <svg class="size-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor"
                                         aria-hidden="true">
                                         <path fill-rule="evenodd"
                                             d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08Z"
@@ -47,17 +47,18 @@
                                     class="absolute left-0 top-full hidden min-w-48 pt-2 group-hover:block group-focus-within:block">
                                     <div class="rounded-lg bg-white shadow-lg ring-1 ring-gray-900/10 flex flex-col p-2">
                                         <a href="lak-ope-astangul-ajalugu.html"
-                                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Ajalugu</a>
+                                            class="rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Ajalugu</a>
                                         <a href="lak-ope-astangul-projekti-kirjeldus.html"
-                                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Projekti
+                                            class="rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Projekti
                                             kirjeldus</a>
                                         <a href="lak-ope-astangul-edulood.html"
-                                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Edulood</a>
+                                            class="rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Edulood</a>
                                     </div>
                                 </div>
                             </div>
-                            <a href="tooriistakast.html" class="text-sm font-semibold">Tööriistakast</a>
-                            <a href="kontakt.html" class="text-sm font-semibold">Kontakt</a>
+                            <a href="tooriistakast.html" class="text-base font-semibold lg:text-lg">Tööriistakast</a>
+                            <a href="https://edgar.smartzoos.eu/lak/" target="_blank" rel="noopener noreferrer" class="text-base font-semibold lg:text-lg">Käsiraamat</a>
+                            <a href="kontakt.html" class="text-base font-semibold lg:text-lg">Kontakt</a>
                         </div>
                             <a href="login.html"
                             class="text-sm font-semibold px-4 py-2 rounded-md transition-colors login-button">Logi
@@ -73,7 +74,7 @@
             <div class="flex items-center justify-between">
                 <a href="index.html" class="-m-1.5 p-1.5">
                     <span class="sr-only">Astangu</span>
-                    <img class="h-8 w-auto" src="assets/astangu-logo.svg" alt="" />
+                    <img class="h-10 w-auto" src="assets/astangu-logo.svg" alt="" />
                 </a>
                 <button type="button" data-menu-close class="-m-2.5 rounded-md p-2.5">
                     <span class="sr-only">Close menu</span>
@@ -103,6 +104,8 @@
                         </div>
                         <a href="tooriistakast.html"
                             class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:bg-gray-50">Tööriistakast</a>
+                        <a href="https://edgar.smartzoos.eu/lak/" target="_blank" rel="noopener noreferrer"
+                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:bg-gray-50">Käsiraamat</a>
                         <a href="kontakt.html"
                             class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:bg-gray-50">Kontakt</a>
                         <a href="login.html"
@@ -119,51 +122,50 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mb-8">
           <div class="flex items-center gap-4 mb-4">
-            <a href="tooriistakast.html"
-              class="text-indigo-600 hover:text-indigo-800 flex items-center gap-2 text-sm font-semibold">
+            <a href="tooriistakast.html" style="color: #5d0f57; text-decoration: underline;" class="flex items-center gap-2 text-sm font-semibold">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
               </svg>
               Tagasi tööriistakasti
             </a>
           </div>
-          <h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl" style="color: #5d0f57;">Lisa uus materjal</h1>
+          <h1 class="mt-2 text-4xl tracking-tight text-pretty text-gray-900 sm:text-5xl" style="color: #5d0f57;">Lisa uus materjal</h1>
           <p class="mt-2 text-lg text-gray-600 max-w-2xl">Loo uus õppematerjal koos metaandmetega, mida saab hiljem
             tööriistakastis filtreerida ja otsida.</p>
         </div>
 
         <div class="max-w-2xl mx-auto"></div>
-        <form id="addResourceForm" class="space-y-8 bg-white p-8 rounded-xl shadow-lg ring-1 ring-gray-900/5">
+        <form id="addResourceForm" class="space-y-8 bg-white">
           <div>
-            <label for="title" class="block text-sm/6 font-medium text-gray-900">Pealkiri</label>
+            <label for="title" class="block text-m/6 font-medium text-gray-900 mb-2">Pealkiri</label>
             <div class="mt-2">
               <input type="text" name="title" id="title" required
                 class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
             </div>
           </div>
           <div>
-            <label for="description" class="block text-sm/6 font-medium text-gray-900">Kirjeldus</label>
+            <label for="description" class="block text-m/6 font-medium text-gray-900 mb-2">Kirjeldus</label>
             <div class="mt-2">
               <textarea name="description" id="description" rows="4" required
                 class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
             </div>
           </div>
           <div>
-            <label for="teema" class="block text-sm/6 font-medium text-gray-900">Teema</label>
+            <label for="teema" class="block text-m/6 font-medium text-gray-900 mb-2">Teema</label>
             <div class="mt-2">
               <input type="text" name="teema" id="teema" required
                 class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
             </div>
           </div>
           <div>
-            <label class="block text-sm font-medium leading-6 text-gray-900 mb-3">Keelelised osaoskused ja õpiväljundid
+            <label class="block text-m/6 font-medium text-gray-900 mb-3">Keelelised osaoskused ja õpiväljundid
               *</label>
             <div id="skillSets" class="space-y-4">
               <!-- Dynamic skill sets will be added here -->
             </div>
             <div class="flex justify-end mt-4">
               <button type="button" id="addSkillSet"
-                class="inline-flex items-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">
+                class="inline-flex items-center rounded-md bg-[#611e59] px-3 py-2 text-sm font-normal text-white shadow-sm hover:bg-[#7a2671] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7a2671] transition cursor-pointer">
                 <svg class="-ml-0.5 mr-1.5 h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path
                     d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
@@ -174,7 +176,7 @@
           </div>
 
           <fieldset>
-            <legend class="text-sm/6 font-medium text-gray-900">Tunni osa</legend>
+            <legend class="text-m/6 font-medium text-gray-900">Tunni osa</legend>
             <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div class="flex items-center">
                 <input id="tunniosa-uus" name="tunniosa" type="checkbox" value="Uue materjali tutvustamine"
@@ -200,7 +202,7 @@
             </div>
           </fieldset>
           <div>
-            <label for="tags" class="block text-sm/6 font-medium text-gray-900">Sildid (komaga
+            <label for="tags" class="block text-m/6 font-medium text-gray-900 mb-2">Sildid (komaga
               eraldatud)</label>
             <div class="mt-2">
               <input type="text" name="tags" id="tags"
@@ -208,34 +210,34 @@
             </div>
           </div>
           <div>
-            <label for="autor" class="block text-sm/6 font-medium text-gray-900">Autor</label>
+            <label for="autor" class="block text-m/6 font-medium text-gray-900 mb-2">Autor</label>
             <div class="mt-2">
               <input type="text" name="autor" id="autor" required
                 class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
             </div>
           </div>
           <fieldset>
-            <legend class="text-sm font-medium leading-6 text-gray-900">Õppematerjali tüüp</legend>
+            <legend class="text-m/6 font-medium text-gray-900 mb-3">Õppematerjali tüüp</legend>
             <div class="mt-4 space-y-3">
               <div class="flex items-center">
                 <input id="h5p" name="resourceType" type="checkbox" value="h5p"
                   class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="h5p" class="ml-3 text-sm font-medium leading-6 text-gray-900">H5P</label>
+                <label for="h5p" class="ml-3 text-sm/6 font-medium text-gray-900">H5P</label>
               </div>
               <div class="flex items-center">
                 <input id="url" name="resourceType" type="checkbox" value="url"
                   class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="url" class="ml-3 text-sm font-medium leading-6 text-gray-900">URL</label>
+                <label for="url" class="ml-3 text-sm/6 font-medium text-gray-900">URL</label>
               </div>
               <div class="flex items-center">
                 <input id="text" name="resourceType" type="checkbox" value="text"
                   class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="text" class="ml-3 text-sm font-medium leading-6 text-gray-900">Tekst (WYSIWYG)</label>
+                <label for="text" class="ml-3 text-sm/6 font-medium text-gray-900">Tekst (WYSIWYG)</label>
               </div>
               <div class="flex items-center">
                 <input id="file" name="resourceType" type="checkbox" value="file"
                   class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="file" class="ml-3 text-sm font-medium leading-6 text-gray-900">Fail</label>
+                <label for="file" class="ml-3 text-sm/6 font-medium text-gray-900">Fail</label>
               </div>
             </div>
           </fieldset>
@@ -244,7 +246,7 @@
           </div>
           <div class="flex items-center justify-end gap-x-6 pt-6 border-t border-gray-900/10">
             <button type="submit"
-              class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              class="rounded-md bg-[#611e59] px-3 py-2 text-sm font-normal text-white shadow-sm hover:bg-[#7a2671] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7a2671] transition cursor-pointer">
               Salvesta materjal
             </button>
           </div>
@@ -357,7 +359,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
-            <label class="block text-sm font-medium leading-6 text-gray-900">Keeleline osaoskus</label>
+            <label class="block text-sm/6 font-medium text-gray-900 mb-2">Keeleline osaoskus</label>
             <div class="mt-2 grid grid-cols-1">
               <select name="keeleline_osaoskus_${skillSetId}" class="keeleline-osaoskus col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6" required>
                 <option value="">Vali osaoskus</option>
@@ -372,7 +374,7 @@
             </div>
           </div>
           <div>
-            <label class="block text-sm font-medium leading-6 text-gray-900">Keeletase</label>
+            <label class="block text-sm/6 font-medium text-gray-900 mb-2">Keeletase</label>
             <div class="mt-2 grid grid-cols-1">
               <select name="keeletase_${skillSetId}" class="keeletase col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:outline-gray-200" disabled>
                 <option value="">Vali tase</option>
@@ -383,7 +385,7 @@
             </div>
           </div>
           <div>
-            <label class="block text-sm font-medium leading-6 text-gray-900">Õpiväljund</label>
+            <label class="block text-sm/6 font-medium text-gray-900 mb-2">Õpiväljund</label>
             <div class="mt-2 grid grid-cols-1">
               <select name="opivaljund_${skillSetId}" class="opivaljund col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:outline-gray-200" disabled>
                 <option value="">Vali väljund</option>
@@ -487,7 +489,7 @@
       if (types.includes('h5p')) {
         html += `
           <div>
-            <label for="h5p-input" class="block text-sm/6 font-medium text-gray-900">H5P embed kood või link</label>
+            <label for="h5p-input" class="block text-sm/6 font-medium text-gray-900 mb-2">H5P embed kood või link</label>
             <div class="mt-2">
               <input type="text" name="h5p" id="h5p-input" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
             </div>
@@ -496,7 +498,7 @@
       if (types.includes('url')) {
         html += `
           <div>
-            <label for="url-input" class="block text-sm/6 font-medium text-gray-900">URL</label>
+            <label for="url-input" class="block text-sm/6 font-medium text-gray-900 mb-2">URL</label>
             <div class="mt-2">
               <input type="url" name="url" id="url-input" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
             </div>
@@ -505,7 +507,7 @@
       if (types.includes('text')) {
         html += `
           <div>
-            <label for="wysiwyg" class="block text-sm/6 font-medium text-gray-900">Tekst (WYSIWYG)</label>
+            <label for="wysiwyg" class="block text-sm/6 font-medium text-gray-900 mb-2">Tekst (WYSIWYG)</label>
             <div class="mt-2">
               <textarea id="wysiwyg" name="text" rows="4" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
             </div>
@@ -514,7 +516,7 @@
       if (types.includes('file')) {
         html += `
           <div>
-            <label for="file-input" class="block text-sm font-medium leading-6 text-gray-900">Fail</label>
+            <label for="file-input" class="block text-sm/6 font-medium text-gray-900 mb-2">Fail</label>
             <div class="mt-2">
               <input type="file" name="file" id="file-input" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none">
             </div>

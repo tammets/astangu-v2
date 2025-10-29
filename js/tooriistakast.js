@@ -79,7 +79,7 @@ function renderResources(list) {
         </div>
       </div>
       <div class="text-xs text-gray-400">${res.date}</div>
-      <a href="materjal.html" class="mt-2 w-full bg-[#611e59] hover:bg-[#611e59] text-white font-normal py-2 px-4 rounded transition block text-center">Ava materjal</a>
+      <a href="materjal.html" class="mt-2 w-full bg-[#611e59] hover:bg-[#7a2671] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7a2671] text-white font-normal py-2 px-4 rounded transition block text-center cursor-pointer">Ava materjal</a>
     `;
     container.appendChild(card);
   });
