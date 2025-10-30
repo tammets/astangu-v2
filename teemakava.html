@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teemakavade Haldus</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4.0.0"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.462.0/lucide.min.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="js/main.js"></script>
     <style>
         :root {
             --background: 0 0% 100%;
@@ -109,10 +110,140 @@
         }
     </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+<body class="bg-gray-50 min-h-screen flex flex-col">
     <div id="toast-container"></div>
-    
-    <div class="container mx-auto py-8">
+
+    <!-- Header -->
+    <header class="relative inset-x-0 top-0 z-50 py-6 site-header">
+        <div class="mx-auto max-w-7xl">
+            <div class="px-6 max-w-7xl mx-auto">
+                <nav class="main-nav flex items-center justify-between lg:justify-start" aria-label="Global">
+                    <a href="index.html" class="-m-1.5 p-1.5 flex items-center gap-2">
+                        <img alt="Astangu logo" class="h-10 w-auto lg:h-12" src="assets/astangu-logo.svg" />
+                        <span class="sr-only">Astangu</span>
+                    </a>
+                    <button type="button" data-menu-open class="-m-2.5 rounded-md p-2.5 lg:hidden">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            aria-hidden="true" data-slot="icon">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                    <div class="hidden lg:ml-12 lg:flex lg:gap-x-10 lg:items-center lg:justify-between lg:w-full">
+                        <div class="flex lg:gap-x-10 items-center">
+                            <a href="index.html" class="text-base font-semibold lg:text-lg">Avaleht</a>
+                            <div class="relative group">
+                                <a href="lak-ope-astangul.html"
+                                    class="text-base font-semibold lg:text-lg inline-flex items-center gap-1">
+                                    LAK-õpe Astangul
+                                    <svg class="size-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                                <div
+                                    class="absolute left-0 top-full hidden min-w-48 pt-2 group-hover:block group-focus-within:block">
+                                    <div class="rounded-lg bg-white shadow-lg ring-1 ring-gray-900/10 flex flex-col p-2">
+                                        <a href="lak-ope-astangul-ajalugu.html"
+                                            class="rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Ajalugu</a>
+                                        <a href="lak-ope-astangul-projekti-kirjeldus.html"
+                                            class="rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Projekti
+                                            kirjeldus</a>
+                                        <a href="lak-ope-astangul-edulood.html"
+                                            class="rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Edulood</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative group">
+                                <a href="tooriistakast.html"
+                                    class="text-base font-semibold lg:text-lg inline-flex items-center gap-1">
+                                    Tööriistakast
+                                    <svg class="size-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                                <div
+                                    class="absolute left-0 top-full hidden min-w-48 pt-2 group-hover:block group-focus-within:block">
+                                    <div class="rounded-lg bg-white shadow-lg ring-1 ring-gray-900/10 flex flex-col p-2">
+                                        <a href="teemakavad.html"
+                                            class="rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50">Teemakavad</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="https://edgar.smartzoos.eu/lak/" target="_blank" rel="noopener noreferrer"
+                                class="text-base font-semibold lg:text-lg">Käsiraamat</a>
+                            <a href="kontakt.html" class="text-base font-semibold lg:text-lg">Kontakt</a>
+                        </div>
+                        <a href="login.html" class="px-4 py-2 rounded-md transition-colors login-button">Logi sisse</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Mobile menu, show/hide based on menu open state. -->
+        <div id="mobile-menu-backdrop" class="lg:hidden fixed inset-0 z-50 hidden bg-black/20"></div>
+        <div id="mobile-menu"
+            class="mobile-menu lg:hidden fixed inset-y-0 right-0 z-50 w-full overflow-y-auto p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 hidden">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="-m-1.5 p-1.5">
+                    <span class="sr-only">Astangu</span>
+                    <img class="h-10 w-auto" src="assets/astangu-logo.svg" alt="" />
+                </a>
+                <button type="button" data-menu-close class="-m-2.5 rounded-md p-2.5">
+                    <span class="sr-only">Close menu</span>
+                    <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true" data-slot="icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="mt-6 flow-root">
+                <div class="-my-6 divide-y divide-gray-500/10">
+                    <div class="space-y-2 py-6">
+                        <a href="index.html"
+                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:bg-gray-50">Avaleht</a>
+                        <div class="space-y-2">
+                            <a href="lak-ope-astangul.html"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:bg-gray-50">LAK-õpe
+                                Astangul</a>
+                            <div class="ml-4 space-y-1">
+                                <a href="lak-ope-astangul-ajalugu.html"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Ajalugu</a>
+                                <a href="lak-ope-astangul-projekti-kirjeldus.html"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Projekti kirjeldus</a>
+                                <a href="lak-ope-astangul-edulood.html"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Edulood</a>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <a href="tooriistakast.html"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:bg-gray-50">Tööriistakast</a>
+                            <div class="ml-4 space-y-1">
+                                <a href="teemakavad.html"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Teemakavad</a>
+                            </div>
+                        </div>
+                        <a href="https://edgar.smartzoos.eu/lak/" target="_blank" rel="noopener noreferrer"
+                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:bg-gray-50">Käsiraamat</a>
+                        <a href="kontakt.html"
+                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:bg-gray-50">Kontakt</a>
+                        <a href="login.html"
+                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold login-button">Logi sisse</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 bg-white">
+        <section class="py-12 sm:py-16">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="space-y-8">
         <!-- Navigation -->
         <div id="navigation" class="card p-4 mb-6 rounded-lg">
             <div class="flex gap-4">
@@ -327,7 +458,26 @@
 
             <div id="current-lesson-display"></div>
         </div>
-    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto">
+        <div class="footer-section">
+            <div class="footer-title">Astangu Kutserehabilitatsiooni Keskus</div>
+            <div class="footer-line">
+                <span class="footer-item">Astangu 27, 13519 Tallinn</span>
+                <span class="footer-item">tel 659 4152; 659 4327</span>
+                <span class="footer-item">faks 659 0520</span>
+            </div>
+            <div class="footer-line">
+                <span class="footer-item">astangu@astangu.ee</span>
+                <span class="footer-item">www.astangu.ee</span>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Application State
