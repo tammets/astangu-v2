@@ -9,106 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.462.0/lucide.min.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script src="js/main.js"></script>
-    <style>
-        :root {
-            --background: 0 0% 100%;
-            --foreground: 222.2 84% 4.9%;
-            --card: 0 0% 100%;
-            --card-foreground: 222.2 84% 4.9%;
-            --primary: 222.2 47.4% 11.2%;
-            --primary-foreground: 210 40% 98%;
-            --secondary: 210 40% 96.1%;
-            --secondary-foreground: 222.2 47.4% 11.2%;
-            --muted: 210 40% 96.1%;
-            --muted-foreground: 215.4 16.3% 46.9%;
-            --accent: 210 40% 96.1%;
-            --accent-foreground: 222.2 47.4% 11.2%;
-            --destructive: 0 84.2% 60.2%;
-            --destructive-foreground: 210 40% 98%;
-            --border: 214.3 31.8% 91.4%;
-            --input: 214.3 31.8% 91.4%;
-            --ring: 222.2 84% 4.9%;
-            --radius: 0.5rem;
-        }
-
-        .toast {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            min-width: 300px;
-            padding: 16px;
-            border-radius: 8px;
-            color: white;
-            font-weight: 500;
-            opacity: 0;
-            transform: translateX(100%);
-            transition: all 0.3s ease;
-        }
-
-        .toast.show {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .toast.success {
-            background-color: #10b981;
-        }
-
-        .toast.error {
-            background-color: #ef4444;
-        }
-
-        .btn-primary {
-            background-color: hsl(var(--primary));
-            color: hsl(var(--primary-foreground));
-        }
-
-        .btn-primary:hover {
-            background-color: hsl(var(--primary) / 0.9);
-        }
-
-        .btn-secondary {
-            background-color: hsl(var(--secondary));
-            color: hsl(var(--secondary-foreground));
-        }
-
-        .btn-destructive {
-            background-color: hsl(var(--destructive));
-            color: hsl(var(--destructive-foreground));
-        }
-
-        .btn-outline {
-            border: 1px solid hsl(var(--border));
-            background-color: transparent;
-            color: hsl(var(--foreground));
-        }
-
-        .btn-outline:hover {
-            background-color: hsl(var(--accent));
-        }
-
-        .card {
-            background-color: hsl(var(--card));
-            color: hsl(var(--card-foreground));
-            border: 1px solid hsl(var(--border));
-        }
-
-        .input,
-        .textarea,
-        .select {
-            border: 1px solid hsl(var(--border));
-            background-color: hsl(var(--background));
-        }
-
-        .input:focus,
-        .textarea:focus,
-        .select:focus {
-            border-color: hsl(var(--ring));
-            outline: none;
-            box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
-        }
-    </style>
+    
     
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col">
@@ -243,24 +144,32 @@
 
     <main class="flex-1 bg-white">
         <section class="py-12 sm:py-16">
-            <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-                <div class="card rounded-lg">
-                    <div class="p-6 border-b">
-                        <h1 class="heading-cond-bold text-4xl tracking-tight sm:text-5xl" style="color: #5d0f57;">Uue teemakava loomine</h1>
-                        <p class="mt-3 text-base text-gray-600">Täida allolev vorm teemakava koostamiseks. Vorm kogub andmed, kuid neid ei salvestata.</p>
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mb-8">
+                    <div class="flex items-center gap-4 mb-4">
+                        <a href="teemakavad.html" class="flex items-center gap-2 text-sm font-medium text-[#5d0f57]" style="text-decoration: underline;">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                            Tagasi teemakavade juurde
+                        </a>
                     </div>
-                    <div class="p-6">
-                        <form id="curriculum-form" class="space-y-6">
+                    <h1 class="heading-cond-bold mt-12 text-4xl tracking-tight sm:text-5xl" style="color: #5d0f57;">Uue teemakava loomine</h1>
+                    <p class="mt-2 text-lg text-gray-600">Täida allolev vorm teemakava koostamiseks.</p>
+                </div>
+                <div class="mx-auto">
+                    <form id="curriculum-form" class="space-y-10 bg-white">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="space-y-2">
-                                    <label for="title" class="block text-sm font-medium">Pealkiri *</label>
-                                    <input type="text" id="title" class="input w-full px-3 py-1.5 rounded-md" 
-                                        placeholder="Näiteks: Emotsioonid" required>
+                                <div>
+                                    <label for="title" class="form-label block text-m/6 text-gray-900 mb-2">Pealkiri *</label>
+                                    <div class="mt-2">
+                                        <input type="text" id="title" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#611e59] sm:text-sm/6" placeholder="Näiteks: Emotsioonid" required>
+                                    </div>
                                 </div>
-                                <div class="space-y-2">
-                                    <label for="subject" class="block text-sm/6 font-medium text-gray-900">Õppeaine *</label>
-                                    <div class="grid grid-cols-1">
-                                        <select id="subject" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 border border-gray-300 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6" required>
+                                <div>
+                                    <label for="subject" class="form-label block text-m/6 text-gray-900 mb-2">Õppeaine *</label>
+                                    <div class="mt-2 grid grid-cols-1">
+                                        <select id="subject" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#611e59] sm:text-sm/6" required>
                                             <option value="">Vali õppeaine</option>
                                             <option value="Eesti keel">Eesti keel</option>
                                             <option value="Matemaatika">Matemaatika</option>
@@ -276,10 +185,10 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="space-y-2">
-                                    <label for="field" class="block text-sm/6 font-medium text-gray-900">Valdkond *</label>
-                                    <div class="grid grid-cols-1">
-                                        <select id="field" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 border border-gray-300 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6" required>
+                                <div>
+                                    <label for="field" class="form-label block text-m/6 text-gray-900 mb-2">Valdkond *</label>
+                                    <div class="mt-2 grid grid-cols-1">
+                                        <select id="field" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#611e59] sm:text-sm/6" required>
                                             <option value="">Vali valdkond</option>
                                             <option value="Sotsiaalsed oskused">Sotsiaalsed oskused</option>
                                             <option value="Kognitiivsed oskused">Kognitiivsed oskused</option>
@@ -293,10 +202,10 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="space-y-2">
-                                    <label for="plannedHours" class="block text-sm/6 font-medium text-gray-900">Kavandatud tundide arv</label>
-                                    <div class="grid grid-cols-1">
-                                        <select id="plannedHours" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 border border-gray-300 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6">
+                                <div>
+                                    <label for="plannedHours" class="form-label block text-m/6 text-gray-900 mb-2">Kavandatud tundide arv</label>
+                                    <div class="mt-2 grid grid-cols-1">
+                                        <select id="plannedHours" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#611e59] sm:text-sm/6">
                                             <option value="">Vali tundide arv</option>
                                             <option value="1 x 45 minutit">1 x 45 minutit</option>
                                             <option value="2 x 45 minutit">2 x 45 minutit</option>
@@ -312,38 +221,41 @@
                                 </div>
                             </div>
 
-                            <div class="space-y-2">
-                                <label for="description" class="block text-sm font-medium">Kirjeldus</label>
-                                <textarea id="description" class="textarea w-full px-3 py-2 rounded-md" rows="4"
-                                        placeholder="Teemakava kirjeldus..."></textarea>
+                            <div>
+                                <label for="description" class="form-label block text-m/6 text-gray-900 mb-2">Kirjeldus</label>
+                                <div class="mt-2">
+                                    <textarea id="description" class="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#611e59] sm:text-sm/6" rows="4" placeholder="Teemakava kirjeldus..."></textarea>
+                                </div>
                             </div>
 
-                            <div class="space-y-2">
-                                <label for="subjectOutcomes" class="block text-sm font-medium">Ainealased õpitulemused</label>
-                                <textarea id="subjectOutcomes" class="textarea w-full px-3 py-2 rounded-md" rows="3"
-                                        placeholder="Näiteks: õpilane tunneb ära põhiemotsioonid; õpilane seletab, missugustes olukordades tekivad teatud emotsioonid..."></textarea>
+                            <div>
+                                <label for="subjectOutcomes" class="form-label block text-m/6 text-gray-900 mb-2">Ainealased õpitulemused</label>
+                                <div class="mt-2">
+                                    <textarea id="subjectOutcomes" class="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#611e59] sm:text-sm/6" rows="3" placeholder="Näiteks: õpilane tunneb ära põhiemotsioonid; õpilane seletab, missugustes olukordades tekivad teatud emotsioonid..."></textarea>
+                                </div>
                             </div>
 
-                            <div class="space-y-2">
-                                <label for="languageOutcomes" class="block text-sm font-medium">Keelelised õpitulemused</label>
-                                <textarea id="languageOutcomes" class="textarea w-full px-3 py-2 rounded-md" rows="3"
-                                        placeholder="Näiteks: õpilane nimetab põhiemotsioone; õpilane tunneb konteksti põhjal ära põhiemotsioonid..."></textarea>
+                            <div>
+                                <label for="languageOutcomes" class="form-label block text-m/6 text-gray-900 mb-2">Keelelised õpitulemused</label>
+                                <div class="mt-2">
+                                    <textarea id="languageOutcomes" class="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#611e59] sm:text-sm/6" rows="3" placeholder="Näiteks: õpilane nimetab põhiemotsioone; õpilane tunneb konteksti põhjal ära põhiemotsioonid..."></textarea>
+                                </div>
                             </div>
 
-                            <div class="space-y-4">
+                            <div class="space-y-6">
                                 <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                                    <h3 class="text-xl font-semibold">Tunnid</h3>
-                                    <button type="button" id="add-lesson" class="btn-primary px-4 py-2 rounded-md flex items-center gap-2">
+                                    <h3 class="text-xl text-gray-900">Tunnid</h3>
+                                    <button type="button" id="add-lesson" class="inline-flex items-center gap-2 rounded-md bg-[#611e59] px-3 py-2 text-sm font-normal text-white shadow-sm hover:bg-[#7a2671] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7a2671] transition-colors">
                                         <i data-lucide="plus" class="w-4 h-4"></i>
                                         Lisa tund
                                     </button>
                                 </div>
-                                <div id="lessons-container" class="space-y-4"></div>
+                                <div id="lessons-container" class="space-y-6"></div>
                             </div>
 
                             <div class="flex justify-end pt-6">
-                                <button type="submit" class="btn-primary px-8 py-3 rounded-md text-lg">
-                                    Kinnita sisestus
+                                <button type="submit" class="inline-flex items-center justify-center rounded-md bg-[#611e59] px-6 py-2.5 text-base text-white shadow-sm hover:bg-[#7a2671] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7a2671] transition-colors">
+                                    Salvesta teemakava
                                 </button>
                             </div>
                         </form>
@@ -390,27 +302,34 @@
         function createLessonForm(lesson, index) {
             const subtopicOptions = ['põhiemotsioonid', 'olukorrad ja emotsioonid', 'emotsioonide väljendamine', 'toimetulekuviisid', 'empaafia', 'suhtlemine'];
             const durations = ['1 x 45 minutit', '2 x 45 minutit', '3 x 45 minutit', '4 x 45 minutit'];
+            const inputClasses = 'block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#611e59] sm:text-sm/6';
+            const textareaClasses = 'block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#611e59] sm:text-sm/6';
+            const selectClasses = 'col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#611e59] sm:text-sm/6';
+            const primaryButtonClasses = 'inline-flex items-center gap-2 rounded-md bg-[#611e59] px-3 py-2 text-sm font-normal text-white shadow-sm hover:bg-[#7a2671] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7a2671] transition-colors';
+            const removeLinkClasses = 'inline-flex items-center gap-2 text-sm font-medium text-red-600 hover:text-red-500 transition-colors';
+            const checkboxClasses = 'lesson-subtopic size-4 rounded border-gray-300 text-[#611e59] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#611e59]';
 
             return `
-                <div class="card border-l-4 border-l-blue-500 rounded-lg" data-lesson-id="${lesson.id}">
-                    <div class="p-4 border-b flex justify-between items-center">
-                        <h3 class="text-lg font-semibold">Tund ${index + 1}</h3>
-                        <button type="button" class="btn-destructive px-3 py-1 rounded text-sm remove-lesson" data-lesson-id="${lesson.id}">
-                            <i data-lucide="trash-2" class="w-4 h-4 inline mr-1"></i>
+                <div class="rounded-xl bg-white shadow-sm" data-lesson-id="${lesson.id}">
+                    <div class="flex items-center justify-between gap-4 px-6 py-4 bg-gray-50 rounded-t-xl">
+                        <h3 class="text-lg font-semibold text-gray-900">Tund ${index + 1}</h3>
+                        <button type="button" class="${removeLinkClasses} remove-lesson" data-lesson-id="${lesson.id}">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
                             Eemalda
                         </button>
                     </div>
-                    <div class="p-6 space-y-6">
+                    <div class="px-6 py-6 space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="space-y-2">
-                                <label class="block text-sm font-medium">Tunni pealkiri</label>
-                                <input type="text" class="input w-full px-3 py-1.5 rounded-md lesson-title" 
-                                       placeholder="Näiteks: Olukorrad ja emotsioonid" value="${lesson.title}">
+                            <div>
+                                <label class="form-label block text-m/6 text-gray-900 mb-2">Tunni pealkiri</label>
+                                <div class="mt-2">
+                                    <input type="text" class="${inputClasses} lesson-title" placeholder="Näiteks: Olukorrad ja emotsioonid" value="${lesson.title}">
+                                </div>
                             </div>
-                            <div class="space-y-2">
-                                <label class="block text-sm font-medium">Tunni kestvus</label>
-                                <div class="grid grid-cols-1">
-                                    <select class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 border border-gray-300 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6 lesson-duration">
+                            <div>
+                                <label class="form-label block text-m/6 text-gray-900 mb-2">Tunni kestvus</label>
+                                <div class="mt-2 grid grid-cols-1">
+                                    <select class="${selectClasses} lesson-duration">
                                         <option value="">Vali kestvus</option>
                                         ${durations.map(d => `<option value="${d}" ${lesson.duration === d ? 'selected' : ''}>${d}</option>`).join('')}
                                     </select>
@@ -421,48 +340,50 @@
                             </div>
                         </div>
 
-                        <div class="space-y-2">
-                            <label class="block text-sm font-medium">Alamteema (mitmikvalik)</label>
+                        <div>
+                            <label class="form-label block text-m/6 text-gray-900 mb-2">Alamteema (mitmikvalik)</label>
                             <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
                                 ${subtopicOptions.map(subtopic => `
-                                    <label class="flex items-center space-x-2 cursor-pointer">
-                                        <input type="checkbox" class="lesson-subtopic" value="${subtopic}" 
-                                               ${lesson.subtopics.includes(subtopic) ? 'checked' : ''}>
-                                        <span class="text-sm">${subtopic}</span>
+                                    <label class="flex items-center gap-2 text-sm text-gray-900 cursor-pointer">
+                                        <input type="checkbox" class="${checkboxClasses}" value="${subtopic}" ${lesson.subtopics.includes(subtopic) ? 'checked' : ''}>
+                                        <span>${subtopic}</span>
                                     </label>
                                 `).join('')}
                             </div>
                         </div>
 
-                        <div class="space-y-2">
-                            <label class="block text-sm font-medium">Tunni keeleline eesmärk</label>
-                            <input type="text" class="input w-full px-3 py-1.5 rounded-md lesson-language-goal" 
-                                   placeholder="Näiteks: Uue sõnavara tutvustamine ja harjutamine" value="${lesson.languageGoal}">
+                        <div>
+                            <label class="form-label block text-m/6 text-gray-900 mb-2">Tunni keeleline eesmärk</label>
+                            <div class="mt-2">
+                                <input type="text" class="${inputClasses} lesson-language-goal" placeholder="Näiteks: Uue sõnavara tutvustamine ja harjutamine" value="${lesson.languageGoal}">
+                            </div>
                         </div>
 
-                        <div class="space-y-2">
-                            <label class="block text-sm font-medium">Tunni õpiväljundid</label>
-                            <textarea class="textarea w-full px-3 py-2 rounded-md lesson-outcomes" rows="3"
-                                      placeholder="Näiteks: õpilane tunneb ära põhiemotsioonid; õpilane seletab...">${lesson.outcomes}</textarea>
+                        <div>
+                            <label class="form-label block text-m/6 text-gray-900 mb-2">Tunni õpiväljundid</label>
+                            <div class="mt-2">
+                                <textarea class="${textareaClasses} lesson-outcomes" rows="3" placeholder="Näiteks: õpilane tunneb ära põhiemotsioonid; õpilane seletab...">${lesson.outcomes}</textarea>
+                            </div>
                         </div>
 
-                        <div class="space-y-2">
-                            <label class="block text-sm font-medium">Tunnis käsitletavad mõisted</label>
-                            <textarea class="textarea w-full px-3 py-2 rounded-md lesson-concepts" rows="4"
-                                      placeholder="Näiteks: Põhiemotsioonid: rõõm, viha, üllatus, kurbus...">${lesson.concepts}</textarea>
+                        <div>
+                            <label class="form-label block text-m/6 text-gray-900 mb-2">Tunnis käsitletavad mõisted</label>
+                            <div class="mt-2">
+                                <textarea class="${textareaClasses} lesson-concepts" rows="4" placeholder="Näiteks: Põhiemotsioonid: rõõm, viha, üllatus, kurbus...">${lesson.concepts}</textarea>
+                            </div>
                         </div>
 
                         <div class="space-y-4">
-                            <div class="flex justify-between items-center">
-                                <label class="text-base font-medium">Tunni käik</label>
-                                <button type="button" class="btn-primary px-3 py-1 rounded text-sm add-activity" data-lesson-id="${lesson.id}">
-                                    <i data-lucide="plus" class="w-4 h-4 inline mr-1"></i>
+                            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                                <p class="text-base font-semibold text-gray-900">Tunni käik</p>
+                                <button type="button" class="${primaryButtonClasses} add-activity" data-lesson-id="${lesson.id}">
+                                    <i data-lucide="plus" class="w-4 h-4"></i>
                                     Lisa tegevus
                                 </button>
                             </div>
-                            <div class="activities-container" data-lesson-id="${lesson.id}">
+                            <div class="activities-container space-y-3" data-lesson-id="${lesson.id}">
                                 ${lesson.activities.length > 0 ? `
-                                    <div class="grid grid-cols-4 gap-2 p-3 bg-gray-50 rounded-lg text-sm font-medium mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-4 gap-3 px-4 py-3 bg-gray-50 rounded-lg text-sm font-medium text-gray-700">
                                         <div>Tunni osad</div>
                                         <div>Arendatavad osaoskused</div>
                                         <div>Plaanitud tegevused</div>
@@ -473,22 +394,25 @@
                             </div>
                         </div>
 
-                        <div class="space-y-2">
-                            <label class="block text-sm font-medium">Lõimingu võimalused teiste ainetega</label>
-                            <textarea class="textarea w-full px-3 py-2 rounded-md lesson-integration" rows="3"
-                                      placeholder="Näiteks: Lõiming ainega 'Arvutiõpetus'...">${lesson.integration}</textarea>
+                        <div>
+                            <label class="form-label block text-m/6 text-gray-900 mb-2">Lõimingu võimalused teiste ainetega</label>
+                            <div class="mt-2">
+                                <textarea class="${textareaClasses} lesson-integration" rows="3" placeholder="Näiteks: Lõiming ainega 'Arvutiõpetus'...">${lesson.integration}</textarea>
+                            </div>
                         </div>
 
-                        <div class="space-y-2">
-                            <label class="block text-sm font-medium">Tegevuste diferentseerimise ja lisaarendamise võimalused</label>
-                            <textarea class="textarea w-full px-3 py-2 rounded-md lesson-differentiation" rows="3"
-                                      placeholder="Näiteks: 4. ülesannet õpilased saavad teha edasi paaristööna...">${lesson.differentiation}</textarea>
+                        <div>
+                            <label class="form-label block text-m/6 text-gray-900 mb-2">Tegevuste diferentseerimise ja lisaarendamise võimalused</label>
+                            <div class="mt-2">
+                                <textarea class="${textareaClasses} lesson-differentiation" rows="3" placeholder="Näiteks: 4. ülesannet õpilased saavad teha edasi paaristööna...">${lesson.differentiation}</textarea>
+                            </div>
                         </div>
 
-                        <div class="space-y-2">
-                            <label class="block text-sm font-medium">Enese- ja tunnianalüüs õpetajale</label>
-                            <textarea class="textarea w-full px-3 py-2 rounded-md lesson-self-analysis" rows="3"
-                                      placeholder="Näiteks: Mis tänases tunnis õnnestus? Mis ei õnnestunud? Miks?">${lesson.selfAnalysis}</textarea>
+                        <div>
+                            <label class="form-label block text-m/6 text-gray-900 mb-2">Enese- ja tunnianalüüs õpetajale</label>
+                            <div class="mt-2">
+                                <textarea class="${textareaClasses} lesson-self-analysis" rows="3" placeholder="Näiteks: Mis tänases tunnis õnnestus? Mis ei õnnestunud? Miks?">${lesson.selfAnalysis}</textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -496,15 +420,17 @@
         }
 
         function createActivityRow(activity) {
+            const activityTextareaClasses = 'block w-full rounded-md bg-white px-3 py-2 text-sm text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#611e59]';
+
             return `
-                <div class="grid grid-cols-4 gap-2 p-3 border rounded-lg bg-white relative activity-row" data-activity-id="${activity.id}">
-                    <button type="button" class="absolute -right-3 -top-3 w-7 h-7 p-0 flex items-center justify-center btn-destructive rounded-full text-xs remove-activity" data-activity-id="${activity.id}">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-3 p-4 bg-white rounded-lg shadow-sm relative activity-row" data-activity-id="${activity.id}">
+                    <button type="button" class="absolute -right-3 -top-3 inline-flex items-center justify-center rounded-full bg-red-500 text-white w-7 h-7 hover:bg-red-600 transition-colors remove-activity" data-activity-id="${activity.id}">
                         <i data-lucide="trash-2" class="w-4 h-4"></i>
                     </button>
-                    <textarea class="textarea text-sm activity-part" rows="2" placeholder="1. Emotsioonide laul">${activity.part}</textarea>
-                    <textarea class="textarea text-sm activity-skills" rows="2" placeholder="kuulamine, rääkimine">${activity.skills}</textarea>
-                    <textarea class="textarea text-sm activity-activities" rows="2" placeholder="Õppijad kuulavad emotsioonide laulu...">${activity.activities}</textarea>
-                    <textarea class="textarea text-sm activity-materials" rows="2" placeholder="https://www.youtube.com/...">${activity.materials}</textarea>
+                    <textarea class="${activityTextareaClasses} activity-part" rows="2" placeholder="1. Emotsioonide laul">${activity.part}</textarea>
+                    <textarea class="${activityTextareaClasses} activity-skills" rows="2" placeholder="kuulamine, rääkimine">${activity.skills}</textarea>
+                    <textarea class="${activityTextareaClasses} activity-activities" rows="2" placeholder="Õppijad kuulavad emotsioonide laulu...">${activity.activities}</textarea>
+                    <textarea class="${activityTextareaClasses} activity-materials" rows="2" placeholder="https://www.youtube.com/...">${activity.materials}</textarea>
                 </div>
             `;
         }
@@ -564,7 +490,7 @@
 
             if (container.children.length === 0) {
                 container.innerHTML = `
-                    <div class="grid grid-cols-4 gap-2 p-3 bg-gray-50 rounded-lg text-sm font-medium mb-3">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-3 px-4 py-3 bg-gray-50 rounded-lg text-sm font-medium text-gray-700">
                         <div>Tunni osad</div>
                         <div>Arendatavad osaoskused</div>
                         <div>Plaanitud tegevused</div>
